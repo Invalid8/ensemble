@@ -1,7 +1,7 @@
 import type { ColorSeason, Undertone } from "@/lib/types";
 import type { Depth } from "@/lib/composer/undertone";
 
-// Exact palette values from SPEC.md.md §10 — simplified 4-season engine, not a professional session.
+// Exact palette values from SPEC.md.md §10 - simplified 4-season engine, not a professional session.
 export const SEASON_PALETTES: Record<ColorSeason, string[]> = {
   Spring: ["#FF7F50", "#FFDAB9", "#9ACD32", "#FFC300", "#C19A6B"],
   Autumn: ["#B7410E", "#808000", "#E1AD01", "#E2725B", "#FFFDD0"],
@@ -14,8 +14,7 @@ export const SEASON_PALETTES: Record<ColorSeason, string[]> = {
  * "Neutral -> nudge to nearest" is left unspecified by the spec; this picks the season for the
  * matching depth, biased warm.
  *
- * `undertone` and `depth` come from `deriveUndertoneAndDepth` (src/lib/composer/undertone.ts) —
- * the confirmed skin-tone-analysis response has no `undertone` or `fitzpatrick` field at all
+ * `undertone` and `depth` come from `deriveUndertoneAndDepth` (src/lib/composer/undertone.ts) -  * the confirmed skin-tone-analysis response has no `undertone` or `fitzpatrick` field at all
  * (DEVELOPMENT.md §6 item 2), only raw hex colors, so both are derived from `skin_color` there
  * rather than read directly off the API response.
  */
@@ -43,7 +42,7 @@ const SOUTHERN_HEMISPHERE_COUNTRIES = new Set([
 /**
  * Climate season (SPEC.md.md §10): hemisphere from country + month, with a tropical
  * special-case for Nigeria (wet ~Apr-Oct, dry/harmattan ~Nov-Mar). Affects garment
- * type/weight + skincare, never color — keep separate from getColorSeason.
+ * type/weight + skincare, never color - keep separate from getColorSeason.
  */
 export function getClimateSeason(country: string, date: Date = new Date()): string {
   const month = date.getMonth() + 1; // 1-12

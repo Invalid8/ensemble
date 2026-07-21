@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { runYouCamWorkflow } from "@/lib/youcam/client";
 
-// SPEC.md.md §8 — universal 4-step workflow, one route handles all three features.
+// SPEC.md.md §8 - universal 4-step workflow, one route handles all three features.
 const ALLOWED_FEATURES = new Set(["skin-analysis", "skin-tone-analysis", "cloth"]);
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ feature: string }> }) {

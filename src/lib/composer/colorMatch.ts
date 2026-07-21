@@ -6,7 +6,7 @@ function hexToRgb(hex: string): [number, number, number] {
   return [r, g, b];
 }
 
-// Simple RGB Euclidean distance — SPEC.md.md §12 allows this ("ΔE if easy") over full LAB ΔE.
+// Simple RGB Euclidean distance - SPEC.md.md §12 allows this ("ΔE if easy") over full LAB ΔE.
 export function hexDistance(a: string, b: string): number {
   const [r1, g1, b1] = hexToRgb(a);
   const [r2, g2, b2] = hexToRgb(b);

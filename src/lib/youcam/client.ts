@@ -19,7 +19,7 @@ function authHeaders(): HeadersInit {
   return { Authorization: `Bearer ${apiKey}` };
 }
 
-// YouCam IDs exceed Number.MAX_SAFE_INTEGER (SPEC.md.md §8) — must not round-trip through JSON.parse.
+// YouCam IDs exceed Number.MAX_SAFE_INTEGER (SPEC.md.md §8) - must not round-trip through JSON.parse.
 async function parseJsonBig(res: Response): Promise<unknown> {
   const text = await res.text();
   return JSONbig.parse(text);
@@ -35,8 +35,7 @@ function backoffDelay(attempt: number, baseDelayMs: number) {
 }
 
 // Field names below are CONFIRMED against docs.perfectcorp.com (2026-07-21) for the
-// ai_clothes and ai_skin_tone_analysis (aka "AI Facial Color Tones Analyzer") references —
-// see docs/DEVELOPMENT.md §6 for the full findings and what's still open (skin-analysis's
+// ai_clothes and ai_skin_tone_analysis (aka "AI Facial Color Tones Analyzer") references - // see docs/DEVELOPMENT.md §6 for the full findings and what's still open (skin-analysis's
 // exact File API shape wasn't independently re-verified but is assumed consistent).
 interface UploadSlot {
   file_id: unknown;

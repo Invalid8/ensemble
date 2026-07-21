@@ -14,9 +14,9 @@ const LIP_PHRASE: Record<MakeupSpec["lipBlushFamily"], string> = {
 };
 
 /**
- * SPEC.md.md §6.4 — the one narrative that makes the skin -> outfit -> beauty dependency
+ * SPEC.md.md §6.4 - the one narrative that makes the skin -> outfit -> beauty dependency
  * audible. Must move in one direction (skin fact -> color choice -> why -> beauty finish ->
- * occasion) per CONTENT.md §5 — never reorder or skip a link in the chain.
+ * occasion) per CONTENT.md §5 - never reorder or skip a link in the chain.
  */
 export function generateRationale(opts: {
   profile: LookProfile;
@@ -34,8 +34,8 @@ export function generateRationale(opts: {
   const occasion = profile.occasion ?? "today";
 
   return (
-    `You're ${undertone}-toned with some ${topConcern}, so we chose this ${nearFaceColorName} ${garmentName} — shown on you — ` +
+    `You're ${undertone}-toned with some ${topConcern}, so we chose this ${nearFaceColorName} ${garmentName} - shown on you - ` +
     `which flatters your colouring and calms it. To finish: a ${baseFinish} base for your ${skinState} skin, a ${lip} lip that ties to the ` +
-    `${garmentName}, all shade-matched to you — ready for ${occasion}.`
+    `${garmentName}, all shade-matched to you - ready for ${occasion}.`
   );
 }

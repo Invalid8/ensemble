@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design tokens from docs/DESIGN.md — soft/warm/confidential, not clinical.
+ * Design tokens from docs/DESIGN.md - soft/warm/confidential, not clinical.
  * shadcn/ui's semantic tokens (--background, --primary, etc.) are mapped onto these instead of
  * its own Nova-preset grayscale, so every generated component inherits our palette automatically
  * rather than needing per-component overrides.
@@ -22,6 +22,10 @@
   --color-border-subtle: #dcd3c6;
   --color-success-calm: #8fa888;
   --color-destructive: #b54b3a;
+  --color-petal-1: #efb8c3;
+  --color-petal-2: #e9a9ba;
+  --color-petal-3: #f2ccd4;
+  --color-gold: #e8a83c;
 
   --background: var(--color-bg);
   --foreground: var(--color-ink);
@@ -55,6 +59,10 @@
   --color-accent-soft: var(--color-accent-soft);
   --color-border-subtle: var(--color-border-subtle);
   --color-success-calm: var(--color-success-calm);
+  --color-petal-1: var(--color-petal-1);
+  --color-petal-2: var(--color-petal-2);
+  --color-petal-3: var(--color-petal-3);
+  --color-gold: var(--color-gold);
   --font-heading: var(--font-newsreader);
   --font-body: var(--font-inter);
   --font-sans: var(--font-inter);
@@ -96,6 +104,10 @@
   --color-border-subtle: #4a4038;
   --color-success-calm: #8fa888;
   --color-destructive: #d4685a;
+  --color-petal-1: #6e4e56;
+  --color-petal-2: #543b42;
+  --color-petal-3: #403036;
+  --color-gold: #e8a83c;
 
   --background: var(--color-bg);
   --foreground: var(--color-ink);
@@ -132,5 +144,23 @@ body {
   }
   html {
     @apply font-sans;
+  }
+}
+
+@keyframes marquee-y {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-x {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
   }
 }

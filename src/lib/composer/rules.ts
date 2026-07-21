@@ -46,7 +46,7 @@ export interface NearFaceConstraints {
 }
 
 /**
- * SPEC.md.md §6.1 — near-face garment color is filtered by skin *condition*, not just palette.
+ * SPEC.md.md §6.1 - near-face garment color is filtered by skin *condition*, not just palette.
  * Returns the adjusted candidate hex list a catalog match should draw from for the near-face piece.
  */
 export function getNearFaceColorConstraints(profile: LookProfile): NearFaceConstraints {
@@ -83,7 +83,7 @@ export type SkincareTag =
   | "brightening"
   | "spf";
 
-/** SPEC.md.md §6.2 — skin state x climate x safety. Returns product-category tags, not products. */
+/** SPEC.md.md §6.2 - skin state x climate x safety. Returns product-category tags, not products. */
 export function getSkincareTags(profile: LookProfile): SkincareTag[] {
   const tags = new Set<SkincareTag>();
   const conditions = profile.skinConditions;
@@ -115,7 +115,7 @@ export interface MakeupSpec {
   neutralBias: "peach-gold" | "rose-mauve" | "outfit-driven";
 }
 
-/** SPEC.md.md §6.3 — makeup coordinated to BOTH the chosen outfit color and skin state. */
+/** SPEC.md.md §6.3 - makeup coordinated to BOTH the chosen outfit color and skin state. */
 export function getMakeupSpec(profile: LookProfile, nearFaceColorHex: string): MakeupSpec {
   const temperature = classifyHue(nearFaceColorHex);
   const lipBlushFamily =
@@ -131,7 +131,7 @@ export function getMakeupSpec(profile: LookProfile, nearFaceColorHex: string): M
 const PREGNANCY_SUPPRESSED_INGREDIENTS = ["retinoid", "retinol", "hydroquinone", "high-dose salicylic acid", "salicylic acid"];
 const SENSITIVITY_SUPPRESSED_INGREDIENTS = ["aha", "bha", "glycolic acid", "salicylic acid", "retinoid", "retinol"];
 
-/** SPEC.md.md §9 — runs as a suppression pass over already-generated recs, not baked into the rules above. */
+/** SPEC.md.md §9 - runs as a suppression pass over already-generated recs, not baked into the rules above. */
 export function applySafetySuppression(products: Product[], flags: SafetyFlags | undefined): Product[] {
   if (!flags) return products;
 

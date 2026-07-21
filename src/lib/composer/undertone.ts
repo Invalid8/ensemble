@@ -12,9 +12,9 @@ function srgbChannelToLinear(channel255: number): number {
 }
 
 // sRGB (D65) -> CIE XYZ -> CIE Lab. Used because skin-tone research classifies depth via L*
-// and warmth via the a*/b* plane (ITA°-style) — far more reliable than thresholding raw hue
+// and warmth via the a*/b* plane (ITA°-style) - far more reliable than thresholding raw hue
 // on a single hex, since skin hues all cluster tightly in the orange-red family regardless
-// of undertone (DEVELOPMENT.md §6 item 2 — no undertone/Fitzpatrick field is returned by the
+// of undertone (DEVELOPMENT.md §6 item 2 - no undertone/Fitzpatrick field is returned by the
 // confirmed skin-tone-analysis response, so this derives from its `skin_color` hex instead).
 export function hexToLab(hex: string): Lab {
   const clean = hex.replace("#", "");
@@ -49,7 +49,7 @@ export function deriveDepthFromLightness(skinColorHex: string): Depth {
 /**
  * Undertone from the angle in the Lab a-b chroma plane: closer to the +b (yellow) axis reads
  * warm, closer to the +a (red/pink) axis reads cool, the band between is called neutral. Still
- * a simplification (SPEC.md.md §11's "simplified engine" note applies) — swap for a real API
+ * a simplification (SPEC.md.md §11's "simplified engine" note applies) - swap for a real API
  * field immediately if the Playground ever exposes one.
  */
 export function deriveUndertone(skinColorHex: string): Undertone {

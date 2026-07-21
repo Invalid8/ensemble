@@ -10,7 +10,7 @@ export interface SkinConditionScore {
 }
 
 // `spots` maps from the API's `age_spot` skin-analysis concern, and `texture` from a concern
-// that's actually nested by subregion (whole face/T-zone/U-zone) in the raw response — both need
+// that's actually nested by subregion (whole face/T-zone/U-zone) in the raw response - both need
 // mapping at ingestion, not a 1:1 passthrough (DEVELOPMENT.md §6 item 3).
 export interface SkinConditions {
   redness: SkinConditionScore;
@@ -34,9 +34,9 @@ export interface SafetyFlags {
  * Populated incrementally across the capture flow, read by the Composer at the end.
  */
 export interface LookProfile {
-  // from face scan (Skin AI) — undefined until that step completes.
+  // from face scan (Skin AI) - undefined until that step completes.
   // `undertone` is DERIVED from skin-tone-analysis's `skin_color` hex via
-  // src/lib/composer/undertone.ts, not read directly off the API response — it doesn't
+  // src/lib/composer/undertone.ts, not read directly off the API response - it doesn't
   // return undertone or Fitzpatrick at all (DEVELOPMENT.md §6 item 2). `fitzpatrick` is kept
   // optional for if a real value ever becomes available; nothing currently populates it.
   undertone?: Undertone;

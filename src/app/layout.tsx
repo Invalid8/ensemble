@@ -15,7 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Ensemble",
-  description: "One coordinated look — skin and outfit, together.",
+  description: "One coordinated look - skin and outfit, together.",
 };
 
 export default function RootLayout({
