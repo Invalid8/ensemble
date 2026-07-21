@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design tokens from docs/DESIGN.md — soft/warm/confidential, not clinical.
+ * shadcn/ui's semantic tokens (--background, --primary, etc.) are mapped onto these instead of
+ * its own Nova-preset grayscale, so every generated component inherits our palette automatically
+ * rather than needing per-component overrides.
+ */
+:root {
+  --color-bg: #f3ebe2;
+  --color-surface-card: #faf6f0;
+  --color-surface-2: #c5beb6;
+  --color-ink: #1a1a1a;
+  --color-ink-secondary: #3d3d3d;
+  --color-ink-muted: #6b6b6b;
+  --color-accent: #d4916e;
+  --color-accent-soft: #e8cbb8;
+  --color-border-subtle: #dcd3c6;
+  --color-success-calm: #8fa888;
+  --color-destructive: #b54b3a;
+
+  --background: var(--color-bg);
+  --foreground: var(--color-ink);
+  --card: var(--color-surface-card);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-surface-card);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-ink);
+  --secondary: var(--color-accent-soft);
+  --secondary-foreground: var(--color-ink-secondary);
+  --muted: var(--color-surface-2);
+  --muted-foreground: var(--color-ink-muted);
+  --accent: var(--color-accent-soft);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-destructive);
+  --border: var(--color-border-subtle);
+  --input: var(--color-border-subtle);
+  --ring: var(--color-accent);
+  --radius: 0.85rem;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface-card: var(--color-surface-card);
+  --color-surface-2: var(--color-surface-2);
+  --color-ink: var(--color-ink);
+  --color-ink-secondary: var(--color-ink-secondary);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-success-calm: var(--color-success-calm);
+  --font-heading: var(--font-newsreader);
+  --font-body: var(--font-inter);
+  --font-sans: var(--font-inter);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+.dark {
+  --color-bg: #1c1815;
+  --color-surface-card: #262019;
+  --color-surface-2: #3a332c;
+  --color-ink: #f3ebe2;
+  --color-ink-secondary: #d8cec2;
+  --color-ink-muted: #9c9187;
+  --color-accent: #e0a37e;
+  --color-accent-soft: #4a3a2e;
+  --color-border-subtle: #4a4038;
+  --color-success-calm: #8fa888;
+  --color-destructive: #d4685a;
+
+  --background: var(--color-bg);
+  --foreground: var(--color-ink);
+  --card: var(--color-surface-card);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-surface-card);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-accent);
+  --primary-foreground: var(--color-bg);
+  --secondary: var(--color-accent-soft);
+  --secondary-foreground: var(--color-ink-secondary);
+  --muted: var(--color-surface-2);
+  --muted-foreground: var(--color-ink-muted);
+  --accent: var(--color-accent-soft);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-destructive);
+  --border: var(--color-border-subtle);
+  --input: var(--color-border-subtle);
+  --ring: var(--color-accent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
