@@ -1,10 +1,10 @@
-# TrueHue — Development Doc
+# Ensemble — Development Doc
 *Build-facing companion to `SPEC.md.md` (source of truth for product decisions). This doc exists so anyone implementing can find tech stack, screens, and implementation approach without re-reading the full spec.*
 
 ---
 
 ## 1. Concept, in one paragraph
-TrueHue turns "getting ready" into one decision instead of two. User states an occasion, scans their face (YouCam Skin AI), uploads a body photo (YouCam Apparel VTO). The skin scan doesn't just drive a separate beauty result — it filters the outfit color shown near the face, and the outfit color chosen then drives the makeup shade/finish. One "Look" screen, one rationale sentence, shoppable. Full product rationale: `SPEC.md.md` §0–§6.
+Ensemble turns "getting ready" into one decision instead of two. User states an occasion, scans their face (YouCam Skin AI), uploads a body photo (YouCam Apparel VTO). The skin scan doesn't just drive a separate beauty result — it filters the outfit color shown near the face, and the outfit color chosen then drives the makeup shade/finish. One "Look" screen, one rationale sentence, shoppable. Full product rationale: `SPEC.md.md` §0–§6.
 
 **The one thing every screen must protect:** if you deleted the skin scan, the outfit result must visibly get worse. That's the judged differentiator — not either API alone, but the coordination logic in §6.
 

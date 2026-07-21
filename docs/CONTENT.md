@@ -1,10 +1,10 @@
-# TrueHue — Content Doc
+# Ensemble — Content Doc
 *Copy and voice guidelines for every string in the product. Companion to `SPEC.md.md` (Trust layer: §11) and `DEVELOPMENT.md`. If a screen's copy isn't covered here, write it to match the principles below, don't improvise a different voice.*
 
 ---
 
 ## 1. Voice, in one line
-**Warm, specific, and honest — never clinical, never alarming, never vague.** TrueHue talks like a friend who's good with color, not a dermatologist and not a hype-man. It names real things (a color, a garment, an occasion) instead of generic praise ("you look great!").
+**Warm, specific, and honest — never clinical, never alarming, never vague.** Ensemble talks like a friend who's good with color, not a dermatologist and not a hype-man. It names real things (a color, a garment, an occasion) instead of generic praise ("you look great!").
 
 Three tests for any string before it ships:
 1. **Would a dermatology chart word this way?** If yes, rewrite it (see banned words, §2).
@@ -64,7 +64,7 @@ Never a bare spinner. Staged status text that narrates the actual coordination h
 - **Title:** `"Your look for {occasion}."` — always fill in the real occasion, never a fallback like "your event."
 - **Rationale** (§6.4 template, see §5 below) is the emotional payoff of the whole flow — it should read as one sentence a stylist would actually say out loud, not a report.
 - **Trust footer** (always present, exact wording anchored below): cosmetic-not-medical note + simplified-engine note.
-- **Share card copy:** short and personal — *"My look for {occasion}, by TrueHue."* Not a marketing tagline.
+- **Share card copy:** short and personal — *"My look for {occasion}, by Ensemble."* Not a marketing tagline.
 
 ---
 

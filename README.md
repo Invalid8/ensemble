@@ -1,4 +1,4 @@
-# TrueHue
+# Ensemble
 
 One coordinated look — skin and outfit, together. Built for the [YouCam API Skin AI & Apparel VTO Hackathon](https://youcam-api.devpost.com), combined track. Full product spec: `docs/SPEC.md.md`. Build-facing docs: `docs/DEVELOPMENT.md`, `docs/CONTENT.md`, `docs/DESIGN.md`.
 

@@ -1,4 +1,4 @@
-# TrueHue — Implementation Spec v2 (Level 3: One Unified Look)
+# Ensemble — Implementation Spec v2 (Level 3: One Unified Look)
 *(working name — change freely)*
 **YouCam API Skin AI + Apparel VTO Hackathon · Combined track · Deadline: Aug 17, 2026**
 **Supersedes v1. Single source of truth. If a decision isn't here, it isn't decided.**
@@ -6,13 +6,13 @@
 ---
 
 ## 0. The product in one paragraph
-TrueHue answers one question — **"How do I put myself together today?"** — by treating skin and clothing as **one styled look, not two shopping trips.** The user tells us the occasion, scans their face, uploads a full-body photo, and gets back a **single coordinated "look"**: an outfit rendered on their own body (Apparel VTO), plus the makeup and skincare that finish *that exact look*, plus one unified explanation tying it all together. The skin analysis visibly drives both halves — the colours the clothes are chosen in, and the beauty products that match. Wrapped in a **Trust layer** that refuses to pathologize skin, and monetized by affiliate links on every item.
+Ensemble answers one question — **"How do I put myself together today?"** — by treating skin and clothing as **one styled look, not two shopping trips.** The user tells us the occasion, scans their face, uploads a full-body photo, and gets back a **single coordinated "look"**: an outfit rendered on their own body (Apparel VTO), plus the makeup and skincare that finish *that exact look*, plus one unified explanation tying it all together. The skin analysis visibly drives both halves — the colours the clothes are chosen in, and the beauty products that match. Wrapped in a **Trust layer** that refuses to pathologize skin, and monetized by affiliate links on every item.
 
 ## 1. The thesis + the test we must pass
 The combined-track judges reject "two separate features." Their test, in plain terms:
 > **If you deleted the Skin AI half, would the Apparel half get visibly worse?**
 
-For TrueHue the answer is **yes, catastrophically**: without the skin scan there is no undertone → no palette → no near-face colour logic → no shade-matched makeup → no skin-state skincare → the "look" collapses into a generic clothes render. **The two APIs are load-bearing for a single output.** That interdependence *is* the product, and §6 (the Look Composer) is where it lives. Everything else serves it.
+For Ensemble the answer is **yes, catastrophically**: without the skin scan there is no undertone → no palette → no near-face colour logic → no shade-matched makeup → no skin-state skincare → the "look" collapses into a generic clothes render. **The two APIs are load-bearing for a single output.** That interdependence *is* the product, and §6 (the Look Composer) is where it lives. Everything else serves it.
 
 ## 2. Target user & wedge
 Online shoppers (primarily women 18–40) getting ready for real moments — a date, an interview, an event — who currently make skin and outfit decisions separately and badly. **Deliberate strength: accuracy and dignity across the full tone range, especially medium-to-deep** — the segment incumbents fail, and the local (Lagos / West Africa) market.
@@ -231,7 +231,7 @@ Occasion entry → Face: lighting check → capture → analyzing → (brief) sk
 - **Wk4 — polish & submit:** finish Look screen; (reach) makeup VTO + look card; screenshots; record + edit demo (royalty-free music, no trademarks); write project description; finalize repo; submit early.
 
 ## 23. Demo arc (2–3 min, rewritten for the unified look)
-1. **Hook (0:00–0:20):** "Getting ready means two guesses — will this suit my skin, and will this outfit look right. TrueHue makes them one decision." State the occasion ("dinner tonight").
+1. **Hook (0:00–0:20):** "Getting ready means two guesses — will this suit my skin, and will this outfit look right. Ensemble makes them one decision." State the occasion ("dinner tonight").
 2. **Face (0:20–0:55):** lighting check → scan → *kind* skin read (show empowering language + deep-tone accuracy beat). Name the Skin AI APIs.
 3. **Body + questions (0:55–1:25):** upload, quick shape/size/occasion.
 4. **The reveal (1:25–2:30):** the Look screen — outfit on the user, coordinated makeup, and read the unified rationale aloud so the *dependency is audible* ("because we saw redness, cool emerald — and a cool-rose lip to match it"). Name the VTO (+ makeup VTO) API.

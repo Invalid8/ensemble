@@ -1,4 +1,4 @@
-# TrueHue — Landing Page Plan
+# Ensemble — Landing Page Plan
 *Companion to `DEVELOPMENT.md` (stack/screens), `CONTENT.md` (voice), `DESIGN.md` (visual system). This is the page a cold visitor — a judge, a Devpost browser, anyone following the demo video link — sees before ever touching the actual app flow.*
 
 ---
@@ -6,7 +6,7 @@
 ## 1. Job this page has to do
 Not a screen in the onboarding flow (§7 of `SPEC.md.md` starts *inside* the product, at occasion-entry). This is what sits in front of it: the elevator pitch, in the time it takes to scroll once, ending in exactly one action — start the flow.
 
-**The test for this page:** someone who has never heard of TrueHue should understand the "one coordinated look, not two guesses" premise and the deletion-test differentiator (§1) before they scroll past the first screen's worth of content. Everything below the fold is reinforcement, not the pitch itself.
+**The test for this page:** someone who has never heard of Ensemble should understand the "one coordinated look, not two guesses" premise and the deletion-test differentiator (§1) before they scroll past the first screen's worth of content. Everything below the fold is reinforcement, not the pitch itself.
 
 Lives at `/` in the Next.js app. The actual onboarding flow (occasion entry → … → Look screen) moves to its own route so the marketing page and the product don't fight for the same URL — e.g. `/get-ready` or `/start`, kicked off by this page's CTA. (Placeholder homepage currently at `src/app/page.tsx` gets replaced by this plan; the flow's first screen moves out to its own route.)
 
@@ -26,7 +26,7 @@ Minimal — logo mark only, no nav links. This isn't a multi-page marketing site
 ### 2.3 The problem (short, one or two lines)
 Names the friction this replaces: deciding skin and outfit separately, and badly. Pull directly from the hackathon's own framing (Apparel VTO topic description: "will this fit, will this look right, is it worth the return") combined with the Skin AI topic framing (the moment right before a purchase or in front of a mirror) — this page should sound like it's answering the judges' own prompt back to them, because it is.
 
-### 2.4 How TrueHue works
+### 2.4 How Ensemble works
 3–4 steps, visual not paragraph-heavy — this is a place `Motion` staggered-fade-in-on-scroll earns its keep (§DESIGN.md §3 motion principles: soft, never jarring).
 1. Tell us the occasion.
 2. Scan your face — skin state + undertone.
@@ -36,10 +36,10 @@ Names the friction this replaces: deciding skin and outfit separately, and badly
 Each step: a short label + one-line description, no jargon, matching the staged-status copy voice already established for the composing screen (`CONTENT.md` §3) — this section is a preview of that same voice.
 
 ### 2.5 The deletion test (the differentiator, stated plainly)
-This is the paragraph aimed at judges specifically, even though real users benefit from it too: state the "if you deleted the skin scan, the outfit result gets worse" logic from `SPEC.md.md` §1 in plain language. Don't bury this — it's the single fact that separates TrueHue from the generic version of this idea (see earlier conversation on differentiation). Pair it with the two YouCam APIs named explicitly (Skin AI + Apparel VTO) — judges need to see the APIs named on the page itself, not just in the demo video.
+This is the paragraph aimed at judges specifically, even though real users benefit from it too: state the "if you deleted the skin scan, the outfit result gets worse" logic from `SPEC.md.md` §1 in plain language. Don't bury this — it's the single fact that separates Ensemble from the generic version of this idea (see earlier conversation on differentiation). Pair it with the two YouCam APIs named explicitly (Skin AI + Apparel VTO) — judges need to see the APIs named on the page itself, not just in the demo video.
 
 ### 2.6 Trust, stated once, visibly
-One short block, not buried in a footer: the empowering-language commitment (§11) and the dignity-across-tone-range wedge (§2) — TrueHue's actual moat per earlier discussion. This is where "confidential/warm" as a design value becomes a stated product value, not just a vibe.
+One short block, not buried in a footer: the empowering-language commitment (§11) and the dignity-across-tone-range wedge (§2) — Ensemble's actual moat per earlier discussion. This is where "confidential/warm" as a design value becomes a stated product value, not just a vibe.
 
 ### 2.7 Final CTA
 Repeat the single action from the hero, no new copy needed — a returning visitor scrolling to the bottom shouldn't hit a wall of links, just the same door back into the flow.

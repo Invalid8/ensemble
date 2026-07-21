@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TrueHue",
+  title: "Ensemble",
   description: "One coordinated look — skin and outfit, together.",
 };
 

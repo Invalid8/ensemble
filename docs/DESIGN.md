@@ -1,4 +1,4 @@
-# TrueHue — Design Doc
+# Ensemble — Design Doc
 *Visual direction for Pencil mockups. Companion to `DEVELOPMENT.md` (screens, states) and `CONTENT.md` (copy, tone). Design must carry the same voice as the copy: warm, not clinical.*
 
 ---
