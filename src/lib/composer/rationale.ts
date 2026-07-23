@@ -22,20 +22,27 @@ export function generateRationale(opts: {
   profile: LookProfile;
   nearFaceColorName: string;
   garmentName: string;
+  /** Short garment noun ("dress", "top") for the second mention — the full name reads twice as clutter. */
+  garmentNoun?: string;
   makeupSpec: MakeupSpec;
 }): string {
   const { profile, nearFaceColorName, garmentName, makeupSpec } = opts;
+  const garmentNoun = opts.garmentNoun ?? garmentName;
 
   const undertone = profile.undertone ?? "neutral";
-  const topConcern = profile.skinFocusAreas?.[0] ?? "a few things we're keeping an eye on";
+  const topConcern = profile.skinFocusAreas?.[0];
+  const openingClause = topConcern
+    ? `You're ${undertone}-toned with some ${topConcern}, so we chose`
+    : `You're ${undertone}-toned and your skin's looking balanced today, so we chose`;
+  const calmsClause = topConcern ? "which flatters your colouring and calms it" : "which flatters your colouring";
   const skinState = profile.skinType ?? "your";
   const baseFinish = BASE_FINISH_PHRASE[makeupSpec.baseFinish];
   const lip = LIP_PHRASE[makeupSpec.lipBlushFamily];
   const occasion = profile.occasion ?? "today";
 
   return (
-    `You're ${undertone}-toned with some ${topConcern}, so we chose this ${nearFaceColorName} ${garmentName} - shown on you - ` +
-    `which flatters your colouring and calms it. To finish: a ${baseFinish} base for your ${skinState} skin, a ${lip} lip that ties to the ` +
-    `${garmentName}, all shade-matched to you - ready for ${occasion}.`
+    `${openingClause} this ${nearFaceColorName} ${garmentName} - shown on you - ` +
+    `${calmsClause}. To finish: a ${baseFinish} base for your ${skinState} skin, a ${lip} lip that ties to the ` +
+    `${garmentNoun}, all shade-matched to you - ready for ${occasion}.`
   );
 }

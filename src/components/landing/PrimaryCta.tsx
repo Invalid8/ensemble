@@ -7,7 +7,7 @@ interface PrimaryCtaProps {
   className?: string;
 }
 
-export function PrimaryCta({ children, href = "/get-ready", className }: PrimaryCtaProps) {
+export function PrimaryCta({ children, href = "/studio", className }: PrimaryCtaProps) {
   return (
     <Link
       href={href}

@@ -56,6 +56,7 @@ export interface LookProfile {
   size?: string;
   fitPref?: FitPreference;
   occasion?: string;
+  budget?: "value" | "mid" | "premium";
 
   // derived
   country?: string;
@@ -84,6 +85,12 @@ export interface Product {
   occasion_tags: string[];
 }
 
+/** One "Why This Look?" claim (SPEC §6.4b) — traceable to the API output or answer that produced it. */
+export interface LookReason {
+  claim: string;
+  source: "undertone" | "skinCondition" | "occasion" | "climate" | "bodyShape" | "safety";
+}
+
 export interface CompleteLook {
   occasion: string;
   outfit: {
@@ -96,4 +103,5 @@ export interface CompleteLook {
     makeup: Product[];
   };
   rationale: string;
+  reasons: LookReason[];
 }
