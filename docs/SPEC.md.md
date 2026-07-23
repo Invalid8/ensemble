@@ -1,12 +1,27 @@
-# Ensemble — Implementation Spec v2 (Level 3: One Unified Look)
+# Ensemble — Implementation Spec v2.1 (Level 3: One Unified Look)
 *(working name — change freely)*
 **YouCam API Skin AI + Apparel VTO Hackathon · Combined track · Deadline: Aug 17, 2026**
-**Supersedes v1. Single source of truth. If a decision isn't here, it isn't decided.**
+**Supersedes v1 and v2. Single source of truth. If a decision isn't here, it isn't decided.**
+*(v2.1 delta: retail positioning layer, budget input, "Why This Look?" checklist, retailer-dashboard mock. Product scope otherwise unchanged.)*
 
 ---
 
 ## 0. The product in one paragraph
 Ensemble answers one question — **"How do I put myself together today?"** — by treating skin and clothing as **one styled look, not two shopping trips.** The user tells us the occasion, scans their face, uploads a full-body photo, and gets back a **single coordinated "look"**: an outfit rendered on their own body (Apparel VTO), plus the makeup and skincare that finish *that exact look*, plus one unified explanation tying it all together. The skin analysis visibly drives both halves — the colours the clothes are chosen in, and the beauty products that match. Wrapped in a **Trust layer** that refuses to pathologize skin, and monetized by affiliate links on every item.
+
+### 0.1 Positioning (two sides, one product — NOT a pivot)
+- **On screen (the demo):** a consumer "getting ready" experience — confidence before an important moment. This is what judges watch; keep the emotional beat.
+- **In the pitch (description + demo close):** **Ensemble is an AI sales associate that fuses Skin AI and Apparel VTO into one decision engine — coordinated looks that grow baskets and cut returns.** That one sentence is the canonical pitch line.
+- **The retailer question we must answer out loud:** *"Why wouldn't a retailer just embed Perfect Corp's Skin AI and VTO widgets separately?"* Answer: the widgets can't talk to each other. Perfect Corp sells *capabilities*; Ensemble is the **decision layer** between them — near-face colour rules, safety suppression, shade-matching, one rationale. Put this verbatim in the written description and demo close.
+- **Retail KPI map (use in Potential Impact + description):**
+
+| Ensemble feature | Retailer metric |
+|---|---|
+| Skin-aware outfit recommendations | Conversion rate |
+| One coordinated look (apparel + beauty) | Average basket size / cross-sell |
+| Undertone-accurate colour + shade matching | Fewer returns |
+| "Why This Look?" transparent reasoning | Trust → completion rate |
+| Occasion-first personalized journey | Engagement / session depth |
 
 ## 1. The thesis + the test we must pass
 The combined-track judges reject "two separate features." Their test, in plain terms:
@@ -48,6 +63,7 @@ LookProfile {
   bodyShape: "hourglass"|"pear"|"apple"|"rectangle"|"invTriangle"
   size: string; fitPref: "fitted"|"regular"|"relaxed"
   occasion: string                              // the context that makes it a "look"
+  budget?: "value"|"mid"|"premium"              // optional; filters catalog by price band (retail: basket-size lever)
 
   // — derived —
   country: string; climateSeason: string        // from country + date
@@ -61,6 +77,8 @@ CompleteLook {
   outfit:  { garments: Garment[], paletteUsed: Hex[], nearFaceColor: Hex }  // VTO-rendered on user
   beauty:  { skincarePrep: Product[], makeup: Product[] }                    // coordinated to skin + outfit
   rationale: string   // one narrative weaving skin → colours → outfit → beauty → occasion
+  reasons: { claim: string, source: "undertone"|"skinCondition"|"occasion"|"climate"|"bodyShape"|"safety" }[]
+                      // structured "Why This Look?" checklist — each entry traceable to an API output or answer (§6.4)
 }
 ```
 
@@ -77,6 +95,7 @@ CompleteLook {
 | Safety flags | **Ask** | suppress unsafe recs (§9) |
 | Body shape, size, fit | **Ask** | silhouette ranking + size filter |
 | Occasion | **Ask (first)** | frames the whole look |
+| Budget band | **Ask (optional, with occasion)** | catalog price filter (§12) |
 | Country | **Ask** | climate season |
 | Climate season | **Derive** — country + date | garment type/weight + skincare |
 | Colour season → palette | **Derive** — undertone + depth | outfit + makeup colours |
@@ -112,16 +131,23 @@ This is the step judges will look for: makeup depends on the garment, which depe
 - **Shade-match to `tone`/`fitzpatrick`** from the scan (concealer/base shade) — a direct skin→beauty link, and our deep-tone accuracy showcase.
 - Undertone biases neutrals (warm → peach/gold; cool → rose/mauve) unless the outfit dictates otherwise.
 
-### 6.4 Rationale generator (one unified narrative)
-Template weaves the chain so the user *sees* one capability feeding the other:
+### 6.4 Rationale generator (one unified narrative + "Why This Look?" checklist)
+The generator emits **two renderings of the same reasoning** — narrative for emotion, checklist for trust:
+
+**(a) Narrative** — template weaves the chain so the user *sees* one capability feeding the other:
 > "You're **{undertone}**-toned with some **{topConcern}**, so we chose this **{nearFaceColor} {garment}** — shown on you — which flatters your colouring and calms it. To finish: a **{base finish}** base for your **{skin state}** skin, a **{lip}** lip that ties to the {garment}, all shade-matched to you — ready for **{occasion}**."
 
 Example: "You're cool-toned with a little cheek redness, so we chose this emerald top (shown on you) — it calms redness where warm corals would amplify it. Finish with a hydrating base for your dry skin and a cool-rose lip that ties to the top, shade-matched to you — ready for tonight's dinner."
 
+**(b) "Why This Look?" checklist** — `reasons[]` in `CompleteLook`: 3–5 short claims, each tagged with its `source` so every checkmark is a *visible proof that an API output drove a decision* (makes the deletion test legible to judges). Example:
+> ✓ Matches your cool undertone *(skin-tone API)* · ✓ Calms visible redness near the face *(skin-analysis API)* · ✓ Base finish chosen for your skin's moisture level *(skin-analysis API)* · ✓ Appropriate for {occasion}
+
+Rules: claims come from the same §6.1–6.3 rule firings that picked the products — never invent a reason a rule didn't fire. Empowering-language remap (§11.1) applies to claim wording. Cap at 5.
+
 ---
 
 ## 7. End-to-end flow (one converging experience)
-1. **Occasion-first entry:** "Let's get you ready — what for?" → occasion (+ country if unknown). Frames it as *one act of getting ready*, not two scans.
+1. **Occasion-first entry:** "Let's get you ready — what for?" → occasion chips (+ optional budget band, + country if unknown). Frames it as *one act of getting ready*, not two scans. *(Deliberately chips, not a chat UI — same reasoning chain, zero scope creep.)*
 2. **Face step:** lighting pre-check → selfie (one upload → two skin tasks) → skin-tone + skin-analysis.
 3. **Micro-questionnaire:** skin type, 1–2 goals, safety flags.
 4. **Body step:** full-body upload + body shape / size / fit.
@@ -163,6 +189,8 @@ Answers **suppress** recommendations. Demo-grade; always pair with "see a profes
 3. **Lighting pre-check** — sample frame brightness; block shutter until adequate; on-screen guide. Fixes score-swing.
 4. **Honest try-on framing** — VTO shows *colour & silhouette on you*, not exact fit. Show `material`+size-chart from catalog ("100% linen, relaxed fit"). Address "floating garment" via expectation-setting.
 
+**Trust IS the retail feature (pitch guard):** never let the B2B framing read as "use skin insecurity to sell more." The pitch order is: dignity-first analysis → customer trusts the recommendation → completes the journey and keeps the items. Trust is *why* the KPIs in §0.1 move — fewer returns and bigger baskets are downstream of not pathologizing skin.
+
 ## 12. Catalog & data (RapidAPI)
 Two product types now — **apparel** and **beauty** — normalized to:
 ```json
@@ -172,17 +200,20 @@ Two product types now — **apparel** and **beauty** — normalized to:
   "price":0, "currency":"", "image_url":"", "product_url":"(affiliate)", "occasion_tags":[] }
 ```
 Map `primary_color_hex` → nearest palette colour (RGB/LAB, ΔE if easy). Curate ~20–40 apparel (span the wheel) + ~15–20 beauty (bases across shades, a few lips per temperature, core skincare) so every profile resolves to a complete look. Hide missing fields, never fabricate.
+**Budget filter:** if `budget` is set, map to price bands per category (value/mid/premium terciles of the curated catalog) and prefer in-band items; relax the band rather than return an incomplete look.
 
 ## 13. The unified "Look" screen (the winning artifact — spec it carefully)
 - **Hero:** the user wearing the outfit (VTO). If makeup VTO built → a face inset showing the coordinated makeup; else makeup shown as shade swatches.
 - **Title:** "Your look for {occasion}."
-- **Unified rationale** (§6.4) — 2–3 sentences, skin→outfit→beauty→occasion.
+- **Unified rationale** (§6.4a) — 2–3 sentences, skin→outfit→beauty→occasion.
+- **"Why This Look?" checklist** (§6.4b) — 3–5 checkmarked claims under the rationale, each visibly sourced (undertone / skin state / occasion). Narrative sells the look; checklist earns the trust.
 - **Shoppable rows:** *Outfit* (each with material/fit chip + affiliate) · *Beauty* (skincare prep + makeup, shade-matched, safety-filtered, affiliate).
 - **Trust footer:** cosmetic-not-medical note + "simplified engine" note.
 - **Share:** "Look card" (outfit + palette + finish) → viral loop.
 
 ## 14. Monetization
 Every try-on-verified item (apparel **and** beauty) is an affiliate link — monetizing the confidence the look creates. Demo uses RapidAPI data; pitch names affiliate networks (Impact, Rakuten, CJ) + the returns-reduction value story.
+**B2B path (pitch only, don't build):** the same composer white-labels as an embedded "AI sales associate" for beauty/fashion retailers — SaaS + rev-share, sold on the §0.1 KPI map. The consumer app is the proof; the retailer integration is the business.
 
 ## 15. Tech stack & architecture
 React/Next.js, mobile-first. Next.js API routes / serverless as a **proxy** holding YouCam + RapidAPI keys (never client-side). `json-bigint` for YouCam responses. Client-side image compression pre-PUT; lighting check first. Polling with exponential backoff (respect 5 QPS). In-app React state only (no persistence needed). One `LookProfile` object threaded through the app.
@@ -191,16 +222,16 @@ React/Next.js, mobile-first. Next.js API routes / serverless as a **proxy** hold
 Occasion entry → Face: lighting check → capture → analyzing → (brief) skin snapshot → micro-questionnaire → Body: upload + questions → composing → **The Look** → (reach) share card.
 
 ## 17. Scope (marked for shippability)
-**Level 3 MUST (core winning experience):** occasion-first entry; face scan (2 skin APIs); questionnaire + safety; body VTO; **Look Composer** producing coordinated outfit colour + beauty **product recs** + unified rationale on **one** screen; shoppable affiliate (apparel + beauty); Trust layer; lighting check.
-**Level 3 REACH (intensifiers, big judge points):** **makeup VTO** rendering the coordinated makeup on the selfie (3rd YouCam API — strongest proof of "one experience"); shareable look card; skin diary.
+**Level 3 MUST (core winning experience):** occasion-first entry (+ optional budget band); face scan (2 skin APIs); questionnaire + safety; body VTO; **Look Composer** producing coordinated outfit colour + beauty **product recs** + unified rationale **+ "Why This Look?" checklist (§6.4b)** on **one** screen; shoppable affiliate (apparel + beauty); Trust layer; lighting check.
+**Level 3 REACH (intensifiers, big judge points):** **makeup VTO** rendering the coordinated makeup on the selfie (3rd YouCam API — strongest proof of "one experience"); shareable look card; skin diary; **Retail Intelligence Dashboard mock** — ONE static screen (anonymized insight cards, e.g. "cool-undertone shoppers convert highest on navy"), clearly labelled *illustrative concept* — for the demo close + description, ~2h budget, never a real build.
 **FLOOR fallback (only if time collapses):** Level 2 — apparel with visible skin-driven "because" captions + beauty as text tips. Keep as safety net, don't plan for it.
-**NOT building:** accounts/auth, real checkout, body measurement/size prediction, skin detection from body photo, medical diagnosis, huge catalog, native app.
+**NOT building:** accounts/auth, real checkout, body measurement/size prediction, skin detection from body photo, medical diagnosis, huge catalog, native app, **conversational chat UI** (occasion chips deliver the same reasoning chain), **functional retailer dashboard/analytics**.
 
 ## 18. Judging-criteria map
 - **Tech Implementation:** 2–3 real YouCam APIs load-bearing for one output + coordination engine + safety logic + live catalog. Passes the deletion test.
 - **Design:** one coherent "getting ready" experience converging on a single Look screen.
-- **Potential Impact:** attacks separate-decision friction + returns cost; serves underserved tones; affiliate revenue on two product types.
-- **Quality of Idea:** "getting ready as one act" maps to the judges' own words (skin + clothes = one self-image); a tool that refuses to pathologize skin = defensible identity.
+- **Potential Impact:** lead with the §0.1 retail framing — an AI sales associate retailers embed, sold on conversion / basket size / returns (KPI map) — then the deletion-test answer to "why not embed the widgets separately?"; serves underserved tones; affiliate now, B2B white-label path (§14) later.
+- **Quality of Idea:** "getting ready as one act" maps to the judges' own words (skin + clothes = one self-image); a tool that refuses to pathologize skin = defensible identity — and the reason the retail KPIs move (§11).
 
 ## 19. Risks & mitigations
 - Scope creep from Level 3 → the MUST/REACH split above; beauty half ships as *recs* first, makeup VTO only if schema confirmed + time allows.
@@ -218,7 +249,7 @@ Occasion entry → Face: lighting check → capture → analyzing → (brief) sk
 
 ## 21. Submission deliverables (mandatory — build alongside the product)
 - **Code repo URL** — public (with license) OR private shared with contact_event@PerfectCorp.com; must contain all source, assets, and **run instructions (README with API-key setup)** — judges will try to run it.
-- **Written description** — features, functionality, and the consumer/retail value case.
+- **Written description** — features, functionality, and the consumer/retail value case. Open with the §0.1 pitch line; include the retailer-question answer + KPI map; close with the dashboard-mock screenshot as "where this goes for retailers" (labelled illustrative).
 - **Screenshots** of the project.
 - **1–3 min demo video** — front-load the payoff (judges may stop at 3:00); must **name the YouCam APIs used**; must show it **functioning on-device**; must be **public on YouTube** (preferred)/Vimeo/Youku with the link on the submission form; **no third-party trademarks or copyrighted music** (use royalty-free audio; be careful showing real brand logos in the catalog).
 - **If we win:** exit interview + agree to a Perfect Corp blog feature.
@@ -227,12 +258,12 @@ Occasion entry → Face: lighting check → capture → analyzing → (brief) sk
 ## 22. Milestones (to Aug 17)
 - **Wk1 — setup & plumbing:** register on Devpost → get redeem code; sign up YouCam API → redeem 1,000 units; **confirm §20 schemas** on the live account; build the proxy + 4-step workflow helper for one API; lighting check; define the `LookProfile` object.
 - **Wk2 — face + brain:** tone→season engine, skin-analysis + empowering-language layer, questionnaire + safety override, occasion-first entry.
-- **Wk3 — body + composer:** VTO + catalog (apparel + beauty), **Look Composer** (near-face colour rule, skincare prep, coordinated makeup, rationale generator), Look screen v1. **Start the demo script + repo README now.**
-- **Wk4 — polish & submit:** finish Look screen; (reach) makeup VTO + look card; screenshots; record + edit demo (royalty-free music, no trademarks); write project description; finalize repo; submit early.
+- **Wk3 — body + composer:** VTO + catalog (apparel + beauty, budget bands), **Look Composer** (near-face colour rule, skincare prep, coordinated makeup, rationale generator **+ reasons[] checklist**), Look screen v1. **Start the demo script + repo README now.**
+- **Wk4 — polish & submit:** finish Look screen; (reach) makeup VTO + look card + dashboard mock (~2h, only if ahead); screenshots; record + edit demo (royalty-free music, no trademarks); write project description (§0.1 pitch line + KPI map); finalize repo; submit early.
 
 ## 23. Demo arc (2–3 min, rewritten for the unified look)
 1. **Hook (0:00–0:20):** "Getting ready means two guesses — will this suit my skin, and will this outfit look right. Ensemble makes them one decision." State the occasion ("dinner tonight").
 2. **Face (0:20–0:55):** lighting check → scan → *kind* skin read (show empowering language + deep-tone accuracy beat). Name the Skin AI APIs.
 3. **Body + questions (0:55–1:25):** upload, quick shape/size/occasion.
-4. **The reveal (1:25–2:30):** the Look screen — outfit on the user, coordinated makeup, and read the unified rationale aloud so the *dependency is audible* ("because we saw redness, cool emerald — and a cool-rose lip to match it"). Name the VTO (+ makeup VTO) API.
-5. **Close (2:30–3:00):** tap shoppable links; state the Trust-layer difference + returns-reduction + affiliate model. End on the deletion-test line: "take the skin scan away and the whole look falls apart — that's the point."
+4. **The reveal (1:25–2:30):** the Look screen — outfit on the user, coordinated makeup, and read the unified rationale aloud so the *dependency is audible* ("because we saw redness, cool emerald — and a cool-rose lip to match it"). Point at the **"Why This Look?" checkmarks** ("every checkmark is an API output driving a decision"). Name the VTO (+ makeup VTO) API.
+5. **Close (2:30–3:00):** tap shoppable links; pivot to retail: "for retailers, this is an AI sales associate" — one basket-size/returns line, flash the dashboard mock (if built, ≤5s, labelled concept). End on the deletion-test line: "take the skin scan away and the whole look falls apart — that's the point."
