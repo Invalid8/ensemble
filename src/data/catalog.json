@@ -1,0 +1,1426 @@
+[
+  {
+    "id": "seph-P87985432",
+    "type": "beauty",
+    "brand": "Fenty Beauty by Rihanna",
+    "name": "Pro Filt’r Soft Matte Longwear Liquid Foundation",
+    "category": "beauty",
+    "subcategory": "foundation",
+    "colors": [],
+    "primary_color_hex": "",
+    "shade": "485 — neutral",
+    "finish": "matte",
+    "key_ingredients": [
+      "glycerin",
+      "titanium dioxide"
+    ],
+    "price": 40,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2590081-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/pro-filtr-soft-matte-longwear-foundation-P87985432?skuId=2590081",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner",
+      "evening"
+    ]
+  },
+  {
+    "id": "seph-P519887",
+    "type": "beauty",
+    "brand": "Armani Beauty",
+    "name": "Luminous Silk Natural Glow Blurring Liquid Foundation with 24 Hour Wear",
+    "category": "beauty",
+    "subcategory": "foundation",
+    "colors": [],
+    "primary_color_hex": "",
+    "shade": "4.5 — light, neutral peach",
+    "finish": "dewy",
+    "key_ingredients": [
+      "niacinamide",
+      "glycerin",
+      "titanium dioxide"
+    ],
+    "price": 69,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2926731-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/luminous-silk-natural-glow-blurring-liquid-foundation-with-24-hour-wear-P519887?skuId=2926731",
+    "occasion_tags": [
+      "wedding-guest",
+      "date",
+      "everyday"
+    ]
+  },
+  {
+    "id": "seph-P521996",
+    "type": "beauty",
+    "brand": "Rare Beauty by Selena Gomez",
+    "name": "True to Myself Natural Matte Longwear Foundation ​",
+    "category": "beauty",
+    "subcategory": "foundation",
+    "colors": [],
+    "primary_color_hex": "",
+    "shade": "9 Light Neutral — neutral peach",
+    "finish": "natural",
+    "key_ingredients": [
+      "hyaluronic acid",
+      "glycerin",
+      "titanium dioxide"
+    ],
+    "price": 38,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2894020-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/true-to-myself-natural-matte-longwear-foundation-P521996?skuId=2894020",
+    "occasion_tags": [
+      "office",
+      "everyday",
+      "graduation"
+    ]
+  },
+  {
+    "id": "seph-P510799",
+    "type": "beauty",
+    "brand": "MAC Cosmetics",
+    "name": "M·A·Cximal Silky Matte 12HR Wear Lipstick",
+    "category": "beauty",
+    "subcategory": "lipstick",
+    "colors": [
+      {
+        "name": "Cool Teddy",
+        "hex": "#A67B6D"
+      }
+    ],
+    "primary_color_hex": "#A67B6D",
+    "shade": "Cool Teddy — cool deep tone beige",
+    "finish": "matte",
+    "key_ingredients": [
+      "glycerin",
+      "titanium dioxide"
+    ],
+    "price": 25,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2837425-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/mac-cosmetics-m-a-cximal-silky-matte-lipstick-P510799?skuId=2837425",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "everyday"
+    ]
+  },
+  {
+    "id": "seph-P513655",
+    "type": "beauty",
+    "brand": "MAC Cosmetics",
+    "name": "M·A·Cximal Sleek Satin 8HR Full-Coverage Hydrating Lipstick",
+    "category": "beauty",
+    "subcategory": "lipstick",
+    "colors": [
+      {
+        "name": "Paramount",
+        "hex": "#8E3B2F"
+      }
+    ],
+    "primary_color_hex": "#8E3B2F",
+    "shade": "Paramount — reddish brown",
+    "finish": "satin",
+    "key_ingredients": [
+      "squalane",
+      "titanium dioxide"
+    ],
+    "price": 25,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2826154-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/mac-cosmetics-macximal-sleek-satin-lipstick-P513655?skuId=2826154",
+    "occasion_tags": [
+      "date",
+      "dinner",
+      "wedding-guest"
+    ]
+  },
+  {
+    "id": "seph-P281411",
+    "type": "beauty",
+    "brand": "SEPHORA COLLECTION",
+    "name": "Cream Lip Stain 10HR Liquid Lipstick",
+    "category": "beauty",
+    "subcategory": "lipstick",
+    "colors": [
+      {
+        "name": "01 Always Red",
+        "hex": "#BF0A30"
+      }
+    ],
+    "primary_color_hex": "#BF0A30",
+    "shade": "01 Always Red — matte classic red",
+    "finish": "matte",
+    "key_ingredients": [
+      "titanium dioxide"
+    ],
+    "price": 16,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2760981-main-zoom.jpg?imwidth=270&pb=2023-03-sephora-value-2023",
+    "product_url": "https://www.sephora.com/product/cream-lip-stain-liquid-lipstick-P281411?skuId=2760981",
+    "occasion_tags": [
+      "evening",
+      "date",
+      "dinner"
+    ]
+  },
+  {
+    "id": "seph-P433531",
+    "type": "beauty",
+    "brand": "Charlotte Tilbury",
+    "name": "K.I.S.S.I.N.G Satin Shine Lipstick",
+    "category": "beauty",
+    "subcategory": "lipstick",
+    "colors": [
+      {
+        "name": "Pillow Talk Naughty Talk​",
+        "hex": "#B97A6E"
+      }
+    ],
+    "primary_color_hex": "#B97A6E",
+    "shade": "Pillow Talk Naughty Talk​ — neutral nude glow​",
+    "finish": "satin",
+    "key_ingredients": [
+      "titanium dioxide"
+    ],
+    "price": 37,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2951275-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/k-i-s-s-i-n-g-lipstick-P433531?skuId=2951275",
+    "occasion_tags": [
+      "wedding-guest",
+      "date",
+      "graduation"
+    ]
+  },
+  {
+    "id": "seph-P97989778",
+    "type": "beauty",
+    "brand": "Rare Beauty by Selena Gomez",
+    "name": "Soft Pinch Liquid Blush",
+    "category": "beauty",
+    "subcategory": "blush",
+    "colors": [
+      {
+        "name": "Adore",
+        "hex": "#E75480"
+      }
+    ],
+    "primary_color_hex": "#E75480",
+    "shade": "Adore — bright pink",
+    "key_ingredients": [
+      "titanium dioxide"
+    ],
+    "price": 25,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2911741-main-zoom.jpg?imwidth=270&pb=allure-2022-bestofbeauty-badge",
+    "product_url": "https://www.sephora.com/product/rare-beauty-by-selena-gomez-soft-pinch-liquid-blush-P97989778?skuId=2911741",
+    "occasion_tags": [
+      "everyday",
+      "office",
+      "date"
+    ]
+  },
+  {
+    "id": "seph-P469825",
+    "type": "beauty",
+    "brand": "Saie",
+    "name": "Dew Blush Liquid Cream Blush",
+    "category": "beauty",
+    "subcategory": "blush",
+    "colors": [
+      {
+        "name": "Flirty",
+        "hex": "#F25C69"
+      }
+    ],
+    "primary_color_hex": "#F25C69",
+    "shade": "Flirty — Watermelon",
+    "finish": "dewy",
+    "key_ingredients": [
+      "glycerin",
+      "titanium dioxide"
+    ],
+    "price": 26,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2872448-main-zoom.jpg?imwidth=270&pb=clean-planet-aware",
+    "product_url": "https://www.sephora.com/product/saie-dew-blush-liquid-cheek-blush-P469825?skuId=2872448",
+    "occasion_tags": [
+      "everyday",
+      "vacation",
+      "wedding-guest"
+    ]
+  },
+  {
+    "id": "seph-P427419",
+    "type": "beauty",
+    "brand": "The Ordinary",
+    "name": "Hyaluronic Acid 2% + B5 Hydrating Serum with Ceramides",
+    "category": "beauty",
+    "subcategory": "skincare-hydrating",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "hyaluronic acid",
+      "ceramides",
+      "panthenol",
+      "glycerin"
+    ],
+    "price": 9.9,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2735132-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/the-ordinary-hyaluronic-acid-2-b5-hydrating-serum-P427419?skuId=2735132",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P482692",
+    "type": "beauty",
+    "brand": "LANEIGE",
+    "name": "Water Bank Blue Hyaluronic Acid Hydrating Serum",
+    "category": "beauty",
+    "subcategory": "skincare-hydrating",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "hyaluronic acid",
+      "squalane",
+      "glycerin"
+    ],
+    "price": 45,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2569796-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/laneige-water-bank-blue-hyaluronic-serum-P482692?skuId=2569796",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P506145",
+    "type": "beauty",
+    "brand": "The Ordinary",
+    "name": "Natural Moisturizing Factors + Beta Glucan Lightweight Gel Moisturizer",
+    "category": "beauty",
+    "subcategory": "skincare-oil-control",
+    "colors": [],
+    "primary_color_hex": "",
+    "finish": "natural",
+    "key_ingredients": [
+      "hyaluronic acid",
+      "glycerin"
+    ],
+    "price": 13.5,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2673317-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/natural-moisturizing-factors-beta-glucan-lightweight-gel-cream-P506145?skuId=2673317",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P520770",
+    "type": "beauty",
+    "brand": "Summer Fridays",
+    "name": "Cloud Dew Gel Cream Moisturizer",
+    "category": "beauty",
+    "subcategory": "skincare-oil-control",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "hyaluronic acid",
+      "vitamin C",
+      "ceramides",
+      "glycerin"
+    ],
+    "price": 38,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2925287-main-zoom.jpg?imwidth=270&pb=clean-at-sephora",
+    "product_url": "https://www.sephora.com/product/cloud-dew-gel-cream-moisturizer-tube-P520770?skuId=2925287",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P520085",
+    "type": "beauty",
+    "brand": "AESTURA",
+    "name": "A-CICA365 Soothing Repair Gel Cream Moisturizer pH4.5 with Centella Asiatica + Panthenol for Redness",
+    "category": "beauty",
+    "subcategory": "skincare-soothing",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "niacinamide",
+      "hyaluronic acid",
+      "vitamin C",
+      "centella",
+      "panthenol",
+      "glycerin"
+    ],
+    "price": 32,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2929222-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/a-cica-365-soothing-repair-gel-cream-moisturizer-ph-4-5-with-centella-asiatica-panthenol-for-redness-P520085?skuId=2929222",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P525012",
+    "type": "beauty",
+    "brand": "Beauty of Joseon",
+    "name": "Light On Vitamin C Serum For Brightening & Dark Spot Correction",
+    "category": "beauty",
+    "subcategory": "skincare-brightening",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "niacinamide",
+      "hyaluronic acid",
+      "vitamin C",
+      "centella",
+      "panthenol",
+      "glycerin"
+    ],
+    "price": 17,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s3001476-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/light-on-vitamin-c-serum-for-brightening-dark-spot-correction-P525012?skuId=3001476",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P469506",
+    "type": "beauty",
+    "brand": "Paula's Choice",
+    "name": "C15 Super Booster for Brightening Dullness & Uneven Tone",
+    "category": "beauty",
+    "subcategory": "skincare-brightening",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "hyaluronic acid",
+      "vitamin C",
+      "panthenol",
+      "glycerin"
+    ],
+    "price": 55,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2737211-main-zoom.jpg?imwidth=270",
+    "product_url": "https://www.sephora.com/product/paula-s-choice-c15-vitamin-c-super-booster-P469506?skuId=2737211",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P515111",
+    "type": "beauty",
+    "brand": "Supergoop!",
+    "name": "Mini Unseen Sunscreen SPF 50 Invisible Sun Protection for Face",
+    "category": "beauty",
+    "subcategory": "skincare-spf",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "avobenzone (SPF)"
+    ],
+    "price": 19,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2836161-main-zoom.jpg?imwidth=270&pb=allure-2025-best-of-beauty-award-winner",
+    "product_url": "https://www.sephora.com/product/supergoop-mini-unseen-sunscreen-spf-50-invisible-sun-protection-for-face-P515111?skuId=2836161",
+    "occasion_tags": []
+  },
+  {
+    "id": "seph-P510354",
+    "type": "beauty",
+    "brand": "innisfree",
+    "name": "Daily UV Mineral Korean Sunscreen SPF 45 with Hyaluronic Acid for Face & Body",
+    "category": "beauty",
+    "subcategory": "skincare-spf",
+    "colors": [],
+    "primary_color_hex": "",
+    "key_ingredients": [
+      "niacinamide",
+      "hyaluronic acid",
+      "centella",
+      "ceramides",
+      "panthenol",
+      "squalane",
+      "glycerin",
+      "zinc oxide (SPF)"
+    ],
+    "price": 22,
+    "currency": "USD",
+    "image_url": "https://www.sephora.com/productimages/sku/s2742443-main-zoom.jpg?imwidth=270&pb=allure-2025-best-of-beauty-award-winner",
+    "product_url": "https://www.sephora.com/product/innisfree-daily-uv-defense-mineral-sunscreen-broad-spectrum-spf-45-P510354?skuId=2742443",
+    "occasion_tags": []
+  },
+  {
+    "id": "asos-211095668",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN wrapped waist mini dress in red",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "RED",
+        "hex": "#BF0A30"
+      }
+    ],
+    "primary_color_hex": "#BF0A30",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "material": "100% Cotton",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 54.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-wrapped-waist-mini-dress-in-red/211095668-1-red",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-wrapped-waist-mini-dress-in-red/prd/211095668#colourWayId-211095679",
+    "occasion_tags": [
+      "date",
+      "dinner",
+      "evening"
+    ]
+  },
+  {
+    "id": "asos-210896631",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN boat neck waist detail midi dress in yellow",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "YELLOW",
+        "hex": "#FFC300"
+      }
+    ],
+    "primary_color_hex": "#FFC300",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "95% Cotton, 5% Elastane",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-boat-neck-waist-detail-midi-dress-in-yellow/210896631-1-yellow",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-boat-neck-waist-detail-midi-dress-in-yellow/prd/210896631#colourWayId-210896640",
+    "occasion_tags": [
+      "wedding-guest",
+      "graduation",
+      "vacation"
+    ]
+  },
+  {
+    "id": "asos-210896598",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN boat neck waist detail midi dress in chocolate",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Chocolate",
+        "hex": "#5D4037"
+      }
+    ],
+    "primary_color_hex": "#5D4037",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "95% Cotton, 5% Elastane",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-boat-neck-waist-detail-midi-dress-in-chocolate/210896598-1-chocolate",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-boat-neck-waist-detail-midi-dress-in-chocolate/prd/210896598#colourWayId-210896601",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-210736993",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN button front cap sleeve midi dress with contrast tipping in black",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "primary_color_hex": "#000000",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "material": "100% Polyester",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 60.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-black/210736993-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-black/prd/210736993#colourWayId-210736996",
+    "occasion_tags": [
+      "dinner",
+      "office",
+      "evening"
+    ]
+  },
+  {
+    "id": "asos-210071329",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN cotton-linen blend halter neck wrap mini sundress in lilac",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Lilac",
+        "hex": "#B57EDC"
+      }
+    ],
+    "primary_color_hex": "#B57EDC",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "80% Cotton, 20% Linen",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 44.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-lilac/210071329-1-lilac",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-lilac/prd/210071329#colourWayId-210071339",
+    "occasion_tags": [
+      "vacation",
+      "date",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-208071900",
+    "type": "apparel",
+    "brand": "YAS",
+    "name": "YAS plisse wrap midi dress in soft green",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Chinois green",
+        "hex": "#A8C3A0"
+      }
+    ],
+    "primary_color_hex": "#A8C3A0",
+    "sizes": [
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12"
+    ],
+    "material": "100% Polyester",
+    "fit": "regular",
+    "price": 96,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/yas-plisse-wrap-midi-dress-in-soft-green/208071900-1-chinoisgreen",
+    "product_url": "https://www.asos.com/us/yas/yas-plisse-wrap-midi-dress-in-soft-green/prd/208071900#colourWayId-208071909",
+    "occasion_tags": [
+      "wedding-guest",
+      "office",
+      "graduation"
+    ]
+  },
+  {
+    "id": "asos-210357004",
+    "type": "apparel",
+    "brand": "ONLY",
+    "name": "ONLY wrap midi dress in black",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "primary_color_hex": "#000000",
+    "sizes": [
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10"
+    ],
+    "material": "100% Polyester",
+    "fit": "regular",
+    "price": 63,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-wrap-midi-dress-in-black/210357004-1-black",
+    "product_url": "https://www.asos.com/us/only/only-wrap-midi-dress-in-black/prd/210357004#colourWayId-210357005",
+    "occasion_tags": [
+      "dinner",
+      "date",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-208898085",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN tailored relaxed blazer in black",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "primary_color_hex": "#000000",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "fit": "relaxed",
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-tailored-relaxed-blazer-in-black/208898085-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-relaxed-blazer-in-black/prd/208898085#colourWayId-208898113",
+    "occasion_tags": [
+      "interview",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210744186",
+    "type": "apparel",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge collarless blazer in ivory",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Ivory",
+        "hex": "#FFFFF0"
+      }
+    ],
+    "primary_color_hex": "#FFFFF0",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "material": "76% Polyester, 18% Viscose, 6% Elastane",
+    "fit": "regular",
+    "price": 99.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-collarless-blazer-in-ivory/210744186-1-ivory",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-collarless-blazer-in-ivory/prd/210744186#colourWayId-210744192",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding-guest"
+    ]
+  },
+  {
+    "id": "asos-208996593",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN ultimate sculpted suit blazer in plum",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "plum",
+        "hex": "#8E4585"
+      }
+    ],
+    "primary_color_hex": "#8E4585",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "64% Polyester, 33% Viscose, 3% Elastane",
+    "fit": "slim",
+    "price": 119,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-ultimate-sculpted-suit-blazer-in-plum/208996593-1-plum",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-ultimate-sculpted-suit-blazer-in-plum/prd/208996593#colourWayId-208996599",
+    "occasion_tags": [
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210120734",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN power shoulders double breasted blazer in soft pink",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "pink",
+        "hex": "#D8A7B1"
+      }
+    ],
+    "primary_color_hex": "#D8A7B1",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "76% Polyester, 18% Viscose, 6% Elastane",
+    "fit": "relaxed",
+    "price": 99.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-power-shoulders-double-breasted-blazer-in-soft-pink/210120734-1-pink",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-power-shoulders-double-breasted-blazer-in-soft-pink/grp/210857737#colourWayId-210120736&productId-210120734",
+    "occasion_tags": [
+      "office",
+      "graduation"
+    ]
+  },
+  {
+    "id": "asos-209879822",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN slim fit high neck blazer in chocolate brown",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Choc",
+        "hex": "#5D4037"
+      }
+    ],
+    "primary_color_hex": "#5D4037",
+    "sizes": [
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12"
+    ],
+    "material": "64% Polyester, 31% Viscose, 5% Elastane",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 109,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-slim-fit-high-neck-blazer-in-chocolate-brown/209879822-1-choc",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-fit-high-neck-blazer-in-chocolate-brown/prd/209879822#colourWayId-209879825",
+    "occasion_tags": [
+      "interview",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-209074015",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN cinch waist blazer in mocha",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Mocha",
+        "hex": "#C19A6B"
+      }
+    ],
+    "primary_color_hex": "#C19A6B",
+    "sizes": [
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12"
+    ],
+    "material": "75% Polyester, 19% Viscose, 6% Elastane",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 99.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-cinch-waist-blazer-in-mocha/209074015-1-mocha",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-cinch-waist-blazer-in-mocha/prd/209074015#colourWayId-209074024",
+    "occasion_tags": [
+      "office",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-210627032",
+    "type": "apparel",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge fitted shirt with ruffles in white",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "WHITE",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "primary_color_hex": "#FFFFFF",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "material": "100% Cotton",
+    "fit": "slim",
+    "price": 49.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-fitted-shirt-with-ruffles-in-white/210627032-1-white",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-fitted-shirt-with-ruffles-in-white/prd/210627032#colourWayId-210627038",
+    "occasion_tags": [
+      "interview",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210389821",
+    "type": "apparel",
+    "brand": "Topshop",
+    "name": "Topshop slash tie detailing satin top in blue",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "BLUE",
+        "hex": "#002366"
+      }
+    ],
+    "primary_color_hex": "#002366",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US  6",
+      "US  8",
+      "US  10",
+      "US  12",
+      "US  14"
+    ],
+    "material": "100% Polyester",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 95,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topshop-slash-tie-detailing-satin-top-in-blue/210389821-1-blue",
+    "product_url": "https://www.asos.com/us/topshop/topshop-slash-tie-detailing-satin-top-in-blue/prd/210389821#colourWayId-210389827",
+    "occasion_tags": [
+      "dinner",
+      "date",
+      "evening"
+    ]
+  },
+  {
+    "id": "asos-211189261",
+    "type": "apparel",
+    "brand": "Wanderdoll",
+    "name": "Wanderdoll x Emma Milton Cleo sheer chiffon draped high-low cape top in chartreuse - part of a set",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "GREEN",
+        "hex": "#046307"
+      }
+    ],
+    "primary_color_hex": "#046307",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "material": "100% Polyester",
+    "fit": "oversized",
+    "price": 78,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/wanderdoll-x-emma-milton-cleo-sheer-chiffon-draped-high-low-cape-top-in-chartreuse-part-of-a-set/211189261-1-green",
+    "product_url": "https://www.asos.com/us/wanderdoll/wanderdoll-x-emma-milton-cleo-sheer-chiffon-draped-high-low-cape-top-in-chartreuse-part-of-a-set/grp/211483108#colourWayId-211189263&productId-211189261",
+    "occasion_tags": [
+      "dinner",
+      "evening",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-209988355",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN lace trim satin cami top in butter yellow",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Butter yellow",
+        "hex": "#F3E5AB"
+      }
+    ],
+    "primary_color_hex": "#F3E5AB",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "97% Polyester, 3% Spandex",
+    "fit": "regular",
+    "price": 37.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-lace-trim-satin-cami-top-in-butter-yellow/209988355-1-butteryellow",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-lace-trim-satin-cami-top-in-butter-yellow/prd/209988355#colourWayId-209988356",
+    "occasion_tags": [
+      "vacation",
+      "everyday",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-209988323",
+    "type": "apparel",
+    "brand": "ASOS Curve",
+    "name": "ASOS DESIGN Curve satin lace trim long line satin cami top in chocolate",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Chocolate",
+        "hex": "#5D4037"
+      }
+    ],
+    "primary_color_hex": "#5D4037",
+    "sizes": [
+      "US 14",
+      "US 16",
+      "US 18",
+      "US 20",
+      "US 22",
+      "US 24",
+      "US 26"
+    ],
+    "material": "97% Polyester, 3% Spandex",
+    "fit": "regular",
+    "price": 39.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-curve-satin-lace-trim-long-line-satin-cami-top-in-chocolate/209988323-1-chocolate",
+    "product_url": "https://www.asos.com/us/asos-curve/asos-design-curve-satin-lace-trim-long-line-satin-cami-top-in-chocolate/prd/209988323#colourWayId-209988325",
+    "occasion_tags": [
+      "dinner",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-210547713",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN crinkle scarf detail top in khaki - part of a set",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "khaki",
+        "hex": "#808000"
+      }
+    ],
+    "primary_color_hex": "#808000",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "69% Polyester, 31% Polyamide",
+    "fit": "regular",
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-crinkle-scarf-detail-top-in-khaki-part-of-a-set/210547713-1-khaki",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-crinkle-scarf-detail-top-in-khaki-part-of-a-set/prd/210547713#colourWayId-210547718",
+    "occasion_tags": [
+      "everyday",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210796785",
+    "type": "apparel",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge short sleeve button up top with peter pan collar in blue",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "BLUE",
+        "hex": "#A9C1D9"
+      }
+    ],
+    "primary_color_hex": "#A9C1D9",
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "material": "47% Cotton, 44% Polyester, 9% Viscose",
+    "fit": "regular",
+    "price": 49.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-short-sleeve-button-up-top-with-peter-pan-collar-in-blue/210796785-1-blue",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-short-sleeve-button-up-top-with-peter-pan-collar-in-blue/grp/210950766#colourWayId-210796786&productId-210796785",
+    "occasion_tags": [
+      "office",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-210899825",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN tailored high waist culotte pants in black",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "black",
+        "hex": "#000000"
+      }
+    ],
+    "primary_color_hex": "#000000",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "67% Polyester, 29% Viscose, 4% Elastane",
+    "fit": {
+      "id": 53001,
+      "name": "Oversized"
+    },
+    "price": 47.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-tailored-high-waist-culotte-pants-in-black/210899825-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-high-waist-culotte-pants-in-black/prd/210899825#colourWayId-210899832",
+    "occasion_tags": [
+      "interview",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210553018",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN Tailored pleated floaty culotte pants in sage",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "SAGE",
+        "hex": "#9CAF88"
+      }
+    ],
+    "primary_color_hex": "#9CAF88",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "73% Viscose, 27% Nylon",
+    "fit": {
+      "id": 61460,
+      "name": "Wide"
+    },
+    "price": 49.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-tailored-pleated-floaty-culotte-pants-in-sage/210553018-1-sage",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-pleated-floaty-culotte-pants-in-sage/prd/210553018#colourWayId-210553029",
+    "occasion_tags": [
+      "office",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-211372626",
+    "type": "apparel",
+    "brand": "ASOS Curve",
+    "name": "ASOS DESIGN Curve satin wide leg pull on pants in khaki",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Khaki",
+        "hex": "#808000"
+      }
+    ],
+    "primary_color_hex": "#808000",
+    "sizes": [
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "material": "100% Polyester",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 50,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-curve-satin-wide-leg-pull-on-pants-in-khaki/211372626-1-khaki",
+    "product_url": "https://www.asos.com/us/asos-curve/asos-design-curve-satin-wide-leg-pull-on-pants-in-khaki/prd/211372626#colourWayId-211372640",
+    "occasion_tags": [
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210341902",
+    "type": "apparel",
+    "brand": "ARRANGE",
+    "name": "ARRANGE Wylder tailored high waist wide leg pants in black",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "primary_color_hex": "#000000",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 149,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/arrange-wylder-tailored-high-waist-wide-leg-pants-in-black/210341902-1-black",
+    "product_url": "https://www.asos.com/us/arrange/arrange-wylder-tailored-high-waist-wide-leg-pants-in-black/prd/210341902#colourWayId-210341904",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-205790007",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN column maxi skirt in black",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "primary_color_hex": "#000000",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "material": "86% Viscose, 14% Elastane",
+    "fit": "slim",
+    "price": 22.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-column-maxi-skirt-in-black/205790007-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-column-maxi-skirt-in-black/prd/205790007#colourWayId-205790008",
+    "occasion_tags": [
+      "office",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-210360115",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN tailored pencil maxi skirt in blue - part of a set",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "Blue",
+        "hex": "#A9C1D9"
+      }
+    ],
+    "primary_color_hex": "#A9C1D9",
+    "sizes": [
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12"
+    ],
+    "material": "63% Polyester, 32% Viscose, 5% Elastane",
+    "fit": "regular",
+    "price": 69.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-tailored-pencil-maxi-skirt-in-blue-part-of-a-set/210360115-1-blue",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-pencil-maxi-skirt-in-blue-part-of-a-set/prd/210360115#colourWayId-210360119",
+    "occasion_tags": [
+      "office",
+      "interview"
+    ]
+  },
+  {
+    "id": "asos-210483943",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN glass sequin pencil midi skirt in brown - part of a set",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "Brown",
+        "hex": "#6B4226"
+      }
+    ],
+    "primary_color_hex": "#6B4226",
+    "sizes": [
+      "US 0",
+      "US 2",
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12",
+      "US 14"
+    ],
+    "fit": "slim",
+    "price": 49.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-glass-sequin-pencil-midi-skirt-in-brown-part-of-a-set/210483943-1-brown",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-glass-sequin-pencil-midi-skirt-in-brown-part-of-a-set/grp/210561532#colourWayId-210483945&productId-210483943",
+    "occasion_tags": [
+      "evening",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210480942",
+    "type": "apparel",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN low waist denim pencil skirt in mid blue",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "MID BLUE",
+        "hex": "#708090"
+      }
+    ],
+    "primary_color_hex": "#708090",
+    "sizes": [
+      "US 4",
+      "US 6",
+      "US 8",
+      "US 10",
+      "US 12"
+    ],
+    "material": "100% Cotton",
+    "fit": {
+      "id": 53002,
+      "name": "Regular"
+    },
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-low-waist-denim-pencil-skirt-in-mid-blue/210480942-1-midblue",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-low-waist-denim-pencil-skirt-in-mid-blue/prd/210480942#colourWayId-210480944",
+    "occasion_tags": [
+      "everyday",
+      "vacation"
+    ]
+  }
+]

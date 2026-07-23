@@ -21,7 +21,7 @@ Ensemble turns "getting ready" into one decision instead of two. User states an 
 | Image handling | Client-side compression before PUT (e.g. `browser-image-compression`) | Runs pre-upload, before the 4-step workflow starts |
 | Polling | Exponential backoff, respecting 5 QPS / 250 req per 300s | Hand-rolled retry loop — see decision below |
 | State | Plain React state | One `LookProfile` object threaded through the app, no persistence, no DB |
-| Catalog data | RapidAPI (apparel + beauty) | **Not yet chosen — open item, see §6** |
+| Catalog data | RapidAPI: **Sephora** (Api Dojo) for beauty + **ASOS** (DataCrawler) for apparel | Chosen 2026-07-23 — see §6.1. One-time ingestion → local JSON snapshot; demo never calls RapidAPI live |
 
 **Decision — no Vercel Eve / agent framework:** the Look Composer (§6 below) is deterministic rule-based logic, not an LLM reasoning loop. Eve's value (durable execution, sandboxing, subagents, scheduled tasks) doesn't map to a fixed-sequence API pipeline. Revisit only if the "skin diary" reach feature (recurring re-scan reminders) gets scoped in — that's genuinely scheduled/stateful.
 
@@ -46,6 +46,7 @@ LookProfile {
   bodyShape: "hourglass"|"pear"|"apple"|"rectangle"|"invTriangle"
   size: string; fitPref: "fitted"|"regular"|"relaxed"
   occasion: string
+  budget?: "value"|"mid"|"premium"     // v2.1 — optional catalog price-band filter
 
   // derived
   country: string; climateSeason: string
@@ -56,6 +57,7 @@ CompleteLook {
   outfit: { garments: Garment[], paletteUsed: Hex[], nearFaceColor: Hex }
   beauty: { skincarePrep: Product[], makeup: Product[] }
   rationale: string
+  reasons: { claim: string, source: string }[]   // v2.1 — "Why This Look?" checklist (SPEC §6.4b)
 }
 ```
 One object, populated incrementally as the user moves through the flow, read by the Composer at the end. No screen owns a separate copy.
@@ -66,13 +68,13 @@ One object, populated incrementally as the user moves through the flow, read by 
 
 | # | Screen | Purpose | Key states to design |
 |---|---|---|---|
-| 1 | Occasion entry | "What are you getting ready for?" + country if unknown | Empty, filled |
+| 1 | Occasion entry | "What are you getting ready for?" + optional budget band + country if unknown | Empty, filled |
 | 2 | Face capture | Lighting pre-check → selfie | Lighting-inadequate (live guidance, not just pass/fail), capturing, captured |
 | 3 | Analyzing (brief) | Skin snapshot while skin-analysis + skin-tone-analysis run | Loading, skin snapshot shown (empowering-language, §11) |
 | 4 | Micro-questionnaire | Skin type, 1–2 goals, safety flags | Chip/pill selection only, no free text |
 | 5 | Body capture | Full-body upload + shape/size/fit | Upload guide overlay, example thumbnail, privacy reassurance copy |
 | 6 | Composing | Look Composer running (§6) | Staged status text (reading skin tone → choosing palette → rendering outfit), not a blank spinner |
-| 7 | The Look (hero) | Outfit on user + coordinated beauty + rationale + shoppable rows | Full result, error/retry state if any API call failed |
+| 7 | The Look (hero) | Outfit on user + coordinated beauty + rationale + "Why This Look?" checklist + shoppable rows | Full result, error/retry state if any API call failed |
 | 8 | (Reach) Share card | Shareable look card | — |
 
 Full screen sequence: `SPEC.md.md` §7 and §16.
@@ -107,7 +109,13 @@ RapidAPI source **not yet chosen**. Needs ~20–40 apparel (span the color wheel
 
 Findings below are from docs.perfectcorp.com (checked 2026-07-21) — official reference pages render client-side, but their `<path>.md` variant returns raw content and was used to pull real field names. Not authenticated against a live API key, so treat as strong-but-not-final; confirm against the API Playground once keys are in hand.
 
-1. **RapidAPI catalog choice** — still not selected.
+1. **RESOLVED (2026-07-23) — RapidAPI catalog: Sephora (Api Dojo) for beauty + ASOS (DataCrawler) for apparel.** Chosen from the marketplace over generic Google-Shopping-style aggregators because both return *structured retail data* (real categories, variants/shades, sizes, materials) rather than scraped search results — which is what the §12 schema needs.
+   - **Ingestion strategy: one-time snapshot, not live.** We only need ~20–40 apparel + ~15–20 beauty items. Pull once via the free tier, normalize to the §12 schema, commit as local JSON (e.g. `src/data/catalog.json`). The demo never depends on RapidAPI uptime, rate limits, or a second live API key — one less failure mode while judges run it.
+   - **CONFIRMED field mapping (probed live 2026-07-23, raw samples in `scripts/probes/`):**
+     - **Sephora** (`sephora.p.rapidapi.com`, US region): search = `us/products/v2/search?q=&pageSize=&currentPage=` → `products[]{productId, brandName, displayName, heroImage, rating, currentSku{skuId, listPrice}}`. Detail = `us/products/v2/detail?productId=&preferedSku=<skuId>` (**must pass a real skuId — empty param returns 204**) → `currentSku{variationValue (shade name), variationDesc (e.g. "cool deep tone beige" — undertone temperature in words, feed directly to shade matching), ingredientDesc (full INCI list), listPrice, highlights}` + `regularChildSkus[]` (all shades w/ swatch image URLs) + `parentCategory`. Prices are strings ("$25.00") — parse.
+     - **ASOS** (`asos10.p.rapidapi.com` — NOT DataCrawler's asos2; this is the one we're subscribed to): search = `api/v1/getProductListBySearchTerm?searchTerm=&currency=USD&country=US&store=US&languageShort=en&sizeSchema=US&limit=&offset=&sort=recommended` → `data.products[]{id, name, brandName, colour (name), price.current.value, price.currency, imageUrl (protocol-relative), url (path)}`. Detail = `api/v1/getProductDetails?productId=` → `data{variants[]{brandSize, isAvailable, colour}, info.aboutMe ("Main: 95% Cotton, 5% Elastane" — material), fitType, description (fit + category cues), gender, media}`.
+   - **Manual enrichment is expected at this catalog size:** `primary_color_hex` (APIs return colour names/swatch images, not hex — assign hex per item during curation), `occasion_tags`, `fit`, beauty `finish`. Spec rule applies: hide missing fields, never fabricate.
+   - **Trademark caution (SPEC §21):** catalog now contains real Sephora/ASOS brands — fine in the running app, but keep brand logos/marks out of demo-video close-ups and marketing frames.
 
 2. **RESOLVED — `skin-tone-analysis` (really "AI Facial Color Tones Analyzer") does NOT return undertone or Fitzpatrick.** Confirmed response fields: `eye_color`, `eye_color_name` (Amber/Brown/Green/Blue/Gray/Other), `lip_color`, `eyebrow_color`, `skin_color`, `hair_color`, `hair_color_name` (Auburn/Black/Blonde/Brown/Grey-White/Red) — all hex except the two `_name` enums. Checked twice for any Fitzpatrick mention (including prose, not just fields) — none. Also checked `ai_face_analyzer` (a separate facial-geometry endpoint) and the Fitzpatrick marketing page for a link to a specific API doc — neither turned up anything; the marketing page's only CTAs are "contact sales" and a consumer showcase tool, suggesting Fitzpatrick classification may be consumer-app-only or a higher tier, not part of the public `s2s/v2.0` surface.
    - **Decision: derive undertone + depth ourselves from `skin_color`.** Implemented in `src/lib/composer/undertone.ts` — converts the hex to CIE Lab and uses L* for depth (light-medium vs medium-deep) and the angle in the a*/b* plane for undertone (warm/cool/neutral), an ITA°-style approach. This is more defensible than thresholding raw hue, since skin hues all cluster tightly in the orange-red family regardless of undertone — hue alone can't separate them. Still a simplification per SPEC.md.md §11's own "not a professional session" framing. `getColorSeason` in `palette.ts` now takes `(undertone, depth)` instead of `(undertone, fitzpatrick)`. `LookProfile.fitzpatrick` stays optional/unpopulated in case a real value ever surfaces (e.g. from the live Playground).
@@ -121,7 +129,7 @@ Findings below are from docs.perfectcorp.com (checked 2026-07-21) — official r
 
 5. **Makeup VTO existence** — still not confirmed (a `makeup_vto` reference page exists at docs.perfectcorp.com but its content didn't render past the title in this pass). Confirm your API tier includes it and pull its real request/response shape before committing to §6.3 rendering.
 
-Item 2 is now the real blocker — it's a product decision (how do we get undertone/depth without a direct API field), not a lookup. Items 3–4 are resolved enough to build against; re-verify 3's nested score shape and 4's exact enum for `garment_category` once a live key is available.
+Items 1–4 are now resolved enough to build against. Remaining live-key verifications: item 1's exact endpoint/response shapes (RapidAPI playground), item 3's nested score shape, item 4's exact enum for `garment_category`, and item 5 (makeup VTO existence).
 
 ---
 
