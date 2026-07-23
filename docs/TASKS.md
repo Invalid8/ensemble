@@ -20,11 +20,11 @@ Legend: `[x]` done · `[~]` partial · `[ ]` todo · **(R)** = REACH, only if ah
 - [ ] Rate-limit backoff on 429 (5 QPS / 250 per 300s)
 
 ## 1. v2.1 spec deltas → code (SPEC §0.1, §4, §6.4b)
-- [ ] Add `budget?: "value"|"mid"|"premium"` to `LookProfile` (`src/lib/types.ts`)
-- [ ] Add `reasons: {claim, source}[]` to `CompleteLook` + emit from `composeLook()` (claims only from rules that fired, cap 5, empowering-language wording)
-- [ ] Budget → price-band filter in catalog matching (relax band rather than incomplete look)
-- [ ] Rename/map `spots` → `age_spot` per confirmed API field (DEVELOPMENT §6.3)
-- [ ] Handle nested-by-subregion `score_info` shape (texture/acne/pore/wrinkle/skin_type → read whole-face)
+- [x] Add `budget?: "value"|"mid"|"premium"` to `LookProfile` (`src/lib/types.ts`)
+- [x] Add `reasons: {claim, source}[]` to `CompleteLook` + emit from `composeLook()` (claims only from rules that fired, cap 5, empowering-language wording)
+- [x] Budget → price-band filter in catalog matching (terciles per type, relaxes rather than incomplete look)
+- [x] Map `spots` ← `age_spot` at ingestion (StudioFlow `analyze()`)
+- [ ] Handle nested-by-subregion `score_info` shape on the LIVE API (texture/skin_type → read whole-face) — mock is flat; verify at Layer-2 testing
 
 ## 2. Blockers / decisions (DEVELOPMENT §6)
 - [x] **Choose RapidAPI catalog source** — decided 2026-07-23: **Sephora (Api Dojo)** for beauty + **ASOS (DataCrawler)** for apparel; one-time snapshot to local JSON, demo never calls RapidAPI live (DEVELOPMENT §6.1)
@@ -32,13 +32,17 @@ Legend: `[x]` done · `[~]` partial · `[ ]` todo · **(R)** = REACH, only if ah
 - [ ] Redeem YouCam key (1,000 units) + verify all field findings against live Playground
 - [ ] Confirm makeup VTO exists in our tier (gates REACH; `makeup_vto` doc page didn't render)
 
-## 3. Capture flow screens (SPEC §7, §16; DEVELOPMENT §4) — NOT STARTED
-- [ ] Screen 1 — Occasion entry: occasion chips + optional budget band + country
-- [ ] Screen 2 — Face capture: lighting pre-check (live guidance, blocks shutter) → selfie
-- [ ] Screen 3 — Analyzing: one upload → two skin tasks; skin snapshot w/ empowering language (§11.1 remap)
-- [ ] Screen 4 — Micro-questionnaire: skin type (w/ detect fallback from `skin_type` concern), 1–2 goals, safety flags — chips only
-- [ ] Screen 5 — Body capture: upload guide + shape/size/fit + privacy copy
-- [ ] Screen 6 — Composing: staged status text, not a blank spinner
+## 3. Capture flow screens (SPEC §7, §16; DEVELOPMENT §4) — WALKING SKELETON at `/studio` (2026-07-23)
+Built as `src/components/studio/StudioFlow.tsx` — full flow functional in **mock mode** (no YOUCAM_API_KEY → proxy returns canned responses shaped like the confirmed live fields; flips to live automatically when the key lands in `.env.local`). Remaining work per screen = polish to DESIGN.md, not function.
+**2026-07-23 redesign: conversational slide flow.** "Dora" stylist persona; one question per slide; answers auto-advance (no Continue buttons except safety, where an empty answer is an answer); welcome → "My name is Dora" → journey choice (✨ glow my skin / 👗 apparel that suits me / 💫 both). Journey branches: `skin` skips body+VTO (beauty-first Look with outfit as "Complete the look" cross-sell); `apparel` still runs the face scan ("your undertone decides your colours" — keeps the §1 deletion-test thesis in every path) with beauty as "Finish the look". Face slide auto-analyzes when the lighting check passes. Back navigation + progress bar throughout.
+- [~] Screen 1 — Occasion entry: chips + budget band + country ✓; needs brand styling
+- [~] Screen 2 — Face capture: file/camera input + luma lighting pre-check (blocks continue, retake guidance) ✓; live camera preview w/ guidance overlay still todo
+- [~] Screen 3 — Analyzing: one upload → two parallel skin tasks; empowering-language snapshot (strengths + ≤3 focus areas) ✓; currently merged into questionnaire screen, no staged loading animation
+- [~] Screen 4 — Micro-questionnaire: skin type w/ detect prefill from `skin_type`, 2 goals max, safety chips ✓
+- [~] Screen 5 — Body capture: upload + shape/size/fit + privacy line ✓; upload guide overlay todo
+- [~] Screen 6 — Composing: staged status text ✓ (two stages; expand when VTO is live)
+- [~] Screen 7 — The Look: VTO hero (mock badge), rationale, Why-This-Look checklist, shoppable rows w/ material/fit/shade chips, trust footer, error degradation (VTO fail → garment imagery) ✓; visual polish todo
+- [ ] Client-side image compression before upload (`browser-image-compression` installed, not wired — matters once live PUT uploads start)
 
 ## 4. Catalog (SPEC §12) — BUILT 2026-07-23: `src/data/catalog.json` (46 products)
 - [x] Ingestion pipeline: `scripts/ingest-catalog.mjs` (discover → curate `scripts/catalog-picks.json` → ingest; detail responses cached in `scripts/probes/detail-cache/` so re-runs are quota-free)
@@ -69,7 +73,13 @@ Legend: `[x]` done · `[~]` partial · `[ ]` todo · **(R)** = REACH, only if ah
 - [ ] **(R)** Retail Intelligence Dashboard mock — ONE static screen, labelled *illustrative concept*, ~2h cap
 - [ ] **(R)** Skin diary — lowest priority
 
-## 8. Submission (SPEC §21, §23) — start Wk3, not last-minute
+## 8. Testing (end-to-end, layered)
+- [x] **Layer 1 — Composer E2E (no key, no UI):** `GET /api/dev/compose?preset=<name>` runs `composeLook()` against the real catalog with 5 synthetic profiles incl. the SPEC §23 demo profile and the §1 deletion test. Built + passing 2026-07-23. Fixed en route: composer filtered by `category` instead of `subcategory` (empty looks), palette-order ties broke toward catalog order instead of the redness rule's cool-first preference, lip/blush matched by raw hex distance instead of §6.3 temperature family, rationale grammar with empty focus areas.
+- [ ] **Layer 2 — YouCam integration (needs key, spends units):** one real selfie → skin-analysis + skin-tone-analysis; one body photo + garment image → cloth VTO. Verifies DEVELOPMENT §6 field findings against production. Budget ~25 units; test deep-tone photos here first (SPEC §19).
+- [~] **Layer 3 — UI flow E2E (available NOW in mock mode):** open `http://localhost:3000/studio`, walk occasion → selfie (lighting check) → skin snapshot + questionnaire → body upload → The Look. Mock mode badges itself on the snapshot and hero; the same flow hits the live APIs once `YOUCAM_API_KEY` is set. Mock endpoints verified via multipart POST (all 3 features, 2026-07-23). Remaining: walk it in a real browser on a phone-sized viewport, then re-verify in live mode.
+- [ ] **Layer 4 — Demo dry run:** the §23 arc, timed under 3:00, on-device, as the final E2E gate before recording.
+
+## 9. Submission (SPEC §21, §23) — start Wk3, not last-minute
 - [ ] README: run instructions + API-key setup (judges will run it)
 - [ ] Written description: §0.1 pitch line → retailer-question answer → KPI map → dashboard mock as "where this goes"
 - [ ] Screenshots

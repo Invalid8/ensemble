@@ -18,14 +18,17 @@ export function nearestHex(target: string, candidates: string[]): string {
   return candidates.reduce((best, c) => (hexDistance(target, c) < hexDistance(target, best) ? c : best));
 }
 
+// Palette order is meaningful: getNearFaceColorConstraints puts preferred (e.g. cool) colors
+// first, so earlier entries carry a small score advantage — enough to break exact-match ties
+// toward the rule's preference, small enough that a clearly closer color still wins.
+const PALETTE_ORDER_PENALTY = 8;
+
 export function pickBestMatch<T extends { primary_color_hex: string }>(
   items: T[],
   allowedHexes: string[]
 ): T | undefined {
-  if (items.length === 0) return undefined;
-  return items.reduce((best, item) => {
-    const bestDist = Math.min(...allowedHexes.map((h) => hexDistance(h, best.primary_color_hex)));
-    const itemDist = Math.min(...allowedHexes.map((h) => hexDistance(h, item.primary_color_hex)));
-    return itemDist < bestDist ? item : best;
-  });
+  if (items.length === 0 || allowedHexes.length === 0) return items[0];
+  const score = (item: T) =>
+    Math.min(...allowedHexes.map((h, i) => hexDistance(h, item.primary_color_hex) + i * PALETTE_ORDER_PENALTY));
+  return items.reduce((best, item) => (score(item) < score(best) ? item : best));
 }

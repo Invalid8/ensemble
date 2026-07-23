@@ -196,6 +196,8 @@ async function ingest() {
     const d = (await get(ASOS, `/api/v1/getProductDetails?productId=${pick.id}&currency=USD&country=US&store=US&languageShort=en&sizeSchema=US`, `asos-${pick.id}`)).data || {};
     const material = (d.info?.aboutMe || "").match(/Main:\s*([^.<]+)/)?.[1]?.trim();
     const fitMatch = (d.description || "").match(/(regular|relaxed|fitted|slim|oversized|tailored)\s+fit/i)?.[1]?.toLowerCase();
+    // ASOS fitType is an object {id, name}, not a string
+    const fitType = typeof d.fitType === "object" && d.fitType !== null ? d.fitType.name?.toLowerCase() : d.fitType;
     products.push({
       id: `asos-${pick.id}`,
       type: "apparel",
@@ -207,7 +209,7 @@ async function ingest() {
       primary_color_hex: pick.primary_color_hex || "",
       sizes: [...new Set((d.variants || []).filter((v) => v.isAvailable).map((v) => v.brandSize))],
       material,
-      fit: pick.fit || d.fitType || fitMatch,
+      fit: pick.fit || fitType || fitMatch,
       price: cand.price,
       currency: cand.currency,
       image_url: `https://${cand.imageUrl}`,
