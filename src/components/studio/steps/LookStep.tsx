@@ -8,6 +8,7 @@ interface LookStepProps {
   look: CompleteLook;
   heroUrl: string | null;
   vtoMock: boolean;
+  vtoReal: boolean;
   onRestart: () => void;
 }
 
@@ -23,7 +24,7 @@ function ShopSection({ title, products }: { title: string; products: Product[] }
   );
 }
 
-function Hero({ heroUrl, vtoMock }: { heroUrl: string | null; vtoMock: boolean }) {
+function Hero({ heroUrl, vtoMock, vtoReal }: { heroUrl: string | null; vtoMock: boolean; vtoReal: boolean }) {
   return (
     <div className="relative overflow-hidden rounded-[var(--radius-xl)] bg-surface-2 shadow-[0_18px_44px_rgba(26,26,26,0.10)]">
       {heroUrl ? (
@@ -41,13 +42,13 @@ function Hero({ heroUrl, vtoMock }: { heroUrl: string | null; vtoMock: boolean }
       )}
       <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-surface-card px-3.5 py-2 shadow-[0_8px_20px_rgba(26,26,26,0.14)]">
         <Petal width={13} color="var(--color-petal-1)" />
-        <span className="font-body text-[11px] font-semibold text-ink">shown on you</span>
+        <span className="font-body text-[11px] font-semibold text-ink">{vtoReal ? "shown on you" : "styled for you"}</span>
       </div>
     </div>
   );
 }
 
-export function LookStep({ look, heroUrl, vtoMock, onRestart }: LookStepProps) {
+export function LookStep({ look, heroUrl, vtoMock, vtoReal, onRestart }: LookStepProps) {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-bg">
       <Petal width={30} color="var(--color-petal-2)" className="absolute left-[4%] top-[8%] hidden lg:block" style={{ transform: "rotate(150deg)" }} />
@@ -61,7 +62,7 @@ export function LookStep({ look, heroUrl, vtoMock, onRestart }: LookStepProps) {
 
         <div className="mt-8 flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:items-start lg:gap-12">
           <div className="lg:sticky lg:top-10">
-            <Hero heroUrl={heroUrl} vtoMock={vtoMock} />
+            <Hero heroUrl={heroUrl} vtoMock={vtoMock} vtoReal={vtoReal} />
           </div>
 
           <div className="flex flex-col gap-4">

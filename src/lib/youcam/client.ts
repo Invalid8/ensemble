@@ -8,6 +8,9 @@ const JSONbig = jsonBigint({ useNativeBigInt: true });
 //         -> {data:{files:[{file_id, requests:[{method,url}]}]}}
 //   task: POST {src_file_id, ...params} -> {data:{task_id}}
 //   poll: GET  -> {data:{task_status:"success"|"error"|..., error, results}}
+//   cloth VTO task: {src_file_id, ref_file_id, garment_category:"full_body"|"upper_body"|"lower_body"}
+//         -> results:{url} (a ~2h signed S3 render). The garment ref MUST be an uploaded file;
+//         an external ref_file_url fails the task with error_download_image.
 
 export class YouCamApiError extends Error {
   constructor(
@@ -68,6 +71,17 @@ async function netFetch(url: string, init: RequestInit, label: string, attempts 
   const e = lastErr as { cause?: { code?: string }; code?: string; message?: string };
   const reason = e?.cause?.code ?? e?.code ?? e?.message ?? "fetch failed";
   throw new YouCamApiError(label, 0, `network error (${reason})`);
+}
+
+// Fetch a reference image (e.g. a catalog garment) server-side so we can upload the bytes to
+// YouCam - the API can't reach retailer CDNs itself (external ref URLs fail error_download_image).
+export async function fetchImageBytes(url: string): Promise<{ bytes: Buffer; contentType: string }> {
+  const res = await netFetch(url, {}, "ref image fetch");
+  if (!res.ok) throw new YouCamApiError("ref image fetch", res.status, `could not fetch ${url}`);
+  return {
+    bytes: Buffer.from(await res.arrayBuffer()),
+    contentType: res.headers.get("content-type") ?? "image/jpeg",
+  };
 }
 
 interface FileSlot {
@@ -158,18 +172,33 @@ async function pollTask(
   throw new Error(`Polling timed out for ${feature} task ${String(taskId)}`);
 }
 
-/** File -> PUT -> task -> poll. Returns the poll's `data` ({ task_status, error, results }). */
+/**
+ * File -> PUT -> task -> poll. Returns the poll's `data` ({ task_status, error, results }).
+ * `refBytes` uploads a second reference image (e.g. the garment for cloth VTO); its file id
+ * is passed to `buildTaskPayload` as the second argument.
+ */
 export async function runYouCamWorkflow(opts: {
   feature: string;
   fileBytes: Buffer;
   contentType: string;
-  buildTaskPayload: (fileId: unknown) => Record<string, unknown>;
+  refBytes?: Buffer;
+  refContentType?: string;
+  buildTaskPayload: (fileId: unknown, refFileId?: unknown) => Record<string, unknown>;
   pollOptions?: { maxAttempts?: number; baseDelayMs?: number };
 }): Promise<YouCamResult> {
-  const { feature, fileBytes, contentType, buildTaskPayload, pollOptions } = opts;
+  const { feature, fileBytes, contentType, refBytes, refContentType, buildTaskPayload, pollOptions } = opts;
 
   const slot = await requestUploadSlot(feature, contentType, fileBytes.length);
   await uploadFileBytes(slot.uploadUrl, slot.uploadMethod, fileBytes, contentType);
-  const taskId = await createTask(feature, buildTaskPayload(slot.fileId));
+
+  let refFileId: unknown;
+  if (refBytes) {
+    const type = refContentType ?? "image/jpeg";
+    const refSlot = await requestUploadSlot(feature, type, refBytes.length);
+    await uploadFileBytes(refSlot.uploadUrl, refSlot.uploadMethod, refBytes, type);
+    refFileId = refSlot.fileId;
+  }
+
+  const taskId = await createTask(feature, buildTaskPayload(slot.fileId, refFileId));
   return pollTask(feature, taskId, pollOptions);
 }

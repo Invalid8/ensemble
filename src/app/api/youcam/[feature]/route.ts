@@ -1,12 +1,14 @@
 import { createHash } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
-import { runYouCamWorkflow, YouCamApiError } from "@/lib/youcam/client";
+import { runYouCamWorkflow, fetchImageBytes, YouCamApiError } from "@/lib/youcam/client";
 import { withCache } from "@/lib/db/cache";
 
 export const runtime = "nodejs";
 
 // Same image + feature is deterministic, so re-running a photo costs zero API units.
 const CACHE_TTL_SECONDS = 60 * 60 * 24 * 30;
+// Cloth returns a signed S3 URL valid ~2h, so its cache must expire well inside that window.
+const CLOTH_TTL_SECONDS = 60 * 90;
 
 class HttpError extends Error {
   constructor(public status: number, message: string) {
@@ -92,23 +94,36 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const taskParamsRaw = formData.get("taskParams");
   const taskParams = typeof taskParamsRaw === "string" ? JSON.parse(taskParamsRaw) : {};
 
+  const refImageUrlRaw = formData.get("refImageUrl");
+  const refImageUrl = typeof refImageUrlRaw === "string" && refImageUrlRaw ? refImageUrlRaw : null;
+
   if (!process.env.YOUCAM_API_KEY) {
     return NextResponse.json(await mockResponse(feature, file));
   }
 
   const bytes = Buffer.from(await file.arrayBuffer());
-  const cacheKey = `youcam:${feature}:${createHash("sha256").update(bytes).update(JSON.stringify(taskParams ?? {})).digest("hex")}`;
+  const hash = createHash("sha256").update(bytes).update(JSON.stringify(taskParams ?? {}));
+  if (refImageUrl) hash.update(refImageUrl);
+  const cacheKey = `youcam:${feature}:${hash.digest("hex")}`;
+  const ttl = feature === "cloth" ? CLOTH_TTL_SECONDS : CACHE_TTL_SECONDS;
 
   try {
-    const normalized = await withCache(cacheKey, "youcam", CACHE_TTL_SECONDS, async () => {
+    const normalized = await withCache(cacheKey, "youcam", ttl, async () => {
+      const ref = refImageUrl ? await fetchImageBytes(refImageUrl) : null;
       const result = await runYouCamWorkflow({
         feature,
         fileBytes: bytes,
         contentType: file.type || "application/octet-stream",
-        buildTaskPayload: (fileId) => ({ src_file_id: fileId, ...taskParams }),
+        refBytes: ref?.bytes,
+        refContentType: ref?.contentType,
+        buildTaskPayload: (fileId, refFileId) => ({
+          src_file_id: fileId,
+          ...(refFileId ? { ref_file_id: refFileId } : {}),
+          ...taskParams,
+        }),
       });
       if (result.task_status === "error") {
-        throw new HttpError(422, friendlyError(result.error)); // don't cache face-quality failures
+        throw new HttpError(422, friendlyError(result.error)); // don't cache task failures
       }
       return normalize(feature, result.results);
     });
