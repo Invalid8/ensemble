@@ -3,6 +3,12 @@ import jsonBigint from "json-bigint";
 const BASE_URL = "https://yce-api-01.makeupar.com";
 const JSONbig = jsonBigint({ useNativeBigInt: true });
 
+// Response shapes below are CONFIRMED against the live API (probed 2026-07-25):
+//   file: POST {files:[{content_type,file_name,file_size}]}
+//         -> {data:{files:[{file_id, requests:[{method,url}]}]}}
+//   task: POST {src_file_id, ...params} -> {data:{task_id}}
+//   poll: GET  -> {data:{task_status:"success"|"error"|..., error, results}}
+
 export class YouCamApiError extends Error {
   constructor(
     public step: string,
@@ -19,79 +25,123 @@ function authHeaders(): HeadersInit {
   return { Authorization: `Bearer ${apiKey}` };
 }
 
-// YouCam IDs exceed Number.MAX_SAFE_INTEGER (SPEC.md.md §8) - must not round-trip through JSON.parse.
-async function parseJsonBig(res: Response): Promise<unknown> {
-  const text = await res.text();
-  return JSONbig.parse(text);
+async function parseJsonBig<T>(res: Response): Promise<T> {
+  return JSONbig.parse(await res.text()) as T;
 }
 
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function backoffDelay(attempt: number, baseDelayMs: number) {
   const jitter = Math.random() * baseDelayMs;
   return Math.min(baseDelayMs * 2 ** attempt + jitter, 15_000);
 }
 
-// Field names below are CONFIRMED against docs.perfectcorp.com (2026-07-21) for the
-// ai_clothes and ai_skin_tone_analysis (aka "AI Facial Color Tones Analyzer") references - // see docs/DEVELOPMENT.md §6 for the full findings and what's still open (skin-analysis's
-// exact File API shape wasn't independently re-verified but is assumed consistent).
-interface UploadSlot {
-  file_id: unknown;
-  requests: { url: string; method: string };
+const TRANSIENT_CODES = new Set([
+  "UND_ERR_CONNECT_TIMEOUT",
+  "ECONNRESET",
+  "ECONNREFUSED",
+  "ETIMEDOUT",
+  "EAI_AGAIN",
+  "ENETUNREACH",
+]);
+
+function isTransientNetworkError(err: unknown): boolean {
+  const e = err as { name?: string; code?: string; cause?: { code?: string } };
+  if (e?.name === "TimeoutError") return true;
+  const code = e?.cause?.code ?? e?.code;
+  return code != null && TRANSIENT_CODES.has(code);
 }
 
-interface CreateTaskResult {
-  task_id: unknown;
+// A single flaky TCP connect to YouCam's host shouldn't sink the whole read - retry the
+// transient ones on a fresh connection before giving up.
+async function netFetch(url: string, init: RequestInit, label: string, attempts = 3): Promise<Response> {
+  let lastErr: unknown;
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    try {
+      return await fetch(url, { ...init, signal: AbortSignal.timeout(25_000) });
+    } catch (err) {
+      lastErr = err;
+      if (!isTransientNetworkError(err) || attempt === attempts - 1) break;
+      await sleep(600 * 2 ** attempt);
+    }
+  }
+  const e = lastErr as { cause?: { code?: string }; code?: string; message?: string };
+  const reason = e?.cause?.code ?? e?.code ?? e?.message ?? "fetch failed";
+  throw new YouCamApiError(label, 0, `network error (${reason})`);
 }
 
-export interface TaskStatus {
-  task_status: "success" | "processing" | "error" | string;
-  [key: string]: unknown;
+interface FileSlot {
+  fileId: unknown;
+  uploadUrl: string;
+  uploadMethod: string;
 }
 
-async function requestUploadSlot(feature: string, contentType: string): Promise<UploadSlot> {
-  const res = await fetch(`${BASE_URL}/s2s/v2.0/file/${feature}`, {
-    method: "POST",
-    headers: { ...authHeaders(), "Content-Type": "application/json" },
-    body: JSON.stringify({ content_type: contentType }),
-  });
+export interface YouCamResult {
+  task_status: "success" | "error" | "processing" | string;
+  error: string | null;
+  results: Record<string, unknown> | null;
+}
+
+async function requestUploadSlot(feature: string, contentType: string, fileSize: number): Promise<FileSlot> {
+  const res = await netFetch(
+    `${BASE_URL}/s2s/v2.0/file/${feature}`,
+    {
+      method: "POST",
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ files: [{ content_type: contentType, file_name: "upload", file_size: fileSize }] }),
+    },
+    `file/${feature}`
+  );
   if (!res.ok) throw new YouCamApiError(`file/${feature}`, res.status, await res.text());
-  return parseJsonBig(res) as Promise<UploadSlot>;
+
+  const json = await parseJsonBig<{
+    data: { files: { file_id: unknown; requests: { method: string; url: string }[] }[] };
+  }>(res);
+  const file = json.data.files[0];
+  return { fileId: file.file_id, uploadUrl: file.requests[0].url, uploadMethod: file.requests[0].method };
 }
 
 async function uploadFileBytes(uploadUrl: string, method: string, bytes: Buffer, contentType: string): Promise<void> {
-  const res = await fetch(uploadUrl, {
-    method,
-    headers: { "Content-Type": contentType },
-    body: bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer,
-  });
+  const res = await netFetch(
+    uploadUrl,
+    {
+      method,
+      headers: { "Content-Type": contentType },
+      body: bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer,
+    },
+    "file upload PUT"
+  );
   if (!res.ok) throw new YouCamApiError("file upload PUT", res.status, await res.text());
 }
 
-async function createTask(feature: string, payload: Record<string, unknown>): Promise<CreateTaskResult> {
-  const res = await fetch(`${BASE_URL}/s2s/v2.0/task/${feature}`, {
-    method: "POST",
-    headers: { ...authHeaders(), "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+async function createTask(feature: string, payload: Record<string, unknown>): Promise<unknown> {
+  const res = await netFetch(
+    `${BASE_URL}/s2s/v2.0/task/${feature}`,
+    {
+      method: "POST",
+      headers: { ...authHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    },
+    `task/${feature}`
+  );
   if (!res.ok) throw new YouCamApiError(`task/${feature}`, res.status, await res.text());
-  return parseJsonBig(res) as Promise<CreateTaskResult>;
+  return (await parseJsonBig<{ data: { task_id: unknown } }>(res)).data.task_id;
 }
 
 async function pollTask(
   feature: string,
   taskId: unknown,
   opts: { maxAttempts?: number; baseDelayMs?: number } = {}
-): Promise<TaskStatus> {
+): Promise<YouCamResult> {
   const maxAttempts = opts.maxAttempts ?? 20;
   const baseDelayMs = opts.baseDelayMs ?? 1000;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const res = await fetch(`${BASE_URL}/s2s/v2.0/task/${feature}/${taskId}`, {
-      headers: authHeaders(),
-    });
+    const res = await netFetch(
+      `${BASE_URL}/s2s/v2.0/task/${feature}/${taskId}`,
+      { headers: authHeaders() },
+      `task/${feature}/${String(taskId)}`
+    );
 
     if (res.status === 429) {
       await sleep(backoffDelay(attempt, baseDelayMs));
@@ -99,7 +149,7 @@ async function pollTask(
     }
     if (!res.ok) throw new YouCamApiError(`task/${feature}/${String(taskId)}`, res.status, await res.text());
 
-    const data = (await parseJsonBig(res)) as TaskStatus;
+    const { data } = await parseJsonBig<{ data: YouCamResult }>(res);
     if (data.task_status === "success" || data.task_status === "error") return data;
 
     await sleep(backoffDelay(attempt, baseDelayMs));
@@ -108,23 +158,18 @@ async function pollTask(
   throw new Error(`Polling timed out for ${feature} task ${String(taskId)}`);
 }
 
-/**
- * Runs the full 4-step workflow (SPEC.md.md §8): request upload slot, PUT bytes,
- * create task, poll to completion. Units are only charged on success, so this never retries
- * a completed task.
- */
+/** File -> PUT -> task -> poll. Returns the poll's `data` ({ task_status, error, results }). */
 export async function runYouCamWorkflow(opts: {
   feature: string;
   fileBytes: Buffer;
   contentType: string;
   buildTaskPayload: (fileId: unknown) => Record<string, unknown>;
   pollOptions?: { maxAttempts?: number; baseDelayMs?: number };
-}): Promise<TaskStatus> {
+}): Promise<YouCamResult> {
   const { feature, fileBytes, contentType, buildTaskPayload, pollOptions } = opts;
 
-  const uploadSlot = await requestUploadSlot(feature, contentType);
-  await uploadFileBytes(uploadSlot.requests.url, uploadSlot.requests.method, fileBytes, contentType);
-
-  const task = await createTask(feature, buildTaskPayload(uploadSlot.file_id));
-  return pollTask(feature, task.task_id, pollOptions);
+  const slot = await requestUploadSlot(feature, contentType, fileBytes.length);
+  await uploadFileBytes(slot.uploadUrl, slot.uploadMethod, fileBytes, contentType);
+  const taskId = await createTask(feature, buildTaskPayload(slot.fileId));
+  return pollTask(feature, taskId, pollOptions);
 }

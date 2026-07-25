@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ensemble-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ensemble
+      POSTGRES_PASSWORD: ensemble
+      POSTGRES_DB: ensemble
+    ports:
+      - "5432:5432"
+    volumes:
+      - ensemble-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ensemble -d ensemble"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  ensemble-pgdata:

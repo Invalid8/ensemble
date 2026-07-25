@@ -4,7 +4,7 @@ import { composeLook, getColorSeason, getPaletteForSeason } from "@/lib/composer
 import type { LookProfile, Product } from "@/lib/types";
 
 // Dev-only composer harness: runs the full Look Composer against the real catalog with
-// synthetic LookProfiles — the end-to-end test for everything downstream of the API captures.
+// synthetic LookProfiles - the end-to-end test for everything downstream of the API captures.
 //   GET /api/dev/compose            → list presets
 //   GET /api/dev/compose?preset=x   → { profile, look }
 // The `no-skin` preset is the deletion test (SPEC §1): no scan → the look visibly collapses.
@@ -76,7 +76,7 @@ const PRESETS: Record<string, LookProfile> = {
     occasion: "interview",
   }),
 
-  // Safety-suppression path: pregnant + sensitive — actives like salicylic/retinoids must vanish.
+  // Safety-suppression path: pregnant + sensitive - actives like salicylic/retinoids must vanish.
   "pregnant-sensitive-wedding": skinProfile({
     undertone: "neutral",
     depth: "medium-deep",
@@ -96,7 +96,7 @@ const PRESETS: Record<string, LookProfile> = {
   }),
 
   // THE DELETION TEST (SPEC §1): no skin scan → no palette, no conditions. The look must
-  // visibly degrade — this failing to degrade would mean the APIs aren't load-bearing.
+  // visibly degrade - this failing to degrade would mean the APIs aren't load-bearing.
   "no-skin": {
     occasion: "dinner",
     skinType: "combo",

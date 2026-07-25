@@ -50,7 +50,7 @@ function preferBudget(products: Product[], allOfType: Product[], budget: LookPro
 }
 
 // §6.3 lip/blush temperature, read from the retailer's own shade description
-// ("Cool Teddy — cool deep tone beige", "Paramount — reddish brown").
+// ("Cool Teddy - cool deep tone beige", "Paramount - reddish brown").
 function shadeTemperature(p: Product): "warm" | "cool" | "neutral" {
   const text = `${p.shade ?? ""} ${p.name}`.toLowerCase();
   if (/\bcool\b|berry|mauve|plum|lavender/.test(text)) return "cool";
@@ -83,7 +83,7 @@ function pickByTemperature(
 export function composeLook(profile: LookProfile, catalog: Product[]): CompleteLook {
   const basePalette = (profile.palette ?? []).filter((hex) => !(profile.avoidColors ?? []).includes(hex));
   const apparel = catalog.filter((p) => p.type === "apparel");
-  // §9 runs over the candidate pool, not the final picks — a suppressed product is
+  // §9 runs over the candidate pool, not the final picks - a suppressed product is
   // naturally replaced by the next-best safe candidate instead of leaving a gap.
   const beauty = applySafetySuppression(catalog.filter((p) => p.type === "beauty"), profile.safetyFlags);
 
@@ -144,7 +144,7 @@ export function composeLook(profile: LookProfile, catalog: Product[]): CompleteL
     makeupSpec,
   });
 
-  // §6.4b "Why This Look?" — every claim traces to a rule that actually fired above.
+  // §6.4b "Why This Look?" - every claim traces to a rule that actually fired above.
   // Empowering wording per §11.1; capped at 5.
   const reasons: LookReason[] = [];
   const noun = nearFaceGarment?.subcategory ?? "piece";

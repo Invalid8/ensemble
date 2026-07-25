@@ -19,7 +19,7 @@ export function nearestHex(target: string, candidates: string[]): string {
 }
 
 // Palette order is meaningful: getNearFaceColorConstraints puts preferred (e.g. cool) colors
-// first, so earlier entries carry a small score advantage — enough to break exact-match ties
+// first, so earlier entries carry a small score advantage - enough to break exact-match ties
 // toward the rule's preference, small enough that a clearly closer color still wins.
 const PALETTE_ORDER_PENALTY = 8;
 

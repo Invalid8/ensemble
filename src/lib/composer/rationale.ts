@@ -22,7 +22,7 @@ export function generateRationale(opts: {
   profile: LookProfile;
   nearFaceColorName: string;
   garmentName: string;
-  /** Short garment noun ("dress", "top") for the second mention — the full name reads twice as clutter. */
+  /** Short garment noun ("dress", "top") for the second mention - the full name reads twice as clutter. */
   garmentNoun?: string;
   makeupSpec: MakeupSpec;
 }): string {

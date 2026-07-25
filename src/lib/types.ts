@@ -85,7 +85,7 @@ export interface Product {
   occasion_tags: string[];
 }
 
-/** One "Why This Look?" claim (SPEC §6.4b) — traceable to the API output or answer that produced it. */
+/** One "Why This Look?" claim (SPEC §6.4b) - traceable to the API output or answer that produced it. */
 export interface LookReason {
   claim: string;
   source: "undertone" | "skinCondition" | "occasion" | "climate" | "bodyShape" | "safety";
