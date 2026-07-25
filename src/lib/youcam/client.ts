@@ -1,7 +1,4 @@
-import jsonBigint from "json-bigint";
-
 const BASE_URL = "https://yce-api-01.makeupar.com";
-const JSONbig = jsonBigint({ useNativeBigInt: true });
 
 // Response shapes below are CONFIRMED against the live API (probed 2026-07-25):
 //   file: POST {files:[{content_type,file_name,file_size}]}
@@ -28,8 +25,10 @@ function authHeaders(): HeadersInit {
   return { Authorization: `Bearer ${apiKey}` };
 }
 
-async function parseJsonBig<T>(res: Response): Promise<T> {
-  return JSONbig.parse(await res.text()) as T;
+// The API's ids (file_id, task_id) are strings, so plain JSON is safe - and json-bigint
+// throws on the 16-digit float scores in skin-analysis (BigInt can't hold a decimal).
+async function parseJson<T>(res: Response): Promise<T> {
+  return JSON.parse(await res.text()) as T;
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -108,7 +107,7 @@ async function requestUploadSlot(feature: string, contentType: string, fileSize:
   );
   if (!res.ok) throw new YouCamApiError(`file/${feature}`, res.status, await res.text());
 
-  const json = await parseJsonBig<{
+  const json = await parseJson<{
     data: { files: { file_id: unknown; requests: { method: string; url: string }[] }[] };
   }>(res);
   const file = json.data.files[0];
@@ -139,7 +138,7 @@ async function createTask(feature: string, payload: Record<string, unknown>): Pr
     `task/${feature}`
   );
   if (!res.ok) throw new YouCamApiError(`task/${feature}`, res.status, await res.text());
-  return (await parseJsonBig<{ data: { task_id: unknown } }>(res)).data.task_id;
+  return (await parseJson<{ data: { task_id: unknown } }>(res)).data.task_id;
 }
 
 async function pollTask(
@@ -163,7 +162,7 @@ async function pollTask(
     }
     if (!res.ok) throw new YouCamApiError(`task/${feature}/${String(taskId)}`, res.status, await res.text());
 
-    const { data } = await parseJsonBig<{ data: YouCamResult }>(res);
+    const { data } = await parseJson<{ data: YouCamResult }>(res);
     if (data.task_status === "success" || data.task_status === "error") return data;
 
     await sleep(backoffDelay(attempt, baseDelayMs));

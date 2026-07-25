@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useShallow } from "zustand/react/shallow";
 import { useStudioStore } from "@/lib/studio/store";
@@ -121,6 +121,11 @@ export default function StudioFlow() {
   const reset = useStudioStore((s) => s.reset);
   const goTo = useStudioStore((s) => s.goTo);
 
+  // The zustand store is a module singleton, so its state can leak across server renders.
+  // Gate on mount so SSR and the first client render agree, then hydrate the live flow.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   useEffect(() => {
     if (step === "composing") void runCompose();
   }, [step, runCompose]);
@@ -134,6 +139,8 @@ export default function StudioFlow() {
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, [step, goTo]);
+
+  if (!mounted) return <div className="min-h-dvh w-full bg-bg" />;
 
   if (step === "look" && look) {
     return (
