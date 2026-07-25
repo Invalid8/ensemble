@@ -55,6 +55,7 @@ export interface LookProfile {
   bodyShape?: BodyShape;
   size?: string;
   fitPref?: FitPreference;
+  wardrobe?: Wardrobe;
   occasion?: string;
   budget?: "value" | "mid" | "premium";
 
@@ -63,9 +64,12 @@ export interface LookProfile {
   climateSeason?: string;
 }
 
+export type Wardrobe = "women" | "men";
+
 export interface Product {
   id: string;
   type: "apparel" | "beauty";
+  gender?: Wardrobe | "unisex";
   brand: string;
   name: string;
   category: string;

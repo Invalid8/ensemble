@@ -54,8 +54,10 @@ function CurrentStep() {
         <OccasionStep
           occasion={s.profile.occasion ?? ""}
           country={s.profile.country ?? ""}
+          wardrobe={s.profile.wardrobe}
           onOccasion={(v) => a.patchProfile({ occasion: v })}
           onCountry={(v) => a.patchProfile({ country: v })}
+          onWardrobe={(w) => a.patchProfile({ wardrobe: w })}
           onNext={a.next}
         />
       );
@@ -117,10 +119,21 @@ export default function StudioFlow() {
   const vtoUrl = useStudioStore((s) => s.vtoUrl);
   const vtoMock = useStudioStore((s) => s.vtoMock);
   const reset = useStudioStore((s) => s.reset);
+  const goTo = useStudioStore((s) => s.goTo);
 
   useEffect(() => {
     if (step === "composing") void runCompose();
   }, [step, runCompose]);
+
+  // The finished look is its own page: push a history entry so a browser/phone back
+  // gesture swipes back into the flow instead of leaving the studio.
+  useEffect(() => {
+    if (step !== "look") return;
+    window.history.pushState({ ensemble: "look" }, "");
+    const onPop = () => goTo("sizing");
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [step, goTo]);
 
   if (step === "look" && look) {
     return (

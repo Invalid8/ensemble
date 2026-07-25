@@ -1,8 +1,10 @@
-// Catalog ingestion (SPEC §12, DEVELOPMENT §6.1) — one-time snapshot, the app never calls RapidAPI live.
+// Catalog ingestion (SPEC §12, DEVELOPMENT §6.1) - one-time snapshot, the app never calls RapidAPI live.
 //
 //   node scripts/ingest-catalog.mjs discover   → search both APIs, write scripts/probes/candidates.json
 //   (curate: copy chosen ids into scripts/catalog-picks.json, add manual enrichment fields)
 //   node scripts/ingest-catalog.mjs ingest     → fetch detail per pick, normalize, write src/data/catalog.json
+//   node scripts/ingest-catalog.mjs mens        → search-only, auto-enrich, APPEND menswear to catalog.json
+//                                                 (turnkey: no curation; ~8 API calls, dedupes by id)
 //
 // Enrichment that stays manual (per DEVELOPMENT §6.1): primary_color_hex, occasion_tags,
 // apparel fit fallback, beauty finish fallback. Set them in catalog-picks.json.
@@ -157,7 +159,7 @@ function parsePrice(listPrice = "") {
 
 async function ingest() {
   const picksFile = path.join(root, "catalog-picks.json");
-  if (!existsSync(picksFile)) throw new Error(`Missing ${picksFile} — run discover, then curate picks into it.`);
+  if (!existsSync(picksFile)) throw new Error(`Missing ${picksFile} - run discover, then curate picks into it.`);
   const picks = JSON.parse(readFileSync(picksFile, "utf8"));
   const candidates = JSON.parse(readFileSync(path.join(probesDir, "candidates.json"), "utf8"));
 
@@ -172,13 +174,14 @@ async function ingest() {
     products.push({
       id: `seph-${pick.productId}`,
       type: "beauty",
+      gender: "unisex",
       brand: cand.brand,
       name: cand.name,
       category: "beauty",
       subcategory: pick.subcategory || cand.subcategory,
       colors: pick.primary_color_hex ? [{ name: cur.variationValue || "", hex: pick.primary_color_hex }] : [],
       primary_color_hex: pick.primary_color_hex || "",
-      shade: cur.variationType === "Color" ? [cur.variationValue, cur.variationDesc].filter(Boolean).join(" — ") || undefined : undefined,
+      shade: cur.variationType === "Color" ? [cur.variationValue, cur.variationDesc].filter(Boolean).join(" - ") || undefined : undefined,
       finish: pick.finish || detectFinish(`${cand.name} ${(cur.highlights || []).map((h) => h.name || h).join(" ")}`),
       key_ingredients: extractActives(cur.ingredientDesc),
       price: parsePrice(cur.listPrice || cand.listPrice),
@@ -201,6 +204,7 @@ async function ingest() {
     products.push({
       id: `asos-${pick.id}`,
       type: "apparel",
+      gender: "women",
       brand: cand.brand,
       name: cand.name,
       category: "apparel",
@@ -231,7 +235,85 @@ async function ingest() {
   if (missingTags) console.log(`⚠ ${missingTags} products missing occasion_tags`);
 }
 
+// ---------- menswear (turnkey, additive) ----------
+
+// The composer only understands these subcategories, so menswear maps onto them:
+// shirts/polos/tees -> "top" (near-face), chinos/jeans/suit trousers -> "trousers", "blazer" (layer).
+const ASOS_MENS_SEARCHES = [
+  { term: "mens smart shirt", subcategory: "top", tags: ["interview", "office", "dinner", "wedding"] },
+  { term: "mens oxford shirt", subcategory: "top", tags: ["office", "smart-casual", "dinner"] },
+  { term: "mens polo shirt", subcategory: "top", tags: ["casual", "weekend", "smart-casual"] },
+  { term: "mens t-shirt", subcategory: "top", tags: ["casual", "weekend"] },
+  { term: "mens blazer", subcategory: "blazer", tags: ["interview", "office", "wedding", "dinner"] },
+  { term: "mens chinos", subcategory: "trousers", tags: ["office", "smart-casual", "dinner", "casual"] },
+  { term: "mens slim jeans", subcategory: "trousers", tags: ["casual", "weekend"] },
+  { term: "mens suit trousers", subcategory: "trousers", tags: ["interview", "office", "wedding"] },
+];
+
+// Colour name -> representative hex, so menswear gets a palette match without manual enrichment.
+const COLOR_HEX = {
+  black: "#1a1a1a", white: "#f4f2ec", cream: "#ece3d2", grey: "#8a8a8a", gray: "#8a8a8a",
+  charcoal: "#36393b", navy: "#1f2a44", blue: "#2f4b7c", green: "#3f5e3f", olive: "#5b5a2f",
+  khaki: "#7c7048", beige: "#c8b79a", stone: "#b8ab95", sand: "#cbb894", tan: "#b48a60",
+  camel: "#a67b4f", brown: "#5a3f2b", burgundy: "#5a1f2a", red: "#9b2d2d", pink: "#c98a94",
+  purple: "#4b3a5a", yellow: "#c9a94a", orange: "#c26b3a", teal: "#2f6b6b", mustard: "#b8862f",
+};
+
+function colorToHex(name = "") {
+  const n = name.toLowerCase().trim();
+  if (COLOR_HEX[n]) return COLOR_HEX[n];
+  for (const key of Object.keys(COLOR_HEX)) if (n.includes(key)) return COLOR_HEX[key];
+  return "#5a5a5a";
+}
+
+async function ingestMens() {
+  const outPath = path.join(root, "..", "src", "data", "catalog.json");
+  const existing = existsSync(outPath) ? JSON.parse(readFileSync(outPath, "utf8")) : [];
+  const byId = new Map(existing.map((p) => [p.id, p]));
+  let added = 0;
+
+  for (const { term, subcategory, tags } of ASOS_MENS_SEARCHES) {
+    const res = await get(
+      ASOS,
+      `/api/v1/getProductListBySearchTerm?searchTerm=${encodeURIComponent(term)}&currency=USD&country=US&store=US&languageShort=en&sizeSchema=US&limit=12&offset=0&sort=recommended`
+    );
+    const products = (res.data?.products || []).filter((p) => p.imageUrl && p.price?.current?.value);
+    let taken = 0;
+    for (const p of products) {
+      if (taken >= 3) break;
+      const id = `asos-${p.id}`;
+      if (byId.has(id)) continue;
+      const hex = colorToHex(p.colour);
+      byId.set(id, {
+        id,
+        type: "apparel",
+        gender: "men",
+        brand: p.brandName,
+        name: p.name,
+        category: "apparel",
+        subcategory,
+        colors: [{ name: p.colour || "", hex }],
+        primary_color_hex: hex,
+        price: p.price.current.value,
+        currency: p.price.currency || "USD",
+        image_url: `https://${p.imageUrl}`,
+        product_url: `https://www.asos.com/us/${p.url}`,
+        occasion_tags: tags,
+      });
+      taken++;
+      added++;
+      console.log(`+ men ${subcategory}: ${p.name} (${p.colour || "?"} -> ${hex})`);
+    }
+    console.log(`asos "${term}": kept ${taken}`);
+  }
+
+  const merged = [...byId.values()];
+  writeFileSync(outPath, JSON.stringify(merged, null, 2) + "\n");
+  console.log(`\nadded ${added} menswear items; catalog now ${merged.length} products → ${outPath}`);
+}
+
 const mode = process.argv[2];
 if (mode === "discover") await discover();
 else if (mode === "ingest") await ingest();
-else console.log("Usage: node scripts/ingest-catalog.mjs [discover|ingest]");
+else if (mode === "mens") await ingestMens();
+else console.log("Usage: node scripts/ingest-catalog.mjs [discover|ingest|mens]");

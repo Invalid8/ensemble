@@ -9,11 +9,17 @@ import type { SkinRead } from "@/lib/studio/types";
 
 const CONCERNS = ["redness", "oiliness", "moisture", "radiance", "age_spot", "texture", "skin_type"];
 
-async function postYouCam(feature: string, file: File, taskParams?: Record<string, unknown>, refImageUrl?: string) {
+async function postYouCam(
+  feature: string,
+  file: File,
+  taskParams?: Record<string, unknown>,
+  extra?: { refImageUrl?: string; vtoLayers?: VtoLayer[] }
+) {
   const form = new FormData();
   form.append("file", file);
   if (taskParams) form.append("taskParams", JSON.stringify(taskParams));
-  if (refImageUrl) form.append("refImageUrl", refImageUrl);
+  if (extra?.refImageUrl) form.append("refImageUrl", extra.refImageUrl);
+  if (extra?.vtoLayers) form.append("vtoLayers", JSON.stringify(extra.vtoLayers));
 
   const res = await fetch(`/api/youcam/${feature}`, { method: "POST", body: form });
   const json = await res.json();
@@ -98,6 +104,11 @@ export interface VtoResult {
   mock: boolean;
 }
 
+interface VtoLayer {
+  url: string;
+  category: string;
+}
+
 function garmentCategory(subcategory?: string): string {
   const s = (subcategory ?? "").toLowerCase();
   if (/dress|jumpsuit|gown|romper|playsuit|overall/.test(s)) return "full_body";
@@ -105,14 +116,25 @@ function garmentCategory(subcategory?: string): string {
   return "upper_body";
 }
 
-export async function renderVto(bodyFile: File, garment: Product | undefined): Promise<VtoResult> {
-  if (!garment?.image_url) return { url: null, mock: false };
+// A dress is one full-body render; separates chain a top then a bottom so both show on the body.
+// The server renders the layers in order, feeding each result into the next.
+function buildLayers(garments: Product[]): VtoLayer[] {
+  const withCat = garments
+    .filter((g) => g.image_url)
+    .map((g) => ({ url: g.image_url, category: garmentCategory(g.subcategory) }));
 
-  const vto = await postYouCam(
-    "cloth",
-    bodyFile,
-    { garment_category: garmentCategory(garment.subcategory) },
-    garment.image_url
-  );
+  const dress = withCat.find((l) => l.category === "full_body");
+  if (dress) return [{ url: dress.url, category: "full_body" }];
+
+  const upper = withCat.find((l) => l.category === "upper_body");
+  const lower = withCat.find((l) => l.category === "lower_body");
+  return [upper, lower].filter((l): l is VtoLayer => Boolean(l));
+}
+
+export async function renderVto(bodyFile: File, garments: Product[]): Promise<VtoResult> {
+  const layers = buildLayers(garments);
+  if (!layers.length) return { url: null, mock: false };
+
+  const vto = await postYouCam("cloth", bodyFile, undefined, { vtoLayers: layers });
   return { url: vto.results?.url ?? null, mock: Boolean(vto.mock) };
 }

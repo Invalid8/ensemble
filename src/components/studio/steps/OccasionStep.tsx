@@ -2,6 +2,13 @@ import { StepHeading } from "./StepHeading";
 import { Button, Chip } from "../ui/controls";
 import { Logo } from "@/components/brand/Logo";
 import { OCCASION_SUGGESTIONS } from "@/lib/studio/constants";
+import { cn } from "@/lib/utils";
+import type { Wardrobe } from "@/lib/types";
+
+const WARDROBES: { value: Wardrobe; label: string }[] = [
+  { value: "women", label: "Women's" },
+  { value: "men", label: "Men's" },
+];
 
 function Field({
   icon,
@@ -43,12 +50,14 @@ const PinIcon = (
 interface OccasionStepProps {
   occasion: string;
   country: string;
+  wardrobe?: Wardrobe;
   onOccasion: (v: string) => void;
   onCountry: (v: string) => void;
+  onWardrobe: (w: Wardrobe) => void;
   onNext: () => void;
 }
 
-export function OccasionStep({ occasion, country, onOccasion, onCountry, onNext }: OccasionStepProps) {
+export function OccasionStep({ occasion, country, wardrobe, onOccasion, onCountry, onWardrobe, onNext }: OccasionStepProps) {
   return (
     <div className="flex flex-1 flex-col">
       <Logo className="mb-7" />
@@ -64,10 +73,31 @@ export function OccasionStep({ occasion, country, onOccasion, onCountry, onNext 
             </Chip>
           ))}
         </div>
+
+        <div className="pt-2">
+          <p className="mb-2 font-body text-[13px] font-medium text-ink-secondary">Whose wardrobe are we styling?</p>
+          <div className="grid grid-cols-2 gap-2">
+            {WARDROBES.map(({ value, label }) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() => onWardrobe(value)}
+                className={cn(
+                  "rounded-[var(--radius-md)] border px-4 py-3 font-body text-sm transition-colors",
+                  wardrobe === value
+                    ? "border-accent bg-accent-soft font-semibold text-ink"
+                    : "border-border-subtle bg-surface-card text-ink-secondary hover:border-ink-muted"
+                )}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="mt-auto pt-6">
-        <Button onClick={onNext} disabled={!occasion.trim()}>
+        <Button onClick={onNext} disabled={!occasion.trim() || !wardrobe}>
           Get your look
         </Button>
       </div>

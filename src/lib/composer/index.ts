@@ -1,4 +1,4 @@
-import type { CompleteLook, LookProfile, LookReason, Product } from "@/lib/types";
+import type { CompleteLook, LookProfile, LookReason, Product, Wardrobe } from "@/lib/types";
 import { pickBestMatch } from "@/lib/composer/colorMatch";
 import { generateRationale } from "@/lib/composer/rationale";
 import {
@@ -80,9 +80,17 @@ function pickByTemperature(
  * coordinated makeup, then the unified rationale. `catalog` is normalized to the §12 Product
  * schema regardless of which RapidAPI source eventually fills it (DEVELOPMENT.md §5.4).
  */
+function matchesWardrobe(p: Product, wardrobe?: Wardrobe): boolean {
+  if (!wardrobe) return true;
+  return !p.gender || p.gender === "unisex" || p.gender === wardrobe;
+}
+
 export function composeLook(profile: LookProfile, catalog: Product[]): CompleteLook {
   const basePalette = (profile.palette ?? []).filter((hex) => !(profile.avoidColors ?? []).includes(hex));
-  const apparel = catalog.filter((p) => p.type === "apparel");
+  const allApparel = catalog.filter((p) => p.type === "apparel");
+  const forWardrobe = allApparel.filter((p) => matchesWardrobe(p, profile.wardrobe));
+  // Fall back to the full pool if the chosen wardrobe has no stock yet, so a look is never empty.
+  const apparel = forWardrobe.length ? forWardrobe : allApparel;
   // §9 runs over the candidate pool, not the final picks - a suppressed product is
   // naturally replaced by the next-best safe candidate instead of leaving a gap.
   const beauty = applySafetySuppression(catalog.filter((p) => p.type === "beauty"), profile.safetyFlags);

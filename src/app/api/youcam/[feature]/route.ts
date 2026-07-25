@@ -78,6 +78,45 @@ function friendlyError(code: string | null): string {
   return (code && ERROR_MESSAGES[code]) || "We couldn't read that photo - mind trying another?";
 }
 
+interface VtoLayer {
+  url: string;
+  category: string;
+}
+
+// Cloth VTO renders one garment per call, so a full outfit is a chain: dress each layer in
+// order, feeding each render back in as the person for the next (top, then trousers).
+async function runClothChain(personBytes: Buffer, personType: string, layers: VtoLayer[]): Promise<string | null> {
+  let bytes = personBytes;
+  let contentType = personType;
+  let url: string | null = null;
+
+  for (let i = 0; i < layers.length; i++) {
+    const ref = await fetchImageBytes(layers[i].url);
+    const result = await runYouCamWorkflow({
+      feature: "cloth",
+      fileBytes: bytes,
+      contentType,
+      refBytes: ref.bytes,
+      refContentType: ref.contentType,
+      buildTaskPayload: (fileId, refFileId) => ({
+        src_file_id: fileId,
+        ref_file_id: refFileId,
+        garment_category: layers[i].category,
+      }),
+    });
+    if (result.task_status === "error") throw new HttpError(422, friendlyError(result.error));
+
+    url = (result.results?.url as string | undefined) ?? null;
+    if (!url) break;
+    if (i < layers.length - 1) {
+      const next = await fetchImageBytes(url);
+      bytes = next.bytes;
+      contentType = next.contentType;
+    }
+  }
+  return url;
+}
+
 export async function POST(request: NextRequest, { params }: { params: Promise<{ feature: string }> }) {
   const { feature } = await params;
 
@@ -97,6 +136,9 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const refImageUrlRaw = formData.get("refImageUrl");
   const refImageUrl = typeof refImageUrlRaw === "string" && refImageUrlRaw ? refImageUrlRaw : null;
 
+  const vtoLayersRaw = formData.get("vtoLayers");
+  const vtoLayers: VtoLayer[] = typeof vtoLayersRaw === "string" && vtoLayersRaw ? JSON.parse(vtoLayersRaw) : [];
+
   if (!process.env.YOUCAM_API_KEY) {
     return NextResponse.json(await mockResponse(feature, file));
   }
@@ -104,11 +146,16 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const bytes = Buffer.from(await file.arrayBuffer());
   const hash = createHash("sha256").update(bytes).update(JSON.stringify(taskParams ?? {}));
   if (refImageUrl) hash.update(refImageUrl);
+  if (vtoLayers.length) hash.update(JSON.stringify(vtoLayers));
   const cacheKey = `youcam:${feature}:${hash.digest("hex")}`;
   const ttl = feature === "cloth" ? CLOTH_TTL_SECONDS : CACHE_TTL_SECONDS;
 
   try {
     const normalized = await withCache(cacheKey, "youcam", ttl, async () => {
+      if (feature === "cloth" && vtoLayers.length) {
+        const url = await runClothChain(bytes, file.type || "image/jpeg", vtoLayers);
+        return { results: url ? { url } : {} };
+      }
       const ref = refImageUrl ? await fetchImageBytes(refImageUrl) : null;
       const result = await runYouCamWorkflow({
         feature,

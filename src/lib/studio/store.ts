@@ -147,7 +147,7 @@ export const useStudioStore = create<StudioState & StudioActions>((set, get) => 
     if (bodyFile) {
       set({ composeStatus: "Rendering the outfit on you…" });
       try {
-        const vto = await renderVto(bodyFile, look.outfit.garments[0]);
+        const vto = await renderVto(bodyFile, look.outfit.garments);
         set({ vtoUrl: vto.url, vtoMock: vto.mock });
       } catch {
         set({ vtoUrl: null });
