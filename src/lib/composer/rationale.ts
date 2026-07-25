@@ -18,6 +18,15 @@ const LIP_PHRASE: Record<MakeupSpec["lipBlushFamily"], string> = {
  * audible. Must move in one direction (skin fact -> color choice -> why -> beauty finish ->
  * occasion) per CONTENT.md §5 - never reorder or skip a link in the chain.
  */
+// Catalog names carry retail cruft ("... in khaki - part of a set") that reads as clutter and
+// duplicates the colour we already say. Strip the set suffix and a trailing "in <colour>".
+function cleanGarmentName(name: string): string {
+  return name
+    .replace(/\s*-\s*part of a set\s*$/i, "")
+    .replace(/\s+in\s+[a-z][a-z ]*$/i, "")
+    .trim();
+}
+
 export function generateRationale(opts: {
   profile: LookProfile;
   nearFaceColorName: string;
@@ -28,21 +37,22 @@ export function generateRationale(opts: {
 }): string {
   const { profile, nearFaceColorName, garmentName, makeupSpec } = opts;
   const garmentNoun = opts.garmentNoun ?? garmentName;
+  const garment = cleanGarmentName(garmentName);
 
   const undertone = profile.undertone ?? "neutral";
   const topConcern = profile.skinFocusAreas?.[0];
   const openingClause = topConcern
     ? `You're ${undertone}-toned with some ${topConcern}, so we chose`
-    : `You're ${undertone}-toned and your skin's looking balanced today, so we chose`;
+    : `You're ${undertone}-toned, so we chose`;
   const calmsClause = topConcern ? "which flatters your colouring and calms it" : "which flatters your colouring";
-  const skinState = profile.skinType ?? "your";
+  const skinType = profile.skinType ? `${profile.skinType} ` : "";
   const baseFinish = BASE_FINISH_PHRASE[makeupSpec.baseFinish];
   const lip = LIP_PHRASE[makeupSpec.lipBlushFamily];
   const occasion = profile.occasion ?? "today";
 
   return (
-    `${openingClause} this ${nearFaceColorName} ${garmentName} - shown on you - ` +
-    `${calmsClause}. To finish: a ${baseFinish} base for your ${skinState} skin, a ${lip} lip that ties to the ` +
+    `${openingClause} this ${nearFaceColorName} ${garment}, ${calmsClause}. ` +
+    `To finish: a ${baseFinish} base for your ${skinType}skin, a ${lip} lip that ties to the ` +
     `${garmentNoun}, all shade-matched to you - ready for ${occasion}.`
   );
 }
