@@ -43,12 +43,12 @@ export function StudioShell({
   progressCurrent,
 }: StudioShellProps) {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-bg lg:flex lg:items-center lg:justify-center lg:py-10">
+    <div className="relative min-h-dvh w-full overflow-hidden bg-bg lg:flex lg:items-center lg:justify-center lg:py-10">
       <StageScatter />
 
       <div
         className={cn(
-          "relative z-10 mx-auto flex min-h-screen w-full max-w-[440px] flex-col bg-bg",
+          "relative z-10 mx-auto flex h-dvh w-full max-w-[440px] flex-col bg-bg",
           "lg:my-0 lg:h-[860px] lg:min-h-0 lg:rounded-[var(--radius-xl)] lg:border lg:border-border-subtle lg:shadow-[0_30px_80px_rgba(26,26,26,0.08)]"
         )}
       >

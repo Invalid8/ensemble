@@ -101,6 +101,11 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
     canvas.height = video.videoHeight;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+    // Match the mirrored selfie preview so the saved photo is what the user actually saw.
+    if (guide === "face") {
+      ctx.translate(canvas.width, 0);
+      ctx.scale(-1, 1);
+    }
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     canvas.toBlob(
       (blob) => {
@@ -112,7 +117,7 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
       "image/jpeg",
       0.92
     );
-  }, [onFile, stopStream]);
+  }, [guide, onFile, stopStream]);
 
   const Guide = guide === "face" ? FaceGuide : BodyGuide;
 
