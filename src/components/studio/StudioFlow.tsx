@@ -128,6 +128,7 @@ export default function StudioFlow() {
         look={look}
         heroUrl={vtoUrl ?? look.outfit.garments[0]?.image_url ?? null}
         vtoMock={vtoMock}
+        vtoReal={Boolean(vtoUrl) && !vtoMock}
         onRestart={reset}
       />
     );
