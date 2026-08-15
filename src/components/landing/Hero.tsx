@@ -2,10 +2,21 @@ import { hero } from "@/lib/landing/content";
 import { Logo } from "@/components/brand/Logo";
 import { PrimaryCta } from "@/components/landing/PrimaryCta";
 import { HeroColumns, HeroRows } from "@/components/landing/HeroMasonry";
+import { heroPreloads } from "@/lib/landing/images";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden lg:flex lg:min-h-screen lg:flex-col">
+      {heroPreloads.map(({ src, media }) => (
+        <link
+          key={src}
+          rel="preload"
+          as="image"
+          href={src}
+          type="image/webp"
+          media={media}
+        />
+      ))}
       <div
         className="absolute -right-[4vw] top-0 hidden h-full w-[47%] lg:block"
         aria-hidden

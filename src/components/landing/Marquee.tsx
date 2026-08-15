@@ -50,10 +50,14 @@ export function Marquee({
             src={image.src}
             alt=""
             aria-hidden
+            width={image.width}
+            height={image.height}
             loading="lazy"
+            fetchPriority={i === 0 ? "high" : "auto"}
+            decoding="async"
             className={cn(
               "rounded-2xl object-cover shadow-[0_6px_18px_rgba(26,26,26,0.08)]",
-              vertical ? "w-full" : "",
+              vertical ? "h-auto w-full" : "",
               itemClassName
             )}
           />
