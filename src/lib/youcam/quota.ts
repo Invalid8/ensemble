@@ -1,19 +1,23 @@
 import type { NextRequest } from "next/server";
 import { getCached, setCached } from "@/lib/db/cache";
 
-// The YouCam key is a fixed pool of units. One look burns 3-4 of them (two skin reads plus
+// The YouCam key is a fixed pool of units. One look burns up to 4 of them (two skin reads plus
 // one or two try-on renders), so a handful of people re-running the flow for fun would drain
-// the demo budget. Cap the number of looks per visitor per rolling window.
+// the demo budget. Cap the units a visitor can spend per rolling window, expressed as looks.
 const LOOK_LIMIT = Number(process.env.YOUCAM_LOOK_LIMIT ?? 3);
 const WINDOW_HOURS = Number(process.env.YOUCAM_QUOTA_WINDOW_HOURS ?? 12);
 const WINDOW_MS = WINDOW_HOURS * 60 * 60 * 1000;
 
-// Every look begins with exactly one tone read, so counting that feature counts looks -
-// the follow-up skin-analysis and cloth calls ride along on the same allowance.
-const COUNTED_FEATURE = "skin-tone-analysis";
+// Worst case for one look: skin-tone + skin-analysis + a top render + a trouser render.
+const UNITS_PER_LOOK = 4;
+const UNIT_LIMIT = LOOK_LIMIT * UNITS_PER_LOOK;
+
+// Every look begins with exactly one tone read, so that feature marks a look starting - and
+// it is the only call that has to reserve a whole look's worth of units up front.
+const LOOK_START_FEATURE = "skin-tone-analysis";
 
 interface Usage {
-  count: number;
+  units: number;
   resetAt: number;
 }
 
@@ -28,8 +32,9 @@ export interface QuotaVerdict {
 // so the count survives a server restart or a recycled serverless instance.
 const memory = new Map<string, Usage>();
 
+// v2: the stored counter changed from looks to units, so old rows must not be read as units.
 function storageKey(visitor: string) {
-  return `quota:youcam:${visitor}`;
+  return `quota:youcam:v2:${visitor}`;
 }
 
 /**
@@ -61,31 +66,43 @@ function minutesUntil(resetAt: number) {
   return Math.max(1, Math.ceil((resetAt - Date.now()) / 60000));
 }
 
-/** Read-only check. Runs before any work so an over-quota visitor never touches the API. */
-export async function checkQuota(visitor: string): Promise<QuotaVerdict> {
-  if (LOOK_LIMIT <= 0) {
-    return { allowed: true, used: 0, limit: LOOK_LIMIT, retryAfterMinutes: 0 };
-  }
-  const usage = await read(visitor);
-  if (!usage) return { allowed: true, used: 0, limit: LOOK_LIMIT, retryAfterMinutes: 0 };
+function verdict(allowed: boolean, usage: Usage | null): QuotaVerdict {
   return {
-    allowed: usage.count < LOOK_LIMIT,
-    used: usage.count,
+    allowed,
+    used: Math.floor((usage?.units ?? 0) / UNITS_PER_LOOK),
     limit: LOOK_LIMIT,
-    retryAfterMinutes: minutesUntil(usage.resetAt),
+    retryAfterMinutes: usage ? minutesUntil(usage.resetAt) : 0,
   };
 }
 
 /**
- * Charge one look. Called only once the request has actually spent units - a cache hit on a
+ * Read-only check. Runs before any work so an over-quota visitor never touches the API.
+ *
+ * A look is allowed to *finish*: starting one reserves a whole look's worth of units, so the
+ * skin-analysis and try-on renders that follow always have budget left and never get refused
+ * halfway through - the failure mode that used to drop a visitor back to a catalog photo with
+ * no explanation. Follow-up calls still spend units, so re-rendering try-ons stays bounded.
+ */
+export async function checkQuota(visitor: string, feature: string): Promise<QuotaVerdict> {
+  if (LOOK_LIMIT <= 0) return verdict(true, null);
+
+  const usage = await read(visitor);
+  if (!usage) return verdict(true, null);
+
+  const needed = feature === LOOK_START_FEATURE ? UNITS_PER_LOOK : 1;
+  return verdict(usage.units + needed <= UNIT_LIMIT, usage);
+}
+
+/**
+ * Charge spent units. Called only once the request has actually spent units - a cache hit on a
  * repeated photo costs nothing, so it must not cost the visitor an allowance either.
  */
-export async function recordLook(visitor: string, feature: string): Promise<void> {
-  if (LOOK_LIMIT <= 0 || feature !== COUNTED_FEATURE) return;
+export async function recordUsage(visitor: string, units = 1): Promise<void> {
+  if (LOOK_LIMIT <= 0 || units <= 0) return;
   const existing = await read(visitor);
   const next: Usage = existing
-    ? { count: existing.count + 1, resetAt: existing.resetAt }
-    : { count: 1, resetAt: Date.now() + WINDOW_MS };
+    ? { units: existing.units + units, resetAt: existing.resetAt }
+    : { units, resetAt: Date.now() + WINDOW_MS };
   memory.set(visitor, next);
   const ttlSeconds = Math.ceil((next.resetAt - Date.now()) / 1000);
   await setCached(storageKey(visitor), "quota", next, ttlSeconds);

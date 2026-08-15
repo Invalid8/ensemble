@@ -35,6 +35,7 @@ interface LookStepProps {
   heroUrl: string | null;
   vtoMock: boolean;
   vtoReal: boolean;
+  vtoNote: string | null;
   onRestart: () => void;
 }
 
@@ -60,36 +61,41 @@ function Hero({
   heroUrl,
   vtoMock,
   vtoReal,
+  vtoNote,
 }: {
   heroUrl: string | null;
   vtoMock: boolean;
   vtoReal: boolean;
+  vtoNote: string | null;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-[var(--radius-xl)] bg-surface-2 shadow-[0_18px_44px_rgba(26,26,26,0.10)]">
-      {heroUrl ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={heroUrl}
-          alt="Your look"
-          className="w-full object-cover lg:h-[720px]"
-        />
-      ) : (
-        <div className="flex aspect-[3/4] items-center justify-center font-body text-sm text-ink-muted lg:aspect-auto lg:h-[640px]">
-          the outfit, on you
+    <div className="flex flex-col gap-2.5">
+      <div className="relative overflow-hidden rounded-[var(--radius-xl)] bg-surface-2 shadow-[0_18px_44px_rgba(26,26,26,0.10)]">
+        {heroUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={heroUrl}
+            alt="Your look"
+            className="w-full object-cover lg:h-[720px]"
+          />
+        ) : (
+          <div className="flex aspect-[3/4] items-center justify-center font-body text-sm text-ink-muted lg:aspect-auto lg:h-[640px]">
+            the outfit, on you
+          </div>
+        )}
+        {vtoMock && (
+          <span className="absolute left-3 top-3 rounded-full bg-ink/75 px-3 py-1 font-body text-[11px] text-bg">
+            preview - try-on render arrives with the API key
+          </span>
+        )}
+        <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-surface-card px-3.5 py-2 shadow-[0_8px_20px_rgba(26,26,26,0.14)]">
+          <Petal width={13} color="var(--color-petal-1)" />
+          <span className="font-body text-[11px] font-semibold text-ink">
+            {vtoReal ? "shown on you" : "styled for you"}
+          </span>
         </div>
-      )}
-      {vtoMock && (
-        <span className="absolute left-3 top-3 rounded-full bg-ink/75 px-3 py-1 font-body text-[11px] text-bg">
-          preview - try-on render arrives with the API key
-        </span>
-      )}
-      <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-surface-card px-3.5 py-2 shadow-[0_8px_20px_rgba(26,26,26,0.14)]">
-        <Petal width={13} color="var(--color-petal-1)" />
-        <span className="font-body text-[11px] font-semibold text-ink">
-          {vtoReal ? "shown on you" : "styled for you"}
-        </span>
       </div>
+      {vtoNote && <p className="font-body text-xs leading-snug text-ink-muted">{vtoNote}</p>}
     </div>
   );
 }
@@ -99,6 +105,7 @@ export function LookStep({
   heroUrl,
   vtoMock,
   vtoReal,
+  vtoNote,
   onRestart,
 }: LookStepProps) {
   return (
@@ -129,7 +136,7 @@ export function LookStep({
 
         <div className="mt-8 flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:items-start lg:gap-12">
           <div className="lg:sticky lg:top-10">
-            <Hero heroUrl={heroUrl} vtoMock={vtoMock} vtoReal={vtoReal} />
+            <Hero heroUrl={heroUrl} vtoMock={vtoMock} vtoReal={vtoReal} vtoNote={vtoNote} />
           </div>
 
           <div className="flex flex-col gap-4">

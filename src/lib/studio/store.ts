@@ -28,6 +28,8 @@ interface StudioState {
   look: CompleteLook | null;
   vtoUrl: string | null;
   vtoMock: boolean;
+  /** Why the look is showing catalog imagery instead of the visitor's own try-on. */
+  vtoNote: string | null;
   error: string | null;
   /** Set when the visitor has used their allowance of looks. Owns the whole screen, not a note. */
   limited: string | null;
@@ -67,6 +69,7 @@ const INITIAL: StudioState = {
   look: null,
   vtoUrl: null,
   vtoMock: false,
+  vtoNote: null,
   error: null,
   limited: null,
 };
@@ -155,12 +158,25 @@ export const useStudioStore = create<StudioState & StudioActions>((set, get) => 
       set({ composeStatus: "Rendering the outfit on you…" });
       try {
         const vto = await renderVto(bodyFile, look.outfit.garments);
-        set({ vtoUrl: vto.url, vtoMock: vto.mock });
+        set({
+          vtoUrl: vto.url,
+          vtoMock: vto.mock,
+          // A render that comes back empty is still a miss - say so rather than let the
+          // catalog photo pass for the visitor's own try-on.
+          vtoNote: vto.url ? null : "We couldn't render this one on you, so you're seeing the piece as shot.",
+        });
       } catch (e) {
         // Running out mid-compose still has a look to show, so fall through to garment
-        // imagery rather than throwing the visitor out at the last step.
-        if (e instanceof QuotaError) set({ vtoUrl: null, vtoMock: false });
-        else set({ vtoUrl: null });
+        // imagery rather than throwing the visitor out at the last step - but never let the
+        // fallback masquerade as a try-on. The visitor asked to be shown wearing this.
+        set({
+          vtoUrl: null,
+          vtoMock: false,
+          vtoNote:
+            e instanceof QuotaError
+              ? "You're out of try-on renders for now, so you're seeing the piece as shot."
+              : "The try-on didn't come back this time, so you're seeing the piece as shot.",
+        });
       }
     }
 

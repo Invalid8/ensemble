@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { runYouCamWorkflow, fetchImageBytes, YouCamApiError } from "@/lib/youcam/client";
 import { withCache } from "@/lib/db/cache";
-import { checkQuota, quotaMessage, recordLook, visitorId } from "@/lib/youcam/quota";
+import { checkQuota, quotaMessage, recordUsage, visitorId } from "@/lib/youcam/quota";
 
 export const runtime = "nodejs";
 
@@ -145,11 +145,12 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     return NextResponse.json(await mockResponse(feature, file));
   }
 
-  // Check before doing any work, so an over-quota visitor never reaches the API. Once the
-  // allowance is gone every feature blocks, not just the counted one - otherwise someone
-  // could keep re-rendering try-ons on a look they already paid for.
+  // Check before doing any work, so an over-quota visitor never reaches the API. Starting a
+  // look reserves the units the whole look needs, so the try-on that comes at the end of it
+  // can never be refused halfway through; every call still spends units, so re-rendering
+  // try-ons on a look already paid for stays bounded.
   const visitor = visitorId(request);
-  const quota = await checkQuota(visitor);
+  const quota = await checkQuota(visitor, feature);
   if (!quota.allowed) {
     return NextResponse.json(
       { error: quotaMessage(quota), code: "rate_limited", retryAfterMinutes: quota.retryAfterMinutes },
@@ -172,7 +173,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       // must not cost the visitor an allowance.
       if (feature === "cloth" && vtoLayers.length) {
         const url = await runClothChain(bytes, file.type || "image/jpeg", vtoLayers);
-        await recordLook(visitor, feature);
+        await recordUsage(visitor, vtoLayers.length); // one render per garment layer
         return { results: url ? { url } : {} };
       }
       const ref = refImageUrl ? await fetchImageBytes(refImageUrl) : null;
@@ -188,7 +189,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
           ...taskParams,
         }),
       });
-      await recordLook(visitor, feature);
+      await recordUsage(visitor);
       if (result.task_status === "error") {
         throw new HttpError(422, friendlyError(result.error)); // don't cache task failures
       }

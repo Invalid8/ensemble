@@ -123,6 +123,7 @@ export default function StudioFlow() {
   const look = useStudioStore((s) => s.look);
   const vtoUrl = useStudioStore((s) => s.vtoUrl);
   const vtoMock = useStudioStore((s) => s.vtoMock);
+  const vtoNote = useStudioStore((s) => s.vtoNote);
   const reset = useStudioStore((s) => s.reset);
   const goTo = useStudioStore((s) => s.goTo);
   const limited = useStudioStore((s) => s.limited);
@@ -163,6 +164,7 @@ export default function StudioFlow() {
         heroUrl={vtoUrl ?? look.outfit.garments[0]?.image_url ?? null}
         vtoMock={vtoMock}
         vtoReal={Boolean(vtoUrl) && !vtoMock}
+        vtoNote={vtoNote}
         onRestart={reset}
       />
     );
