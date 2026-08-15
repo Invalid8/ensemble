@@ -157,18 +157,22 @@ export const useStudioStore = create<StudioState & StudioActions>((set, get) => 
     if (bodyFile) {
       set({ composeStatus: "Rendering the outfit on you…" });
       try {
-        const vto = await renderVto(bodyFile, look.outfit.garments);
+        const vto = await renderVto(bodyFile, look.outfit.garments, (i, total) =>
+          set({
+            composeStatus:
+              total > 1
+                ? `Rendering the outfit on you… (${i + 1} of ${total})`
+                : "Rendering the outfit on you…",
+          })
+        );
         set({
           vtoUrl: vto.url,
           vtoMock: vto.mock,
-          // A render that comes back empty is still a miss - say so rather than let the
-          // catalog photo pass for the visitor's own try-on.
+          // an empty render is still a miss - don't let the catalog photo pass for a try-on
           vtoNote: vto.url ? null : "We couldn't render this one on you, so you're seeing the piece as shot.",
         });
       } catch (e) {
-        // Running out mid-compose still has a look to show, so fall through to garment
-        // imagery rather than throwing the visitor out at the last step - but never let the
-        // fallback masquerade as a try-on. The visitor asked to be shown wearing this.
+        // Still a look worth showing, so fall through to garment imagery - but say why.
         set({
           vtoUrl: null,
           vtoMock: false,

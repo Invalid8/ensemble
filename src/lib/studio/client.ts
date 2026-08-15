@@ -22,19 +22,18 @@ async function postYouCam(
   feature: string,
   file: File,
   taskParams?: Record<string, unknown>,
-  extra?: { refImageUrl?: string; vtoLayers?: VtoLayer[] }
+  extra?: { refImageUrl?: string; vtoLayers?: VtoLayer[]; personUrl?: string }
 ) {
   const form = new FormData();
   form.append("file", file);
   if (taskParams) form.append("taskParams", JSON.stringify(taskParams));
   if (extra?.refImageUrl) form.append("refImageUrl", extra.refImageUrl);
   if (extra?.vtoLayers) form.append("vtoLayers", JSON.stringify(extra.vtoLayers));
+  if (extra?.personUrl) form.append("personUrl", extra.personUrl);
 
   const res = await fetch(`/api/youcam/${feature}`, { method: "POST", body: form });
 
-  // A platform-level failure (a killed function, a gateway timeout) answers with HTML, not our
-  // JSON - parsing it blind throws a SyntaxError that reads like a bug in our own code. Fall
-  // back to the status so the real cause survives to the caller.
+  // A killed function answers with HTML, not our JSON - parse blind and the SyntaxError buries the cause.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let json: Record<string, any> = {};
   try {
@@ -161,10 +160,36 @@ function buildLayers(garments: Product[]): VtoLayer[] {
   return [upper, lower].filter((l): l is VtoLayer => Boolean(l));
 }
 
-export async function renderVto(bodyFile: File, garments: Product[]): Promise<VtoResult> {
+/**
+ * One request per garment, each render feeding the next as the person. Chaining the whole outfit
+ * in one request measured ~48s and died on Vercel's 60s ceiling; a layer at a time is ~25s.
+ */
+export async function renderVto(
+  bodyFile: File,
+  garments: Product[],
+  onLayer?: (index: number, total: number) => void
+): Promise<VtoResult> {
   const layers = buildLayers(garments);
   if (!layers.length) return { url: null, mock: false };
 
-  const vto = await postYouCam("cloth", await compressForUpload(bodyFile), undefined, { vtoLayers: layers });
-  return { url: vto.results?.url ?? null, mock: Boolean(vto.mock) };
+  const person = await compressForUpload(bodyFile);
+  let url: string | null = null;
+  let mock = false;
+
+  for (let i = 0; i < layers.length; i++) {
+    onLayer?.(i, layers.length);
+    const vto = await postYouCam("cloth", person, undefined, {
+      vtoLayers: [layers[i]],
+      // First layer dresses the photo, the rest dress the render before it (mock echoes a data: URL).
+      ...(url?.startsWith("https://") ? { personUrl: url } : {}),
+    });
+
+    mock = mock || Boolean(vto.mock);
+    const next = vto.results?.url ?? null;
+    // an empty layer still leaves the visitor wearing the earlier ones
+    if (!next) break;
+    url = next;
+  }
+
+  return { url, mock };
 }

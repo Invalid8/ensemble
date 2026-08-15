@@ -76,10 +76,10 @@ function Hero({
           <img
             src={heroUrl}
             alt="Your look"
-            className="w-full object-cover lg:h-[720px]"
+            className="w-full object-cover lg:h-[calc(100dvh-7rem)]"
           />
         ) : (
-          <div className="flex aspect-[3/4] items-center justify-center font-body text-sm text-ink-muted lg:aspect-auto lg:h-[640px]">
+          <div className="flex aspect-[3/4] items-center justify-center font-body text-sm text-ink-muted lg:aspect-auto lg:h-[calc(100dvh-7rem)]">
             the outfit, on you
           </div>
         )}
@@ -109,7 +109,8 @@ export function LookStep({
   onRestart,
 }: LookStepProps) {
   return (
-    <div className="relative min-h-dvh w-full overflow-hidden bg-bg">
+    // clip, not hidden: `overflow-hidden` would make this a scroll container and kill the sticky hero
+    <div className="relative min-h-dvh w-full overflow-x-clip bg-bg">
       <Petal
         width={30}
         color="var(--color-petal-2)"

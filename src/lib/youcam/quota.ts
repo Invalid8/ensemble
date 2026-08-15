@@ -78,10 +78,9 @@ function verdict(allowed: boolean, usage: Usage | null): QuotaVerdict {
 /**
  * Read-only check. Runs before any work so an over-quota visitor never touches the API.
  *
- * A look is allowed to *finish*: starting one reserves a whole look's worth of units, so the
- * skin-analysis and try-on renders that follow always have budget left and never get refused
- * halfway through - the failure mode that used to drop a visitor back to a catalog photo with
- * no explanation. Follow-up calls still spend units, so re-rendering try-ons stays bounded.
+ * A look is allowed to finish: starting one reserves a whole look's worth of units, so the reads
+ * and renders that follow are never refused halfway through. Follow-ups still spend units, so
+ * re-rendering try-ons stays bounded.
  */
 export async function checkQuota(visitor: string, feature: string): Promise<QuotaVerdict> {
   if (LOOK_LIMIT <= 0) return verdict(true, null);

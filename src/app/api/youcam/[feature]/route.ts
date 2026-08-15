@@ -6,10 +6,8 @@ import { checkQuota, quotaMessage, recordUsage, visitorId } from "@/lib/youcam/q
 
 export const runtime = "nodejs";
 
-// A one-garment try-on measured ~26s against the live API and a two-garment chain ~48s, so the
-// platform default (10-15s on most serverless hosts) kills the render long before it lands and
-// the visitor gets a catalog photo instead of themselves. 60s is the Vercel Hobby ceiling; raise
-// it further on a paid plan if a three-layer outfit ever becomes possible.
+// A single try-on render measures ~26s, well past the 10-15s serverless default. 60s is the
+// Vercel Hobby ceiling.
 export const maxDuration = 60;
 
 // Same image + feature is deterministic, so re-running a photo costs zero API units.
@@ -90,6 +88,18 @@ interface VtoLayer {
   category: string;
 }
 
+// `personUrl` makes the server fetch a client-chosen URL, so restrict it to YouCam renders (SSRF).
+const RENDER_HOST_SUFFIX = ".amazonaws.com";
+
+function isOwnRenderUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" && parsed.hostname.endsWith(RENDER_HOST_SUFFIX);
+  } catch {
+    return false;
+  }
+}
+
 // Cloth VTO renders one garment per call, so a full outfit is a chain: dress each layer in
 // order, feeding each render back in as the person for the next (top, then trousers).
 async function runClothChain(personBytes: Buffer, personType: string, layers: VtoLayer[]): Promise<string | null> {
@@ -110,9 +120,9 @@ async function runClothChain(personBytes: Buffer, personType: string, layers: Vt
         ref_file_id: refFileId,
         garment_category: layers[i].category,
       }),
-      // A render lands in ~20s, so a 15s backoff ceiling can waste most of a second layer's
-      // budget waiting on a task that already finished. Check often enough to hand over promptly.
-      pollOptions: { maxAttempts: 30, maxDelayMs: 3_000 },
+      // Renders measured 11-49s, so poll briskly (a 15s ceiling can sit on a task that finished
+      // seconds ago) and give up at ~45s - inside maxDuration, so we answer instead of being killed.
+      pollOptions: { maxAttempts: 16, maxDelayMs: 3_000 },
     });
     if (result.task_status === "error") throw new HttpError(422, friendlyError(result.error));
 
@@ -149,15 +159,20 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const vtoLayersRaw = formData.get("vtoLayers");
   const vtoLayers: VtoLayer[] = typeof vtoLayersRaw === "string" && vtoLayersRaw ? JSON.parse(vtoLayersRaw) : [];
 
+  // The person can be a previous render, which is how an outfit is dressed one request at a time.
+  const personUrlRaw = formData.get("personUrl");
+  const personUrl = typeof personUrlRaw === "string" && personUrlRaw ? personUrlRaw : null;
+  if (personUrl && !isOwnRenderUrl(personUrl)) {
+    return NextResponse.json({ error: "personUrl must be a render from this API" }, { status: 400 });
+  }
+
   // Mock mode spends nothing, so it is never rate limited.
   if (!process.env.YOUCAM_API_KEY) {
     return NextResponse.json(await mockResponse(feature, file));
   }
 
-  // Check before doing any work, so an over-quota visitor never reaches the API. Starting a
-  // look reserves the units the whole look needs, so the try-on that comes at the end of it
-  // can never be refused halfway through; every call still spends units, so re-rendering
-  // try-ons on a look already paid for stays bounded.
+  // Check before doing any work, so an over-quota visitor never reaches the API. Starting a look
+  // reserves the units it needs, so the try-on at the end of it is never refused halfway through.
   const visitor = visitorId(request);
   const quota = await checkQuota(visitor, feature);
   if (!quota.allowed) {
@@ -171,6 +186,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const hash = createHash("sha256").update(bytes).update(JSON.stringify(taskParams ?? {}));
   if (refImageUrl) hash.update(refImageUrl);
   if (vtoLayers.length) hash.update(JSON.stringify(vtoLayers));
+  if (personUrl) hash.update(personUrl);
   const cacheKey = `youcam:${feature}:${hash.digest("hex")}`;
   const ttl = feature === "cloth" ? CLOTH_TTL_SECONDS : CACHE_TTL_SECONDS;
 
@@ -181,7 +197,10 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       // units and still counts, but a transport or auth failure never reached YouCam and
       // must not cost the visitor an allowance.
       if (feature === "cloth" && vtoLayers.length) {
-        const url = await runClothChain(bytes, file.type || "image/jpeg", vtoLayers);
+        const person = personUrl
+          ? await fetchImageBytes(personUrl)
+          : { bytes, contentType: file.type || "image/jpeg" };
+        const url = await runClothChain(person.bytes, person.contentType, vtoLayers);
         await recordUsage(visitor, vtoLayers.length); // one render per garment layer
         return { results: url ? { url } : {} };
       }
@@ -219,9 +238,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         ? "The studio is taking longer than usual. Give it a moment and try again."
         : "Something slipped on our end. Give it a moment and try again.";
 
-    // Name the step that actually broke. Without this the visitor-safe message is the only
-    // trace outside the server console, and "something slipped" is unactionable when a demo
-    // fails in front of someone - the step tells us upload vs task vs poll at a glance.
+    // Name the step that broke - "something slipped" alone is unactionable from the client side.
     const detail =
       err instanceof YouCamApiError
         ? { step: err.step, upstreamStatus: err.statusCode }

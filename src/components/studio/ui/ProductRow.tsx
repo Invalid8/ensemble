@@ -3,9 +3,7 @@
 import { useState } from "react";
 import type { Product } from "@/lib/types";
 
-// Sephora's image CDN answers Access Denied outside its own regions, so a beauty thumbnail from
-// there can never paint - it only costs a request and a flash of empty tile. Skip the fetch and
-// go straight to the brand tile for hosts we know refuse us.
+// Sephora's CDN answers Access Denied outside its regions, so skip the request entirely.
 const BLOCKED_IMAGE_HOSTS = ["sephora.com"];
 
 function isReachable(src: string): boolean {
@@ -41,8 +39,7 @@ function initialsFor(brand: string): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-// A tile carrying the brand and the product's own shade reads as a designed stand-in rather
-// than a broken image - and for makeup the swatch is genuinely the useful part of the picture.
+// Brand mark on the product's own shade - a designed stand-in, not a broken image.
 function BrandTile({ product }: { product: Product }) {
   const swatch = /^#[0-9a-f]{6}$/i.test(product.primary_color_hex ?? "")
     ? product.primary_color_hex
@@ -66,8 +63,8 @@ function BrandTile({ product }: { product: Product }) {
   );
 }
 
-// The brand tile always sits underneath; the photo lays on top with an empty alt, so a loading
-// or broken image shows the tile (never spilled alt text that reads as "failed").
+// The tile sits underneath and the photo lays on top with an empty alt, so a broken image
+// shows the tile rather than spilled alt text.
 function Thumb({ product }: { product: Product }) {
   const [failed, setFailed] = useState(false);
   const src = product.image_url;
