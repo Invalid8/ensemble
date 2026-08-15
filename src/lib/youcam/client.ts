@@ -33,9 +33,9 @@ async function parseJson<T>(res: Response): Promise<T> {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function backoffDelay(attempt: number, baseDelayMs: number) {
+function backoffDelay(attempt: number, baseDelayMs: number, maxDelayMs = 15_000) {
   const jitter = Math.random() * baseDelayMs;
-  return Math.min(baseDelayMs * 2 ** attempt + jitter, 15_000);
+  return Math.min(baseDelayMs * 2 ** attempt + jitter, maxDelayMs);
 }
 
 const TRANSIENT_CODES = new Set([
@@ -144,10 +144,13 @@ async function createTask(feature: string, payload: Record<string, unknown>): Pr
 async function pollTask(
   feature: string,
   taskId: unknown,
-  opts: { maxAttempts?: number; baseDelayMs?: number } = {}
+  opts: { maxAttempts?: number; baseDelayMs?: number; maxDelayMs?: number } = {}
 ): Promise<YouCamResult> {
   const maxAttempts = opts.maxAttempts ?? 20;
   const baseDelayMs = opts.baseDelayMs ?? 1000;
+  // Capped backoff matters on a chained render: a 15s ceiling can sit on a finished task for
+  // most of a serverless function's budget, and the second layer never gets to start.
+  const maxDelayMs = opts.maxDelayMs ?? 15_000;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const res = await netFetch(
@@ -157,7 +160,7 @@ async function pollTask(
     );
 
     if (res.status === 429) {
-      await sleep(backoffDelay(attempt, baseDelayMs));
+      await sleep(backoffDelay(attempt, baseDelayMs, maxDelayMs));
       continue;
     }
     if (!res.ok) throw new YouCamApiError(`task/${feature}/${String(taskId)}`, res.status, await res.text());
@@ -165,7 +168,7 @@ async function pollTask(
     const { data } = await parseJson<{ data: YouCamResult }>(res);
     if (data.task_status === "success" || data.task_status === "error") return data;
 
-    await sleep(backoffDelay(attempt, baseDelayMs));
+    await sleep(backoffDelay(attempt, baseDelayMs, maxDelayMs));
   }
 
   throw new Error(`Polling timed out for ${feature} task ${String(taskId)}`);
@@ -183,7 +186,7 @@ export async function runYouCamWorkflow(opts: {
   refBytes?: Buffer;
   refContentType?: string;
   buildTaskPayload: (fileId: unknown, refFileId?: unknown) => Record<string, unknown>;
-  pollOptions?: { maxAttempts?: number; baseDelayMs?: number };
+  pollOptions?: { maxAttempts?: number; baseDelayMs?: number; maxDelayMs?: number };
 }): Promise<YouCamResult> {
   const { feature, fileBytes, contentType, refBytes, refContentType, buildTaskPayload, pollOptions } = opts;
 

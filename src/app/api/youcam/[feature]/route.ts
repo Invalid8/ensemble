@@ -6,6 +6,12 @@ import { checkQuota, quotaMessage, recordUsage, visitorId } from "@/lib/youcam/q
 
 export const runtime = "nodejs";
 
+// A one-garment try-on measured ~26s against the live API and a two-garment chain ~48s, so the
+// platform default (10-15s on most serverless hosts) kills the render long before it lands and
+// the visitor gets a catalog photo instead of themselves. 60s is the Vercel Hobby ceiling; raise
+// it further on a paid plan if a three-layer outfit ever becomes possible.
+export const maxDuration = 60;
+
 // Same image + feature is deterministic, so re-running a photo costs zero API units.
 const CACHE_TTL_SECONDS = 60 * 60 * 24 * 30;
 // Cloth returns a signed S3 URL valid ~2h, so its cache must expire well inside that window.
@@ -104,6 +110,9 @@ async function runClothChain(personBytes: Buffer, personType: string, layers: Vt
         ref_file_id: refFileId,
         garment_category: layers[i].category,
       }),
+      // A render lands in ~20s, so a 15s backoff ceiling can waste most of a second layer's
+      // budget waiting on a task that already finished. Check often enough to hand over promptly.
+      pollOptions: { maxAttempts: 30, maxDelayMs: 3_000 },
     });
     if (result.task_status === "error") throw new HttpError(422, friendlyError(result.error));
 

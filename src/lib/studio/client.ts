@@ -31,7 +31,24 @@ async function postYouCam(
   if (extra?.vtoLayers) form.append("vtoLayers", JSON.stringify(extra.vtoLayers));
 
   const res = await fetch(`/api/youcam/${feature}`, { method: "POST", body: form });
-  const json = await res.json();
+
+  // A platform-level failure (a killed function, a gateway timeout) answers with HTML, not our
+  // JSON - parsing it blind throws a SyntaxError that reads like a bug in our own code. Fall
+  // back to the status so the real cause survives to the caller.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let json: Record<string, any> = {};
+  try {
+    json = await res.json();
+  } catch {
+    if (!res.ok) {
+      throw new Error(
+        res.status === 504 || res.status === 408
+          ? "The try-on took too long to come back."
+          : `${feature} failed (${res.status})`
+      );
+    }
+  }
+
   if (res.status === 429 || json.code === "rate_limited") throw new QuotaError(json.error ?? "");
   if (!res.ok) throw new Error(json.error ?? `${feature} failed`);
   return json;
