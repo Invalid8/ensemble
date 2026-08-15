@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { runYouCamWorkflow, fetchImageBytes, YouCamApiError } from "@/lib/youcam/client";
 import { withCache } from "@/lib/db/cache";
 import { checkQuota, quotaMessage, recordUsage, visitorId } from "@/lib/youcam/quota";
+import { catalogImageUrl } from "@/lib/catalogImage";
 
 export const runtime = "nodejs";
 
@@ -102,13 +103,18 @@ function isOwnRenderUrl(url: string): boolean {
 
 // Cloth VTO renders one garment per call, so a full outfit is a chain: dress each layer in
 // order, feeding each render back in as the person for the next (top, then trousers).
-async function runClothChain(personBytes: Buffer, personType: string, layers: VtoLayer[]): Promise<string | null> {
+async function runClothChain(
+  personBytes: Buffer,
+  personType: string,
+  layers: VtoLayer[],
+  origin: string
+): Promise<string | null> {
   let bytes = personBytes;
   let contentType = personType;
   let url: string | null = null;
 
   for (let i = 0; i < layers.length; i++) {
-    const ref = await fetchImageBytes(layers[i].url);
+    const ref = await fetchImageBytes(new URL(catalogImageUrl(layers[i].url), origin).toString());
     const result = await runYouCamWorkflow({
       feature: "cloth",
       fileBytes: bytes,
@@ -200,11 +206,13 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         const person = personUrl
           ? await fetchImageBytes(personUrl)
           : { bytes, contentType: file.type || "image/jpeg" };
-        const url = await runClothChain(person.bytes, person.contentType, vtoLayers);
+        const url = await runClothChain(person.bytes, person.contentType, vtoLayers, request.nextUrl.origin);
         await recordUsage(visitor, vtoLayers.length); // one render per garment layer
         return { results: url ? { url } : {} };
       }
-      const ref = refImageUrl ? await fetchImageBytes(refImageUrl) : null;
+      const ref = refImageUrl
+        ? await fetchImageBytes(new URL(catalogImageUrl(refImageUrl), request.nextUrl.origin).toString())
+        : null;
       const result = await runYouCamWorkflow({
         feature,
         fileBytes: bytes,

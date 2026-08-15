@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { catalogImageUrl } from "@/lib/catalogImage";
 import type { Product } from "@/lib/types";
 
 // Sephora's CDN answers Access Denied outside its regions, so skip the request entirely.
@@ -8,6 +9,7 @@ const BLOCKED_IMAGE_HOSTS = ["sephora.com"];
 
 function isReachable(src: string): boolean {
   if (!src) return false;
+  if (src.startsWith("/")) return true; // our own catalog copy
   try {
     const host = new URL(src).hostname;
     return !BLOCKED_IMAGE_HOSTS.some((blocked) => host === blocked || host.endsWith(`.${blocked}`));
@@ -67,7 +69,7 @@ function BrandTile({ product }: { product: Product }) {
 // shows the tile rather than spilled alt text.
 function Thumb({ product }: { product: Product }) {
   const [failed, setFailed] = useState(false);
-  const src = product.image_url;
+  const src = catalogImageUrl(product.image_url);
   const showImage = Boolean(src) && isReachable(src) && !failed;
 
   return (

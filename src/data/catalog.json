@@ -487,14 +487,15 @@
     "fit": "regular",
     "price": 54.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-wrapped-waist-mini-dress-in-red/211095668-1-red",
+    "image_url": "/catalog/asos-211095668.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-wrapped-waist-mini-dress-in-red/prd/211095668#colourWayId-211095679",
     "occasion_tags": [
       "date",
       "dinner",
       "evening"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-wrapped-waist-mini-dress-in-red/211095668-1-red"
   },
   {
     "id": "asos-210896631",
@@ -524,14 +525,15 @@
     "fit": "regular",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-boat-neck-waist-detail-midi-dress-in-yellow/210896631-1-yellow",
+    "image_url": "/catalog/asos-210896631.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-boat-neck-waist-detail-midi-dress-in-yellow/prd/210896631#colourWayId-210896640",
     "occasion_tags": [
       "wedding-guest",
       "graduation",
       "vacation"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-boat-neck-waist-detail-midi-dress-in-yellow/210896631-1-yellow"
   },
   {
     "id": "asos-210896598",
@@ -561,14 +563,15 @@
     "fit": "regular",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-boat-neck-waist-detail-midi-dress-in-chocolate/210896598-1-chocolate",
+    "image_url": "/catalog/asos-210896598.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-boat-neck-waist-detail-midi-dress-in-chocolate/prd/210896598#colourWayId-210896601",
     "occasion_tags": [
       "office",
       "dinner",
       "everyday"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-boat-neck-waist-detail-midi-dress-in-chocolate/210896598-1-chocolate"
   },
   {
     "id": "asos-210736993",
@@ -594,14 +597,15 @@
     "fit": "regular",
     "price": 60.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-black/210736993-1-black",
+    "image_url": "/catalog/asos-210736993.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-black/prd/210736993#colourWayId-210736996",
     "occasion_tags": [
       "dinner",
       "office",
       "evening"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-black/210736993-1-black"
   },
   {
     "id": "asos-210071329",
@@ -631,14 +635,15 @@
     "fit": "regular",
     "price": 44.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-lilac/210071329-1-lilac",
+    "image_url": "/catalog/asos-210071329.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-lilac/prd/210071329#colourWayId-210071339",
     "occasion_tags": [
       "vacation",
       "date",
       "everyday"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-lilac/210071329-1-lilac"
   },
   {
     "id": "asos-208071900",
@@ -666,14 +671,15 @@
     "fit": "regular",
     "price": 96,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/yas-plisse-wrap-midi-dress-in-soft-green/208071900-1-chinoisgreen",
+    "image_url": "/catalog/asos-208071900.jpg",
     "product_url": "https://www.asos.com/us/yas/yas-plisse-wrap-midi-dress-in-soft-green/prd/208071900#colourWayId-208071909",
     "occasion_tags": [
       "wedding-guest",
       "office",
       "graduation"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/yas-plisse-wrap-midi-dress-in-soft-green/208071900-1-chinoisgreen"
   },
   {
     "id": "asos-210357004",
@@ -700,14 +706,15 @@
     "fit": "regular",
     "price": 63,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-wrap-midi-dress-in-black/210357004-1-black",
+    "image_url": "/catalog/asos-210357004.jpg",
     "product_url": "https://www.asos.com/us/only/only-wrap-midi-dress-in-black/prd/210357004#colourWayId-210357005",
     "occasion_tags": [
       "dinner",
       "date",
       "office"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/only-wrap-midi-dress-in-black/210357004-1-black"
   },
   {
     "id": "asos-208898085",
@@ -732,13 +739,14 @@
     "fit": "relaxed",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-tailored-relaxed-blazer-in-black/208898085-1-black",
+    "image_url": "/catalog/asos-208898085.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-relaxed-blazer-in-black/prd/208898085#colourWayId-208898113",
     "occasion_tags": [
       "interview",
       "office"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-tailored-relaxed-blazer-in-black/208898085-1-black"
   },
   {
     "id": "asos-210744186",
@@ -764,14 +772,15 @@
     "fit": "regular",
     "price": 99.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-collarless-blazer-in-ivory/210744186-1-ivory",
+    "image_url": "/catalog/asos-210744186.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-collarless-blazer-in-ivory/prd/210744186#colourWayId-210744192",
     "occasion_tags": [
       "interview",
       "office",
       "wedding-guest"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-collarless-blazer-in-ivory/210744186-1-ivory"
   },
   {
     "id": "asos-208996593",
@@ -801,13 +810,14 @@
     "fit": "slim",
     "price": 119,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-ultimate-sculpted-suit-blazer-in-plum/208996593-1-plum",
+    "image_url": "/catalog/asos-208996593.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-ultimate-sculpted-suit-blazer-in-plum/prd/208996593#colourWayId-208996599",
     "occasion_tags": [
       "office",
       "dinner"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-ultimate-sculpted-suit-blazer-in-plum/208996593-1-plum"
   },
   {
     "id": "asos-210120734",
@@ -837,13 +847,14 @@
     "fit": "relaxed",
     "price": 99.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-power-shoulders-double-breasted-blazer-in-soft-pink/210120734-1-pink",
+    "image_url": "/catalog/asos-210120734.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-power-shoulders-double-breasted-blazer-in-soft-pink/grp/210857737#colourWayId-210120736&productId-210120734",
     "occasion_tags": [
       "office",
       "graduation"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-power-shoulders-double-breasted-blazer-in-soft-pink/210120734-1-pink"
   },
   {
     "id": "asos-209879822",
@@ -870,13 +881,14 @@
     "fit": "regular",
     "price": 109,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-fit-high-neck-blazer-in-chocolate-brown/209879822-1-choc",
+    "image_url": "/catalog/asos-209879822.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-fit-high-neck-blazer-in-chocolate-brown/prd/209879822#colourWayId-209879825",
     "occasion_tags": [
       "interview",
       "office"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-fit-high-neck-blazer-in-chocolate-brown/209879822-1-choc"
   },
   {
     "id": "asos-209074015",
@@ -903,13 +915,14 @@
     "fit": "regular",
     "price": 99.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-cinch-waist-blazer-in-mocha/209074015-1-mocha",
+    "image_url": "/catalog/asos-209074015.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-cinch-waist-blazer-in-mocha/prd/209074015#colourWayId-209074024",
     "occasion_tags": [
       "office",
       "everyday"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-cinch-waist-blazer-in-mocha/209074015-1-mocha"
   },
   {
     "id": "asos-210627032",
@@ -935,13 +948,14 @@
     "fit": "slim",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-fitted-shirt-with-ruffles-in-white/210627032-1-white",
+    "image_url": "/catalog/asos-210627032.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-fitted-shirt-with-ruffles-in-white/prd/210627032#colourWayId-210627038",
     "occasion_tags": [
       "interview",
       "office"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-fitted-shirt-with-ruffles-in-white/210627032-1-white"
   },
   {
     "id": "asos-210389821",
@@ -971,14 +985,15 @@
     "fit": "regular",
     "price": 95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topshop-slash-tie-detailing-satin-top-in-blue/210389821-1-blue",
+    "image_url": "/catalog/asos-210389821.jpg",
     "product_url": "https://www.asos.com/us/topshop/topshop-slash-tie-detailing-satin-top-in-blue/prd/210389821#colourWayId-210389827",
     "occasion_tags": [
       "dinner",
       "date",
       "evening"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/topshop-slash-tie-detailing-satin-top-in-blue/210389821-1-blue"
   },
   {
     "id": "asos-211189261",
@@ -1005,14 +1020,15 @@
     "fit": "oversized",
     "price": 78,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/wanderdoll-x-emma-milton-cleo-sheer-chiffon-draped-high-low-cape-top-in-chartreuse-part-of-a-set/211189261-1-green",
+    "image_url": "/catalog/asos-211189261.jpg",
     "product_url": "https://www.asos.com/us/wanderdoll/wanderdoll-x-emma-milton-cleo-sheer-chiffon-draped-high-low-cape-top-in-chartreuse-part-of-a-set/grp/211483108#colourWayId-211189263&productId-211189261",
     "occasion_tags": [
       "dinner",
       "evening",
       "date"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/wanderdoll-x-emma-milton-cleo-sheer-chiffon-draped-high-low-cape-top-in-chartreuse-part-of-a-set/211189261-1-green"
   },
   {
     "id": "asos-209988355",
@@ -1042,14 +1058,15 @@
     "fit": "regular",
     "price": 37.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-lace-trim-satin-cami-top-in-butter-yellow/209988355-1-butteryellow",
+    "image_url": "/catalog/asos-209988355.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-lace-trim-satin-cami-top-in-butter-yellow/prd/209988355#colourWayId-209988356",
     "occasion_tags": [
       "vacation",
       "everyday",
       "date"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-lace-trim-satin-cami-top-in-butter-yellow/209988355-1-butteryellow"
   },
   {
     "id": "asos-209988323",
@@ -1078,13 +1095,14 @@
     "fit": "regular",
     "price": 39.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-curve-satin-lace-trim-long-line-satin-cami-top-in-chocolate/209988323-1-chocolate",
+    "image_url": "/catalog/asos-209988323.jpg",
     "product_url": "https://www.asos.com/us/asos-curve/asos-design-curve-satin-lace-trim-long-line-satin-cami-top-in-chocolate/prd/209988323#colourWayId-209988325",
     "occasion_tags": [
       "dinner",
       "date"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-curve-satin-lace-trim-long-line-satin-cami-top-in-chocolate/209988323-1-chocolate"
   },
   {
     "id": "asos-210547713",
@@ -1114,13 +1132,14 @@
     "fit": "regular",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-crinkle-scarf-detail-top-in-khaki-part-of-a-set/210547713-1-khaki",
+    "image_url": "/catalog/asos-210547713.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-crinkle-scarf-detail-top-in-khaki-part-of-a-set/prd/210547713#colourWayId-210547718",
     "occasion_tags": [
       "everyday",
       "office"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-crinkle-scarf-detail-top-in-khaki-part-of-a-set/210547713-1-khaki"
   },
   {
     "id": "asos-210796785",
@@ -1146,13 +1165,14 @@
     "fit": "regular",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-short-sleeve-button-up-top-with-peter-pan-collar-in-blue/210796785-1-blue",
+    "image_url": "/catalog/asos-210796785.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-short-sleeve-button-up-top-with-peter-pan-collar-in-blue/grp/210950766#colourWayId-210796786&productId-210796785",
     "occasion_tags": [
       "office",
       "everyday"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-short-sleeve-button-up-top-with-peter-pan-collar-in-blue/210796785-1-blue"
   },
   {
     "id": "asos-210899825",
@@ -1182,13 +1202,14 @@
     "fit": "oversized",
     "price": 47.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-tailored-high-waist-culotte-pants-in-black/210899825-1-black",
+    "image_url": "/catalog/asos-210899825.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-high-waist-culotte-pants-in-black/prd/210899825#colourWayId-210899832",
     "occasion_tags": [
       "interview",
       "office"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-tailored-high-waist-culotte-pants-in-black/210899825-1-black"
   },
   {
     "id": "asos-210553018",
@@ -1218,13 +1239,14 @@
     "fit": "wide",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-tailored-pleated-floaty-culotte-pants-in-sage/210553018-1-sage",
+    "image_url": "/catalog/asos-210553018.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-pleated-floaty-culotte-pants-in-sage/prd/210553018#colourWayId-210553029",
     "occasion_tags": [
       "office",
       "everyday"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-tailored-pleated-floaty-culotte-pants-in-sage/210553018-1-sage"
   },
   {
     "id": "asos-211372626",
@@ -1249,13 +1271,14 @@
     "fit": "regular",
     "price": 50,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-curve-satin-wide-leg-pull-on-pants-in-khaki/211372626-1-khaki",
+    "image_url": "/catalog/asos-211372626.jpg",
     "product_url": "https://www.asos.com/us/asos-curve/asos-design-curve-satin-wide-leg-pull-on-pants-in-khaki/prd/211372626#colourWayId-211372640",
     "occasion_tags": [
       "office",
       "dinner"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-curve-satin-wide-leg-pull-on-pants-in-khaki/211372626-1-khaki"
   },
   {
     "id": "asos-210341902",
@@ -1284,14 +1307,15 @@
     "fit": "regular",
     "price": 149,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/arrange-wylder-tailored-high-waist-wide-leg-pants-in-black/210341902-1-black",
+    "image_url": "/catalog/asos-210341902.jpg",
     "product_url": "https://www.asos.com/us/arrange/arrange-wylder-tailored-high-waist-wide-leg-pants-in-black/prd/210341902#colourWayId-210341904",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/arrange-wylder-tailored-high-waist-wide-leg-pants-in-black/210341902-1-black"
   },
   {
     "id": "asos-205790007",
@@ -1321,13 +1345,14 @@
     "fit": "slim",
     "price": 22.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-column-maxi-skirt-in-black/205790007-1-black",
+    "image_url": "/catalog/asos-205790007.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-column-maxi-skirt-in-black/prd/205790007#colourWayId-205790008",
     "occasion_tags": [
       "office",
       "everyday"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-column-maxi-skirt-in-black/205790007-1-black"
   },
   {
     "id": "asos-210360115",
@@ -1354,13 +1379,14 @@
     "fit": "regular",
     "price": 69.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-tailored-pencil-maxi-skirt-in-blue-part-of-a-set/210360115-1-blue",
+    "image_url": "/catalog/asos-210360115.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-pencil-maxi-skirt-in-blue-part-of-a-set/prd/210360115#colourWayId-210360119",
     "occasion_tags": [
       "office",
       "interview"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-tailored-pencil-maxi-skirt-in-blue-part-of-a-set/210360115-1-blue"
   },
   {
     "id": "asos-210483943",
@@ -1389,13 +1415,14 @@
     "fit": "slim",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-glass-sequin-pencil-midi-skirt-in-brown-part-of-a-set/210483943-1-brown",
+    "image_url": "/catalog/asos-210483943.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-glass-sequin-pencil-midi-skirt-in-brown-part-of-a-set/grp/210561532#colourWayId-210483945&productId-210483943",
     "occasion_tags": [
       "evening",
       "dinner"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-glass-sequin-pencil-midi-skirt-in-brown-part-of-a-set/210483943-1-brown"
   },
   {
     "id": "asos-210480942",
@@ -1422,13 +1449,14 @@
     "fit": "regular",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-low-waist-denim-pencil-skirt-in-mid-blue/210480942-1-midblue",
+    "image_url": "/catalog/asos-210480942.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-low-waist-denim-pencil-skirt-in-mid-blue/prd/210480942#colourWayId-210480944",
     "occasion_tags": [
       "everyday",
       "vacation"
     ],
-    "gender": "women"
+    "gender": "women",
+    "source_image_url": "https://images.asos-media.com/products/asos-design-low-waist-denim-pencil-skirt-in-mid-blue/210480942-1-midblue"
   },
   {
     "id": "asos-207150537",
@@ -1447,14 +1475,15 @@
     "primary_color_hex": "#f4f2ec",
     "price": 29.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jj-rebel-smart-shirt-in-white/207150537-1-white",
+    "image_url": "/catalog/asos-207150537.jpg",
     "product_url": "https://www.asos.com/us/jj-rebel/jj-rebel-smart-shirt-in-white/prd/207150537#colourWayId-207150556",
     "occasion_tags": [
       "interview",
       "office",
       "dinner",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jj-rebel-smart-shirt-in-white/207150537-1-white"
   },
   {
     "id": "asos-202681134",
@@ -1473,14 +1502,15 @@
     "primary_color_hex": "#1a1a1a",
     "price": 54,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-fit-stretch-smart-shirt-in-black/202681134-1-black",
+    "image_url": "/catalog/asos-202681134.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-super-slim-fit-stretch-smart-shirt-in-black/prd/202681134#colourWayId-202681135",
     "occasion_tags": [
       "interview",
       "office",
       "dinner",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-fit-stretch-smart-shirt-in-black/202681134-1-black"
   },
   {
     "id": "asos-202676510",
@@ -1499,14 +1529,15 @@
     "primary_color_hex": "#f4f2ec",
     "price": 54,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-fit-stretch-smart-shirt-in-white/202676510-1-white",
+    "image_url": "/catalog/asos-202676510.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-super-slim-fit-stretch-smart-shirt-in-white/prd/202676510#colourWayId-202676511",
     "occasion_tags": [
       "interview",
       "office",
       "dinner",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-fit-stretch-smart-shirt-in-white/202676510-1-white"
   },
   {
     "id": "asos-210314518",
@@ -1525,13 +1556,14 @@
     "primary_color_hex": "#2f4b7c",
     "price": 37.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-regular-fit-brushed-oxford-shirt-in-blue/210314518-1-blue",
+    "image_url": "/catalog/asos-210314518.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-regular-fit-brushed-oxford-shirt-in-blue/prd/210314518#colourWayId-210314520",
     "occasion_tags": [
       "office",
       "smart-casual",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-regular-fit-brushed-oxford-shirt-in-blue/210314518-1-blue"
   },
   {
     "id": "asos-209724968",
@@ -1550,13 +1582,14 @@
     "primary_color_hex": "#2f4b7c",
     "price": 69.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-collective-super-oversized-striped-oxford-shirt-in-blue-and-white/209724968-1-midblue",
+    "image_url": "/catalog/asos-209724968.jpg",
     "product_url": "https://www.asos.com/us/asos-collective/asos-collective-super-oversized-striped-oxford-shirt-in-blue-and-white/prd/209724968#colourWayId-209725000",
     "occasion_tags": [
       "office",
       "smart-casual",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-collective-super-oversized-striped-oxford-shirt-in-blue-and-white/209724968-1-midblue"
   },
   {
     "id": "asos-210537233",
@@ -1575,13 +1608,14 @@
     "primary_color_hex": "#e0d6c2",
     "price": 110,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/tommy-jeans-oxford-shirt-in-blue-green-stripes/210537233-1-ecrustripe",
+    "image_url": "/catalog/asos-210537233.jpg",
     "product_url": "https://www.asos.com/us/tommy-jeans/tommy-jeans-oxford-shirt-in-blue-green-stripes/prd/210537233#colourWayId-210537238",
     "occasion_tags": [
       "office",
       "smart-casual",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/tommy-jeans-oxford-shirt-in-blue-green-stripes/210537233-1-ecrustripe"
   },
   {
     "id": "asos-211094914",
@@ -1600,13 +1634,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 47.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-oversized-knit-notch-with-leaf-print-in-gray/211094914-1-grey",
+    "image_url": "/catalog/asos-211094914.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-oversized-knit-notch-with-leaf-print-in-gray/prd/211094914#colourWayId-211094915",
     "occasion_tags": [
       "casual",
       "weekend",
       "smart-casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-oversized-knit-notch-with-leaf-print-in-gray/211094914-1-grey"
   },
   {
     "id": "asos-210049643",
@@ -1625,13 +1660,14 @@
     "primary_color_hex": "#c07f88",
     "price": 19.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-essentials-muscle-fit-polo-shirt-in-pink/210049643-1-woodrose",
+    "image_url": "/catalog/asos-210049643.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-essentials-muscle-fit-polo-shirt-in-pink/prd/210049643#colourWayId-210049645",
     "occasion_tags": [
       "casual",
       "weekend",
       "smart-casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-essentials-muscle-fit-polo-shirt-in-pink/210049643-1-woodrose"
   },
   {
     "id": "asos-209718421",
@@ -1650,13 +1686,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 18,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-essentials-regular-fit-polo-in-black-pique/209718421-1-black",
+    "image_url": "/catalog/asos-209718421.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-essentials-regular-fit-polo-in-black-pique/prd/209718421#colourWayId-209718428",
     "occasion_tags": [
       "casual",
       "weekend",
       "smart-casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-essentials-regular-fit-polo-in-black-pique/209718421-1-black"
   },
   {
     "id": "asos-210502371",
@@ -1675,12 +1712,13 @@
     "primary_color_hex": "#1a1a1a",
     "price": 34.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-muscle-t-shirt-with-henley-neck-in-black-rib/210502371-1-black",
+    "image_url": "/catalog/asos-210502371.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-muscle-t-shirt-with-henley-neck-in-black-rib/prd/210502371#colourWayId-210502372",
     "occasion_tags": [
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-muscle-t-shirt-with-henley-neck-in-black-rib/210502371-1-black"
   },
   {
     "id": "asos-201948247",
@@ -1699,12 +1737,13 @@
     "primary_color_hex": "#1a1a1a",
     "price": 86,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/allsaints-underground-oversized-t-shirt-in-black/201948247-1-black",
+    "image_url": "/catalog/asos-201948247.jpg",
     "product_url": "https://www.asos.com/us/allsaints/allsaints-underground-oversized-t-shirt-in-black/prd/201948247#colourWayId-201948256",
     "occasion_tags": [
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/allsaints-underground-oversized-t-shirt-in-black/201948247-1-black"
   },
   {
     "id": "asos-210230897",
@@ -1723,12 +1762,13 @@
     "primary_color_hex": "#f4f2ec",
     "price": 39.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-textured-print-shirt-in-white/210230897-1-antiquewhite",
+    "image_url": "/catalog/asos-210230897.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-textured-print-shirt-in-white/prd/210230897#colourWayId-210230903",
     "occasion_tags": [
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-textured-print-shirt-in-white/210230897-1-antiquewhite"
   },
   {
     "id": "asos-209524585",
@@ -1747,14 +1787,15 @@
     "primary_color_hex": "#1a1a1a",
     "price": 119,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-skinny-tuxedo-jacket-in-black/209524585-1-black",
+    "image_url": "/catalog/asos-209524585.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-skinny-tuxedo-jacket-in-black/grp/210195448#colourWayId-209524595&productId-209524585",
     "occasion_tags": [
       "interview",
       "office",
       "wedding",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-skinny-tuxedo-jacket-in-black/209524585-1-black"
   },
   {
     "id": "asos-211192471",
@@ -1773,14 +1814,15 @@
     "primary_color_hex": "#5a3f2b",
     "price": 229.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/mango-boston-regular-fit-double-breasted-suit-blazer-in-mid-brown-part-of-a-set/211192471-1-brown",
+    "image_url": "/catalog/asos-211192471.jpg",
     "product_url": "https://www.asos.com/us/mango/mango-boston-regular-fit-double-breasted-suit-blazer-in-mid-brown-part-of-a-set/prd/211192471#colourWayId-211192478",
     "occasion_tags": [
       "interview",
       "office",
       "wedding",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/mango-boston-regular-fit-double-breasted-suit-blazer-in-mid-brown-part-of-a-set/211192471-1-brown"
   },
   {
     "id": "asos-210229910",
@@ -1799,14 +1841,15 @@
     "primary_color_hex": "#9c8d7d",
     "price": 542,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/allsaints-clover-wool-blend-tailored-blazer-in-taupe-brown-part-of-a-set/210229910-1-feathertaupe",
+    "image_url": "/catalog/asos-210229910.jpg",
     "product_url": "https://www.asos.com/us/allsaints/allsaints-clover-wool-blend-tailored-blazer-in-taupe-brown-part-of-a-set/prd/210229910#colourWayId-210229917",
     "occasion_tags": [
       "interview",
       "office",
       "wedding",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/allsaints-clover-wool-blend-tailored-blazer-in-taupe-brown-part-of-a-set/210229910-1-feathertaupe"
   },
   {
     "id": "asos-207150762",
@@ -1825,14 +1868,15 @@
     "primary_color_hex": "#c8b79a",
     "price": 27.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jj-rebel-slim-fit-chino-pants-in-beige/207150762-1-crockery",
+    "image_url": "/catalog/asos-207150762.jpg",
     "product_url": "https://www.asos.com/us/jj-rebel/jj-rebel-slim-fit-chino-pants-in-beige/prd/207150762#colourWayId-207150784",
     "occasion_tags": [
       "office",
       "smart-casual",
       "dinner",
       "casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jj-rebel-slim-fit-chino-pants-in-beige/207150762-1-crockery"
   },
   {
     "id": "asos-207150975",
@@ -1851,14 +1895,15 @@
     "primary_color_hex": "#1f2a44",
     "price": 27.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jj-rebel-slim-fit-chino-pants-in-navy/207150975-1-navyblazer",
+    "image_url": "/catalog/asos-207150975.jpg",
     "product_url": "https://www.asos.com/us/jj-rebel/jj-rebel-slim-fit-chino-pants-in-navy/prd/207150975#colourWayId-207150978",
     "occasion_tags": [
       "office",
       "smart-casual",
       "dinner",
       "casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jj-rebel-slim-fit-chino-pants-in-navy/207150975-1-navyblazer"
   },
   {
     "id": "asos-210139102",
@@ -1877,14 +1922,15 @@
     "primary_color_hex": "#1a1a1a",
     "price": 42.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-chinos-in-black/210139102-1-black",
+    "image_url": "/catalog/asos-210139102.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-chinos-in-black/prd/210139102#colourWayId-210139149",
     "occasion_tags": [
       "office",
       "smart-casual",
       "dinner",
       "casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-chinos-in-black/210139102-1-black"
   },
   {
     "id": "asos-204404429",
@@ -1903,12 +1949,13 @@
     "primary_color_hex": "#1a1a1a",
     "price": 42.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-stretch-slim-jeans-in-black/204404429-1-black",
+    "image_url": "/catalog/asos-204404429.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-stretch-slim-jeans-in-black/prd/204404429#colourWayId-204404430",
     "occasion_tags": [
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-stretch-slim-jeans-in-black/204404429-1-black"
   },
   {
     "id": "asos-210016182",
@@ -1927,12 +1974,13 @@
     "primary_color_hex": "#2f4b7c",
     "price": 45,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-glenn-slim-fit-jeans-in-mid-blue/210016182-1-bluedenim",
+    "image_url": "/catalog/asos-210016182.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-glenn-slim-fit-jeans-in-mid-blue/prd/210016182#colourWayId-210016186",
     "occasion_tags": [
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-glenn-slim-fit-jeans-in-mid-blue/210016182-1-bluedenim"
   },
   {
     "id": "asos-207150621",
@@ -1951,12 +1999,13 @@
     "primary_color_hex": "#1a1a1a",
     "price": 34.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jj-rebel-luke-slim-fit-jeans-in-black/207150621-1-blackdenim",
+    "image_url": "/catalog/asos-207150621.jpg",
     "product_url": "https://www.asos.com/us/jj-rebel/jj-rebel-luke-slim-fit-jeans-in-black/prd/207150621#colourWayId-207150630",
     "occasion_tags": [
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jj-rebel-luke-slim-fit-jeans-in-black/207150621-1-blackdenim"
   },
   {
     "id": "asos-211447038",
@@ -1975,13 +2024,14 @@
     "primary_color_hex": "#2f4b7c",
     "price": 99.98,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-3-piece-suit-in-blue/210149171-2",
+    "image_url": "/catalog/asos-211447038.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-3-piece-suit-in-blue/grp/211447038#colourWayId-210148488",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-3-piece-suit-in-blue/210149171-2"
   },
   {
     "id": "asos-210149182",
@@ -2000,13 +2050,14 @@
     "primary_color_hex": "#2f4b7c",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-suit-pants-in-blue/210149182-1-brightblue",
+    "image_url": "/catalog/asos-210149182.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-suit-pants-in-blue/grp/211447038#colourWayId-210149183&productId-210149182",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-suit-pants-in-blue/210149182-1-brightblue"
   },
   {
     "id": "asos-210126254",
@@ -2025,13 +2076,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-skinny-suit-pants-in-black/210126254-1-black",
+    "image_url": "/catalog/asos-210126254.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-skinny-suit-pants-in-black/grp/210881547#colourWayId-210126263&productId-210126254",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-skinny-suit-pants-in-black/210126254-1-black"
   },
   {
     "id": "asos-210389739",
@@ -2050,14 +2102,15 @@
     "primary_color_hex": "#1a1a1a",
     "price": 94.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-lace-midi-dress-in-black/210389739-1-black",
+    "image_url": "/catalog/asos-210389739.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-lace-midi-dress-in-black/prd/210389739#colourWayId-210389743",
     "occasion_tags": [
       "dinner",
       "date",
       "wedding-guest",
       "evening"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-lace-midi-dress-in-black/210389739-1-black"
   },
   {
     "id": "asos-210218277",
@@ -2076,14 +2129,15 @@
     "primary_color_hex": "#7c7048",
     "price": 79.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-satin-lace-applique-midi-dress-in-khaki/210218277-1-khaki",
+    "image_url": "/catalog/asos-210218277.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-satin-lace-applique-midi-dress-in-khaki/prd/210218277#colourWayId-210218282",
     "occasion_tags": [
       "dinner",
       "date",
       "wedding-guest",
       "evening"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-satin-lace-applique-midi-dress-in-khaki/210218277-1-khaki"
   },
   {
     "id": "asos-210737155",
@@ -2102,14 +2156,15 @@
     "primary_color_hex": "#9b2d2d",
     "price": 54.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-burnt-red/210737155-1-burntred",
+    "image_url": "/catalog/asos-210737155.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-burnt-red/prd/210737155#colourWayId-210737165",
     "occasion_tags": [
       "dinner",
       "date",
       "wedding-guest",
       "evening"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-burnt-red/210737155-1-burntred"
   },
   {
     "id": "asos-210569883",
@@ -2128,13 +2183,14 @@
     "primary_color_hex": "#5b5a2f",
     "price": 94.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-off-the-shoulder-wrap-bodice-detailing-maxi-dress-with-train-in-green/210569883-1-olive",
+    "image_url": "/catalog/asos-210569883.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-off-the-shoulder-wrap-bodice-detailing-maxi-dress-with-train-in-green/prd/210569883#colourWayId-210569907",
     "occasion_tags": [
       "wedding-guest",
       "evening",
       "vacation"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-off-the-shoulder-wrap-bodice-detailing-maxi-dress-with-train-in-green/210569883-1-olive"
   },
   {
     "id": "asos-210749908",
@@ -2153,13 +2209,14 @@
     "primary_color_hex": "#3f5e3f",
     "price": 129,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-scoop-neck-maxi-dress-with-asymmetric-fringe-in-olive-green/210749908-1-olivegreen",
+    "image_url": "/catalog/asos-210749908.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-scoop-neck-maxi-dress-with-asymmetric-fringe-in-olive-green/prd/210749908#colourWayId-210749910",
     "occasion_tags": [
       "wedding-guest",
       "evening",
       "vacation"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-scoop-neck-maxi-dress-with-asymmetric-fringe-in-olive-green/210749908-1-olivegreen"
   },
   {
     "id": "asos-210897641",
@@ -2178,13 +2235,14 @@
     "primary_color_hex": "#4d2f33",
     "price": 74.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-plisse-contrast-draped-halter-neck-maxi-dress-in-rum-raisin/210897641-1-rumraisin",
+    "image_url": "/catalog/asos-210897641.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-plisse-contrast-draped-halter-neck-maxi-dress-in-rum-raisin/prd/210897641#colourWayId-210897645",
     "occasion_tags": [
       "wedding-guest",
       "evening",
       "vacation"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-plisse-contrast-draped-halter-neck-maxi-dress-in-rum-raisin/210897641-1-rumraisin"
   },
   {
     "id": "asos-210619086",
@@ -2203,13 +2261,14 @@
     "primary_color_hex": "#4a3222",
     "price": 84.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-satin-maxi-dress-with-godets-in-chocolate-brown/210619086-1-chocolate",
+    "image_url": "/catalog/asos-210619086.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-satin-maxi-dress-with-godets-in-chocolate-brown/prd/210619086#colourWayId-210619095",
     "occasion_tags": [
       "evening",
       "date",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-satin-maxi-dress-with-godets-in-chocolate-brown/210619086-1-chocolate"
   },
   {
     "id": "asos-210413891",
@@ -2228,13 +2287,14 @@
     "primary_color_hex": "#e0d6c2",
     "price": 169,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-premium-embroidered-ruffle-detail-maxi-dress-in-ecru/210413891-1-ecru",
+    "image_url": "/catalog/asos-210413891.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-premium-embroidered-ruffle-detail-maxi-dress-in-ecru/prd/210413891#colourWayId-210413892",
     "occasion_tags": [
       "evening",
       "date",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-premium-embroidered-ruffle-detail-maxi-dress-in-ecru/210413891-1-ecru"
   },
   {
     "id": "asos-210484681",
@@ -2253,13 +2313,14 @@
     "primary_color_hex": "#5b5a2f",
     "price": 139,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-scattered-paillette-sequins-scoop-neck-maxi-dress-in-dark-olive/210484681-1-darkolive",
+    "image_url": "/catalog/asos-210484681.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-scattered-paillette-sequins-scoop-neck-maxi-dress-in-dark-olive/prd/210484681#colourWayId-210484682",
     "occasion_tags": [
       "evening",
       "date",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-scattered-paillette-sequins-scoop-neck-maxi-dress-in-dark-olive/210484681-1-darkolive"
   },
   {
     "id": "asos-210298298",
@@ -2278,13 +2339,14 @@
     "primary_color_hex": "#4a3222",
     "price": 69.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-shirt-mini-dress-with-puff-sleeve-and-tie-detail-in-chocolate/210298298-1-chocolate",
+    "image_url": "/catalog/asos-210298298.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-shirt-mini-dress-with-puff-sleeve-and-tie-detail-in-chocolate/prd/210298298#colourWayId-210298299",
     "occasion_tags": [
       "office",
       "everyday",
       "smart-casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-shirt-mini-dress-with-puff-sleeve-and-tie-detail-in-chocolate/210298298-1-chocolate"
   },
   {
     "id": "asos-210337102",
@@ -2303,13 +2365,14 @@
     "primary_color_hex": "#e6dbba",
     "price": 79.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-wide-cuffs-mini-shirt-dress-in-buttermilk/210337102-1-parsnip",
+    "image_url": "/catalog/asos-210337102.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-wide-cuffs-mini-shirt-dress-in-buttermilk/prd/210337102#colourWayId-210337111",
     "occasion_tags": [
       "office",
       "everyday",
       "smart-casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-wide-cuffs-mini-shirt-dress-in-buttermilk/210337102-1-parsnip"
   },
   {
     "id": "asos-210646754",
@@ -2328,13 +2391,14 @@
     "primary_color_hex": "#3fa8a0",
     "price": 189,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-open-back-cluster-embellished-mini-t-shirt-dress-in-turquoise/210646754-1-turquoise",
+    "image_url": "/catalog/asos-210646754.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-open-back-cluster-embellished-mini-t-shirt-dress-in-turquoise/prd/210646754#colourWayId-210646770",
     "occasion_tags": [
       "office",
       "everyday",
       "smart-casual"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-open-back-cluster-embellished-mini-t-shirt-dress-in-turquoise/210646754-1-turquoise"
   },
   {
     "id": "asos-210079084",
@@ -2353,13 +2417,14 @@
     "primary_color_hex": "#3f5e3f",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-midi-slip-dress-with-scarf-in-green/210079084-1-green",
+    "image_url": "/catalog/asos-210079084.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-midi-slip-dress-with-scarf-in-green/prd/210079084#colourWayId-210079095",
     "occasion_tags": [
       "date",
       "evening",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-midi-slip-dress-with-scarf-in-green/210079084-1-green"
   },
   {
     "id": "asos-210969555",
@@ -2378,13 +2443,14 @@
     "primary_color_hex": "#b57f2a",
     "price": 119,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topshop-viscose-satin-low-scoop-flood-length-maxi-slip-dress-in-abstract-ochre-print/210969555-1-abstractochre",
+    "image_url": "/catalog/asos-210969555.jpg",
     "product_url": "https://www.asos.com/us/topshop/topshop-viscose-satin-low-scoop-flood-length-maxi-slip-dress-in-abstract-ochre-print/prd/210969555#colourWayId-210969570",
     "occasion_tags": [
       "date",
       "evening",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/topshop-viscose-satin-low-scoop-flood-length-maxi-slip-dress-in-abstract-ochre-print/210969555-1-abstractochre"
   },
   {
     "id": "asos-209959033",
@@ -2403,13 +2469,14 @@
     "primary_color_hex": "#7a6a5c",
     "price": 119,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topshop-satin-v-neck-maxi-slip-dress-with-lace-inserts-in-mole/209959033-1-mole",
+    "image_url": "/catalog/asos-209959033.jpg",
     "product_url": "https://www.asos.com/us/topshop/topshop-satin-v-neck-maxi-slip-dress-with-lace-inserts-in-mole/prd/209959033#colourWayId-209959043",
     "occasion_tags": [
       "date",
       "evening",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/topshop-satin-v-neck-maxi-slip-dress-with-lace-inserts-in-mole/209959033-1-mole"
   },
   {
     "id": "asos-210218457",
@@ -2428,13 +2495,14 @@
     "primary_color_hex": "#c9a94a",
     "price": 59.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-high-neck-drape-front-extreme-cape-sleeve-mini-dress-in-yellow/210218457-1-yellow",
+    "image_url": "/catalog/asos-210218457.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-high-neck-drape-front-extreme-cape-sleeve-mini-dress-in-yellow/prd/210218457#colourWayId-210218462",
     "occasion_tags": [
       "office",
       "dinner",
       "wedding-guest"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-high-neck-drape-front-extreme-cape-sleeve-mini-dress-in-yellow/210218457-1-yellow"
   },
   {
     "id": "asos-209989424",
@@ -2453,13 +2521,14 @@
     "primary_color_hex": "#5a1f2a",
     "price": 47.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-burgundy-scarf-print/209989424-1-burgundyscarfprint",
+    "image_url": "/catalog/asos-209989424.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-burgundy-scarf-print/prd/209989424#colourWayId-209989428",
     "occasion_tags": [
       "office",
       "dinner",
       "wedding-guest"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-burgundy-scarf-print/209989424-1-burgundyscarfprint"
   },
   {
     "id": "asos-211035191",
@@ -2478,13 +2547,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 47.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-plunge-waisted-mini-dress-in-black/211035191-1-black",
+    "image_url": "/catalog/asos-211035191.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-plunge-waisted-mini-dress-in-black/prd/211035191#colourWayId-211035194",
     "occasion_tags": [
       "office",
       "dinner",
       "wedding-guest"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-plunge-waisted-mini-dress-in-black/211035191-1-black"
   },
   {
     "id": "asos-211434700",
@@ -2503,13 +2573,14 @@
     "primary_color_hex": "#5c2230",
     "price": 139.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/mango-iguana-tie-waist-tailored-blazer-in-maroon-part-of-a-set/211434700-1-maroon",
+    "image_url": "/catalog/asos-211434700.jpg",
     "product_url": "https://www.asos.com/us/mango/mango-iguana-tie-waist-tailored-blazer-in-maroon-part-of-a-set/grp/211582964#colourWayId-211434701&productId-211434700",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/mango-iguana-tie-waist-tailored-blazer-in-maroon-part-of-a-set/211434700-1-maroon"
   },
   {
     "id": "asos-209932451",
@@ -2528,13 +2599,14 @@
     "primary_color_hex": "#b8ab95",
     "price": 209,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/arrange-structured-tailored-blazer-in-stone-part-of-a-set/209932451-1-stone",
+    "image_url": "/catalog/asos-209932451.jpg",
     "product_url": "https://www.asos.com/us/arrange/arrange-structured-tailored-blazer-in-stone-part-of-a-set/grp/210571297#colourWayId-209932454&productId-209932451",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/arrange-structured-tailored-blazer-in-stone-part-of-a-set/209932451-1-stone"
   },
   {
     "id": "asos-210650973",
@@ -2553,13 +2625,14 @@
     "primary_color_hex": "#ece3d2",
     "price": 154.98,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-tailored-blazer-with-neck-scarf-detail-and-maxi-skirt-set-in-cream/210192391-2",
+    "image_url": "/catalog/asos-210650973.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-blazer-with-neck-scarf-detail-and-maxi-skirt-set-in-cream/grp/210650973#colourWayId-210192404",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-tailored-blazer-with-neck-scarf-detail-and-maxi-skirt-set-in-cream/210192391-2"
   },
   {
     "id": "asos-210037767",
@@ -2578,13 +2651,14 @@
     "primary_color_hex": "#f4f2ec",
     "price": 69.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-tie-front-blouse-in-white/210037767-1-white",
+    "image_url": "/catalog/asos-210037767.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-tie-front-blouse-in-white/prd/210037767#colourWayId-210037768",
     "occasion_tags": [
       "office",
       "dinner",
       "interview"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-tie-front-blouse-in-white/210037767-1-white"
   },
   {
     "id": "asos-209825443",
@@ -2603,13 +2677,14 @@
     "primary_color_hex": "#5b3a4a",
     "price": 53.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/miss-selfridge-satin-tie-front-blouse-in-fig/209825443-1-fig",
+    "image_url": "/catalog/asos-209825443.jpg",
     "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-satin-tie-front-blouse-in-fig/prd/209825443#colourWayId-209825471",
     "occasion_tags": [
       "office",
       "dinner",
       "interview"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/miss-selfridge-satin-tie-front-blouse-in-fig/209825443-1-fig"
   },
   {
     "id": "asos-210739626",
@@ -2628,13 +2703,14 @@
     "primary_color_hex": "#c8b79a",
     "price": 75,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/lioness-femme-puff-sleeve-button-up-blouse-in-gray/210739626-1-beige",
+    "image_url": "/catalog/asos-210739626.jpg",
     "product_url": "https://www.asos.com/us/lioness/lioness-femme-puff-sleeve-button-up-blouse-in-gray/prd/210739626#colourWayId-210739627",
     "occasion_tags": [
       "office",
       "dinner",
       "interview"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/lioness-femme-puff-sleeve-button-up-blouse-in-gray/210739626-1-beige"
   },
   {
     "id": "asos-211051306",
@@ -2653,13 +2729,14 @@
     "primary_color_hex": "#9b2d2d",
     "price": 47.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-knit-cinched-top-in-red-stripe/211051306-1-redstripe",
+    "image_url": "/catalog/asos-211051306.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-knit-cinched-top-in-red-stripe/prd/211051306#colourWayId-211051318",
     "occasion_tags": [
       "everyday",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-knit-cinched-top-in-red-stripe/211051306-1-redstripe"
   },
   {
     "id": "asos-210835892",
@@ -2678,13 +2755,14 @@
     "primary_color_hex": "#36393b",
     "price": 46,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/the-frolic-exclusive-sleeveless-asymmetric-button-knit-top-in-white/210835892-1-charcoal",
+    "image_url": "/catalog/asos-210835892.jpg",
     "product_url": "https://www.asos.com/us/the-frolic/the-frolic-exclusive-sleeveless-asymmetric-button-knit-top-in-white/prd/210835892#colourWayId-210835894",
     "occasion_tags": [
       "everyday",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/the-frolic-exclusive-sleeveless-asymmetric-button-knit-top-in-white/210835892-1-charcoal"
   },
   {
     "id": "asos-211550334",
@@ -2703,13 +2781,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 69.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/mango-knit-polo-shirt-in-blue-and-gray/211550334-1-grey",
+    "image_url": "/catalog/asos-211550334.jpg",
     "product_url": "https://www.asos.com/us/mango/mango-knit-polo-shirt-in-blue-and-gray/prd/211550334#colourWayId-211550335",
     "occasion_tags": [
       "everyday",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/mango-knit-polo-shirt-in-blue-and-gray/211550334-1-grey"
   },
   {
     "id": "asos-207969313",
@@ -2728,13 +2807,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 51,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/monki-high-waist-wide-leg-tailored-pants-in-dark-gray-melange/207969313-1-grey",
+    "image_url": "/catalog/asos-207969313.jpg",
     "product_url": "https://www.asos.com/us/monki/monki-high-waist-wide-leg-tailored-pants-in-dark-gray-melange/prd/207969313#colourWayId-207969316",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/monki-high-waist-wide-leg-tailored-pants-in-dark-gray-melange/207969313-1-grey"
   },
   {
     "id": "asos-208884796",
@@ -2753,13 +2833,14 @@
     "primary_color_hex": "#5a3f2b",
     "price": 54,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/vero-moda-tall-dad-fit-tailored-pants-in-chocolate/208884796-1-chocolatebrown",
+    "image_url": "/catalog/asos-208884796.jpg",
     "product_url": "https://www.asos.com/us/vero-moda-tall/vero-moda-tall-dad-fit-tailored-pants-in-chocolate/prd/208884796#colourWayId-208884827",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/vero-moda-tall-dad-fit-tailored-pants-in-chocolate/208884796-1-chocolatebrown"
   },
   {
     "id": "asos-209805013",
@@ -2778,13 +2859,14 @@
     "primary_color_hex": "#59684a",
     "price": 51,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/vero-moda-tall-straight-leg-tailored-pants-in-green-part-of-a-set/209805013-1-laurelwreath",
+    "image_url": "/catalog/asos-209805013.jpg",
     "product_url": "https://www.asos.com/us/vero-moda-tall/vero-moda-tall-straight-leg-tailored-pants-in-green-part-of-a-set/grp/210591405#colourWayId-209805025&productId-209805013",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/vero-moda-tall-straight-leg-tailored-pants-in-green-part-of-a-set/209805013-1-laurelwreath"
   },
   {
     "id": "asos-211105775",
@@ -2803,13 +2885,14 @@
     "primary_color_hex": "#a4907c",
     "price": 65,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topshop-organza-drape-detail-midi-skirt-in-mink/211105775-1-mink",
+    "image_url": "/catalog/asos-211105775.jpg",
     "product_url": "https://www.asos.com/us/topshop/topshop-organza-drape-detail-midi-skirt-in-mink/prd/211105775#colourWayId-211105778",
     "occasion_tags": [
       "office",
       "dinner",
       "everyday"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/topshop-organza-drape-detail-midi-skirt-in-mink/211105775-1-mink"
   },
   {
     "id": "asos-211449820",
@@ -2828,13 +2911,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 63,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jdy-lace-trim-satin-maxi-skirt-in-black-polka-dot-print/211449820-1-blackcloud",
+    "image_url": "/catalog/asos-211449820.jpg",
     "product_url": "https://www.asos.com/us/jdy/jdy-lace-trim-satin-maxi-skirt-in-black-polka-dot-print/prd/211449820#colourWayId-211449822",
     "occasion_tags": [
       "office",
       "dinner",
       "everyday"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jdy-lace-trim-satin-maxi-skirt-in-black-polka-dot-print/211449820-1-blackcloud"
   },
   {
     "id": "asos-210900124",
@@ -2853,13 +2937,14 @@
     "primary_color_hex": "#c26b3a",
     "price": 75,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topshop-drop-waist-full-circle-midi-skirt-in-orange-abstract-striped-print-part-of-a-set/210900124-1-orange",
+    "image_url": "/catalog/asos-210900124.jpg",
     "product_url": "https://www.asos.com/us/topshop/topshop-drop-waist-full-circle-midi-skirt-in-orange-abstract-striped-print-part-of-a-set/grp/211637150#colourWayId-210900133&productId-210900124",
     "occasion_tags": [
       "office",
       "dinner",
       "everyday"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/topshop-drop-waist-full-circle-midi-skirt-in-orange-abstract-striped-print-part-of-a-set/210900124-1-orange"
   },
   {
     "id": "asos-210080716",
@@ -2878,13 +2963,14 @@
     "primary_color_hex": "#5a3f2b",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-carrot-fit-suit-pants-in-brown/210080716-1-brown",
+    "image_url": "/catalog/asos-210080716.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-carrot-fit-suit-pants-in-brown/grp/211480115#colourWayId-210080721&productId-210080716",
     "occasion_tags": [
       "interview",
       "wedding",
       "office"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-carrot-fit-suit-pants-in-brown/210080716-1-brown"
   },
   {
     "id": "asos-209482066",
@@ -2903,13 +2989,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 49.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-skinny-tuxedo-pants-in-black/209482066-1-black",
+    "image_url": "/catalog/asos-209482066.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-skinny-tuxedo-pants-in-black/grp/210195448#colourWayId-209482072&productId-209482066",
     "occasion_tags": [
       "interview",
       "wedding",
       "office"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-skinny-tuxedo-pants-in-black/209482066-1-black"
   },
   {
     "id": "asos-210225959",
@@ -2928,13 +3015,14 @@
     "primary_color_hex": "#8a7663",
     "price": 129,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-tailored-pants-in-brown-part-of-a-set/210225959-1-morel",
+    "image_url": "/catalog/asos-210225959.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-super-slim-tailored-pants-in-brown-part-of-a-set/grp/210723431#colourWayId-210225967&productId-210225959",
     "occasion_tags": [
       "interview",
       "wedding",
       "office"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-tailored-pants-in-brown-part-of-a-set/210225959-1-morel"
   },
   {
     "id": "asos-206195387",
@@ -2953,13 +3041,14 @@
     "primary_color_hex": "#5f6b4a",
     "price": 58,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-sons-linen-mix-long-sleeve-shirt-in-sage/206195387-1-swamp",
+    "image_url": "/catalog/asos-206195387.jpg",
     "product_url": "https://www.asos.com/us/only-sons/only-sons-linen-mix-long-sleeve-shirt-in-sage/prd/206195387#colourWayId-206195429",
     "occasion_tags": [
       "vacation",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/only-sons-linen-mix-long-sleeve-shirt-in-sage/206195387-1-swamp"
   },
   {
     "id": "asos-204402083",
@@ -2978,13 +3067,14 @@
     "primary_color_hex": "#f4f2ec",
     "price": 58,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-sons-linen-blend-long-sleeve-slim-fit-shirt-in-white/204402083-1-white",
+    "image_url": "/catalog/asos-204402083.jpg",
     "product_url": "https://www.asos.com/us/only-sons/only-sons-linen-blend-long-sleeve-slim-fit-shirt-in-white/prd/204402083#colourWayId-204402138",
     "occasion_tags": [
       "vacation",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/only-sons-linen-blend-long-sleeve-slim-fit-shirt-in-white/204402083-1-white"
   },
   {
     "id": "asos-209729019",
@@ -3003,13 +3093,14 @@
     "primary_color_hex": "#c8b79a",
     "price": 54.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-oversized-overhead-linen-blend-shirt-in-beige-part-of-a-set/209729019-1-beige",
+    "image_url": "/catalog/asos-209729019.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-oversized-overhead-linen-blend-shirt-in-beige-part-of-a-set/prd/209729019#colourWayId-209729021",
     "occasion_tags": [
       "vacation",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-oversized-overhead-linen-blend-shirt-in-beige-part-of-a-set/209729019-1-beige"
   },
   {
     "id": "asos-209651241",
@@ -3028,13 +3119,14 @@
     "primary_color_hex": "#e0d6c2",
     "price": 70,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topman-relaxed-fit-short-sleeve-twill-cropped-overshirt-in-contrast-ecru/209651241-1-ecru",
+    "image_url": "/catalog/asos-209651241.jpg",
     "product_url": "https://www.asos.com/us/topman/topman-relaxed-fit-short-sleeve-twill-cropped-overshirt-in-contrast-ecru/prd/209651241#colourWayId-209651258",
     "occasion_tags": [
       "smart-casual",
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/topman-relaxed-fit-short-sleeve-twill-cropped-overshirt-in-contrast-ecru/209651241-1-ecru"
   },
   {
     "id": "asos-210501006",
@@ -3053,13 +3145,14 @@
     "primary_color_hex": "#d0705c",
     "price": 75,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/topman-boxy-fit-jersey-shacket-in-coral/210501006-1-coral",
+    "image_url": "/catalog/asos-210501006.jpg",
     "product_url": "https://www.asos.com/us/topman/topman-boxy-fit-jersey-shacket-in-coral/prd/210501006#colourWayId-210501007",
     "occasion_tags": [
       "smart-casual",
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/topman-boxy-fit-jersey-shacket-in-coral/210501006-1-coral"
   },
   {
     "id": "asos-210348945",
@@ -3078,13 +3171,14 @@
     "primary_color_hex": "#c26b3a",
     "price": 70,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/liquor-n-poker-long-sleeve-shirt-in-burnt-orange-plaid/210348945-1-orangecheck",
+    "image_url": "/catalog/asos-210348945.jpg",
     "product_url": "https://www.asos.com/us/liquor-n-poker/liquor-n-poker-long-sleeve-shirt-in-burnt-orange-plaid/prd/210348945#colourWayId-210348946",
     "occasion_tags": [
       "smart-casual",
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/liquor-n-poker-long-sleeve-shirt-in-burnt-orange-plaid/210348945-1-orangecheck"
   },
   {
     "id": "asos-209320069",
@@ -3103,13 +3197,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 59.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-gray/209320069-1-mediumgreymelange",
+    "image_url": "/catalog/asos-209320069.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-knitted-polo-in-gray/prd/209320069#colourWayId-209320071",
     "occasion_tags": [
       "dinner",
       "smart-casual",
       "date"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-gray/209320069-1-mediumgreymelange"
   },
   {
     "id": "asos-210225889",
@@ -3128,13 +3223,14 @@
     "primary_color_hex": "#d6c65c",
     "price": 49.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-beige/210225889-1-lemonpepper",
+    "image_url": "/catalog/asos-210225889.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-knitted-polo-in-beige/prd/210225889#colourWayId-210225896",
     "occasion_tags": [
       "dinner",
       "smart-casual",
       "date"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-beige/210225889-1-lemonpepper"
   },
   {
     "id": "asos-210226008",
@@ -3153,13 +3249,14 @@
     "primary_color_hex": "#8a7663",
     "price": 49.95,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-beige/210226008-1-morel",
+    "image_url": "/catalog/asos-210226008.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-knitted-polo-in-beige/prd/210226008#colourWayId-210226010",
     "occasion_tags": [
       "dinner",
       "smart-casual",
       "date"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-beige/210226008-1-morel"
   },
   {
     "id": "asos-209814822",
@@ -3178,13 +3275,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 45,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-toby-wide-leg-tailored-pants-in-black/209814822-1-black",
+    "image_url": "/catalog/asos-209814822.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-toby-wide-leg-tailored-pants-in-black/prd/209814822#colourWayId-209814829",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-toby-wide-leg-tailored-pants-in-black/209814822-1-black"
   },
   {
     "id": "asos-211133498",
@@ -3203,13 +3301,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 96,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/weekday-wide-leg-tailored-pants-in-dark-gray-pinstripe/211133498-1-greypinstripe",
+    "image_url": "/catalog/asos-211133498.jpg",
     "product_url": "https://www.asos.com/us/weekday/weekday-wide-leg-tailored-pants-in-dark-gray-pinstripe/prd/211133498#colourWayId-211133499",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/weekday-wide-leg-tailored-pants-in-dark-gray-pinstripe/211133498-1-greypinstripe"
   },
   {
     "id": "asos-210068291",
@@ -3228,13 +3327,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 45,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-wide-fit-tailored-pants-in-gray/210068291-1-greymelange",
+    "image_url": "/catalog/asos-210068291.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-wide-fit-tailored-pants-in-gray/prd/210068291#colourWayId-210068293",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-wide-fit-tailored-pants-in-gray/210068291-1-greymelange"
   },
   {
     "id": "asos-209801944",
@@ -3253,13 +3353,14 @@
     "primary_color_hex": "#1a1a1a",
     "price": 94.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-black/209801944-1-black",
+    "image_url": "/catalog/asos-209801944.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-double-breasted-suit-jacket-in-black/grp/210510238#colourWayId-209801948&productId-209801944",
     "occasion_tags": [
       "interview",
       "wedding",
       "office"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-black/209801944-1-black"
   },
   {
     "id": "asos-210176518",
@@ -3278,13 +3379,14 @@
     "primary_color_hex": "#8a8a8a",
     "price": 94.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-light-gray/210176518-1-lightgrey",
+    "image_url": "/catalog/asos-210176518.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-double-breasted-suit-jacket-in-light-gray/grp/211458921#colourWayId-210176534&productId-210176518",
     "occasion_tags": [
       "interview",
       "wedding",
       "office"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-light-gray/210176518-1-lightgrey"
   },
   {
     "id": "asos-210176868",
@@ -3303,13 +3405,14 @@
     "primary_color_hex": "#36393b",
     "price": 94.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-charcoal/210176868-1-charcoal",
+    "image_url": "/catalog/asos-210176868.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-double-breasted-suit-jacket-in-charcoal/grp/211452507#colourWayId-210176871&productId-210176868",
     "occasion_tags": [
       "interview",
       "wedding",
       "office"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-charcoal/210176868-1-charcoal"
   },
   {
     "id": "asos-209717083",
@@ -3328,13 +3431,14 @@
     "primary_color_hex": "#5a3f2b",
     "price": 161.7,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/arket-cotton-rich-corduroy-tailored-blazer-in-dark-brown-part-of-a-set/209717083-1-darkbrown",
+    "image_url": "/catalog/asos-209717083.jpg",
     "product_url": "https://www.asos.com/us/arket/arket-cotton-rich-corduroy-tailored-blazer-in-dark-brown-part-of-a-set/grp/210295959#colourWayId-209717085&productId-209717083",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/arket-cotton-rich-corduroy-tailored-blazer-in-dark-brown-part-of-a-set/209717083-1-darkbrown"
   },
   {
     "id": "asos-210485049",
@@ -3353,13 +3457,14 @@
     "primary_color_hex": "#f4f2ec",
     "price": 119,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-tailored-relaxed-mensy-blazer-in-white/210485049-1-white",
+    "image_url": "/catalog/asos-210485049.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-relaxed-mensy-blazer-in-white/prd/210485049#colourWayId-210485052",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-tailored-relaxed-mensy-blazer-in-white/210485049-1-white"
   },
   {
     "id": "asos-209534995",
@@ -3378,13 +3483,14 @@
     "primary_color_hex": "#5a3f2b",
     "price": 135,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/mango-bergamo-premium-wool-mix-tailored-suit-blazer-in-brown-part-of-a-set/209534995-1-brown",
+    "image_url": "/catalog/asos-209534995.jpg",
     "product_url": "https://www.asos.com/us/mango/mango-bergamo-premium-wool-mix-tailored-suit-blazer-in-brown-part-of-a-set/grp/210161769#colourWayId-209535011&productId-209534995",
     "occasion_tags": [
       "interview",
       "office",
       "dinner"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/mango-bergamo-premium-wool-mix-tailored-suit-blazer-in-brown-part-of-a-set/209534995-1-brown"
   },
   {
     "id": "asos-202614093",
@@ -3403,13 +3509,14 @@
     "primary_color_hex": "#f4f2ec",
     "price": 41,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-sons-linen-mix-grandad-collar-shirt-in-white/202614093-1-white",
+    "image_url": "/catalog/asos-202614093.jpg",
     "product_url": "https://www.asos.com/us/only-sons/only-sons-linen-mix-grandad-collar-shirt-in-white/prd/202614093#colourWayId-202614094",
     "occasion_tags": [
       "vacation",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/only-sons-linen-mix-grandad-collar-shirt-in-white/202614093-1-white"
   },
   {
     "id": "asos-209624987",
@@ -3428,13 +3535,14 @@
     "primary_color_hex": "#c8b79a",
     "price": 54.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/asos-design-relaxed-linen-blend-shirt-in-beige/209624987-1-beige",
+    "image_url": "/catalog/asos-209624987.jpg",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-relaxed-linen-blend-shirt-in-beige/prd/209624987#colourWayId-209624989",
     "occasion_tags": [
       "vacation",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/asos-design-relaxed-linen-blend-shirt-in-beige/209624987-1-beige"
   },
   {
     "id": "asos-210347641",
@@ -3453,13 +3561,14 @@
     "primary_color_hex": "#2f4b7c",
     "price": 45,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-linen-blend-long-sleeve-shirt-in-light-blue/210347641-1-celestialblue",
+    "image_url": "/catalog/asos-210347641.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-linen-blend-long-sleeve-shirt-in-light-blue/prd/210347641#colourWayId-210347642",
     "occasion_tags": [
       "vacation",
       "smart-casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-linen-blend-long-sleeve-shirt-in-light-blue/210347641-1-celestialblue"
   },
   {
     "id": "asos-208878097",
@@ -3478,13 +3587,14 @@
     "primary_color_hex": "#8a7a63",
     "price": 70,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-overshirt-in-tweed-plaid/208878097-1-delicioso",
+    "image_url": "/catalog/asos-208878097.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-overshirt-in-tweed-plaid/prd/208878097#colourWayId-208878109",
     "occasion_tags": [
       "smart-casual",
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-overshirt-in-tweed-plaid/208878097-1-delicioso"
   },
   {
     "id": "asos-210979655",
@@ -3503,13 +3613,14 @@
     "primary_color_hex": "#9b2d2d",
     "price": 283,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/farah-mattison-shacket-and-swinton-shorts-set-in-red/210651435-2",
+    "image_url": "/catalog/asos-210979655.jpg",
     "product_url": "https://www.asos.com/us/farah/farah-mattison-shacket-and-swinton-shorts-set-in-red/grp/210979655",
     "occasion_tags": [
       "smart-casual",
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/farah-mattison-shacket-and-swinton-shorts-set-in-red/210651435-2"
   },
   {
     "id": "asos-210651435",
@@ -3528,13 +3639,14 @@
     "primary_color_hex": "#9b2d2d",
     "price": 154,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/farah-mattison-long-sleeve-logo-shacket-in-red-part-of-a-set/210651435-1-red",
+    "image_url": "/catalog/asos-210651435.jpg",
     "product_url": "https://www.asos.com/us/farah/farah-mattison-long-sleeve-logo-shacket-in-red-part-of-a-set/grp/210979655#colourWayId-210651437&productId-210651435",
     "occasion_tags": [
       "smart-casual",
       "casual",
       "weekend"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/farah-mattison-long-sleeve-logo-shacket-in-red-part-of-a-set/210651435-1-red"
   },
   {
     "id": "asos-207427931",
@@ -3553,13 +3665,14 @@
     "primary_color_hex": "#c8b79a",
     "price": 40,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/jack-jones-textured-knitted-polo-in-beige/207427931-1-corianderdetail",
+    "image_url": "/catalog/asos-207427931.jpg",
     "product_url": "https://www.asos.com/us/jack-jones/jack-jones-textured-knitted-polo-in-beige/prd/207427931#colourWayId-207427953",
     "occasion_tags": [
       "dinner",
       "smart-casual",
       "date"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/jack-jones-textured-knitted-polo-in-beige/207427931-1-corianderdetail"
   },
   {
     "id": "asos-204401956",
@@ -3578,13 +3691,14 @@
     "primary_color_hex": "#1f2a44",
     "price": 44,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-sons-knitted-polo-in-navy/204401956-1-darknavy",
+    "image_url": "/catalog/asos-204401956.jpg",
     "product_url": "https://www.asos.com/us/only-sons/only-sons-knitted-polo-in-navy/prd/204401956#colourWayId-204401959",
     "occasion_tags": [
       "dinner",
       "smart-casual",
       "date"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/only-sons-knitted-polo-in-navy/204401956-1-darknavy"
   },
   {
     "id": "asos-204402130",
@@ -3603,13 +3717,14 @@
     "primary_color_hex": "#b8ab95",
     "price": 44,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-sons-knitted-polo-in-beige/204402130-1-pumicestone",
+    "image_url": "/catalog/asos-204402130.jpg",
     "product_url": "https://www.asos.com/us/only-sons/only-sons-knitted-polo-in-beige/prd/204402130#colourWayId-204402142",
     "occasion_tags": [
       "dinner",
       "smart-casual",
       "date"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/only-sons-knitted-polo-in-beige/204402130-1-pumicestone"
   },
   {
     "id": "asos-211337696",
@@ -3628,13 +3743,14 @@
     "primary_color_hex": "#9b2d2d",
     "price": 99.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/mango-tailored-pants-in-mushroom/211337696-1-mushroom",
+    "image_url": "/catalog/asos-211337696.jpg",
     "product_url": "https://www.asos.com/us/mango/mango-tailored-pants-in-mushroom/prd/211337696#colourWayId-211337703",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/mango-tailored-pants-in-mushroom/211337696-1-mushroom"
   },
   {
     "id": "asos-211220540",
@@ -3653,13 +3769,14 @@
     "primary_color_hex": "#5a3f2b",
     "price": 119.99,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/mango-pin-stripe-linen-blend-tailored-pants-in-mid-brown/211220540-1-brown",
+    "image_url": "/catalog/asos-211220540.jpg",
     "product_url": "https://www.asos.com/us/mango/mango-pin-stripe-linen-blend-tailored-pants-in-mid-brown/prd/211220540#colourWayId-211220543",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/mango-pin-stripe-linen-blend-tailored-pants-in-mid-brown/211220540-1-brown"
   },
   {
     "id": "asos-209988470",
@@ -3678,12 +3795,13 @@
     "primary_color_hex": "#8a8a8a",
     "price": 81,
     "currency": "USD",
-    "image_url": "https://images.asos-media.com/products/only-sons-loose-fit-tailored-pants-in-dark-gray/209988470-1-darkgreymelange",
+    "image_url": "/catalog/asos-209988470.jpg",
     "product_url": "https://www.asos.com/us/only-sons/only-sons-loose-fit-tailored-pants-in-dark-gray/prd/209988470#colourWayId-209988472",
     "occasion_tags": [
       "interview",
       "office",
       "wedding"
-    ]
+    ],
+    "source_image_url": "https://images.asos-media.com/products/only-sons-loose-fit-tailored-pants-in-dark-gray/209988470-1-darkgreymelange"
   }
 ]
