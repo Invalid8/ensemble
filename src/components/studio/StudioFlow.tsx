@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useShallow } from "zustand/react/shallow";
 import { useStudioStore } from "@/lib/studio/store";
@@ -17,8 +17,13 @@ import { BodyStep } from "./steps/BodyStep";
 import { SizingStep } from "./steps/SizingStep";
 import { ComposingStep } from "./steps/ComposingStep";
 import { LookStep } from "./steps/LookStep";
+import { LimitStep } from "./steps/LimitStep";
 
 const PROGRESS_STEPS: StepId[] = ["face", "snapshot", "skinType", "goals", "safety", "body", "sizing"];
+
+// The mount gate never changes after hydration, so it needs no subscription - the server
+// snapshot returns false and the client snapshot returns true.
+const subscribeNever = () => () => {};
 
 function CurrentStep() {
   const s = useStudioStore(
@@ -120,11 +125,11 @@ export default function StudioFlow() {
   const vtoMock = useStudioStore((s) => s.vtoMock);
   const reset = useStudioStore((s) => s.reset);
   const goTo = useStudioStore((s) => s.goTo);
+  const limited = useStudioStore((s) => s.limited);
 
   // The zustand store is a module singleton, so its state can leak across server renders.
   // Gate on mount so SSR and the first client render agree, then hydrate the live flow.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useSyncExternalStore(subscribeNever, () => true, () => false);
 
   useEffect(() => {
     if (step === "composing") void runCompose();
@@ -141,6 +146,15 @@ export default function StudioFlow() {
   }, [step, goTo]);
 
   if (!mounted) return <div className="min-h-dvh w-full bg-bg" />;
+
+  // Out of looks takes over the whole screen - it is a state of the visitor, not of a step.
+  if (limited) {
+    return (
+      <StudioShell showBack={false} onBack={back} showProgress={false} progressTotal={0} progressCurrent={0}>
+        <LimitStep message={limited} onRestart={reset} />
+      </StudioShell>
+    );
+  }
 
   if (step === "look" && look) {
     return (

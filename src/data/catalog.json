@@ -1569,10 +1569,10 @@
     "colors": [
       {
         "name": "Ecru stripe",
-        "hex": "#5a5a5a"
+        "hex": "#e0d6c2"
       }
     ],
-    "primary_color_hex": "#5a5a5a",
+    "primary_color_hex": "#e0d6c2",
     "price": 110,
     "currency": "USD",
     "image_url": "https://images.asos-media.com/products/tommy-jeans-oxford-shirt-in-blue-green-stripes/210537233-1-ecrustripe",
@@ -1619,10 +1619,10 @@
     "colors": [
       {
         "name": "Wood Rose",
-        "hex": "#5a5a5a"
+        "hex": "#c07f88"
       }
     ],
-    "primary_color_hex": "#5a5a5a",
+    "primary_color_hex": "#c07f88",
     "price": 19.99,
     "currency": "USD",
     "image_url": "https://images.asos-media.com/products/asos-design-essentials-muscle-fit-polo-shirt-in-pink/210049643-1-woodrose",
@@ -1793,10 +1793,10 @@
     "colors": [
       {
         "name": "FEATHER TAUPE",
-        "hex": "#5a5a5a"
+        "hex": "#9c8d7d"
       }
     ],
-    "primary_color_hex": "#5a5a5a",
+    "primary_color_hex": "#9c8d7d",
     "price": 542,
     "currency": "USD",
     "image_url": "https://images.asos-media.com/products/allsaints-clover-wool-blend-tailored-blazer-in-taupe-brown-part-of-a-set/210229910-1-feathertaupe",
@@ -1819,10 +1819,10 @@
     "colors": [
       {
         "name": "Crockery",
-        "hex": "#5a5a5a"
+        "hex": "#c8b79a"
       }
     ],
-    "primary_color_hex": "#5a5a5a",
+    "primary_color_hex": "#c8b79a",
     "price": 27.95,
     "currency": "USD",
     "image_url": "https://images.asos-media.com/products/jj-rebel-slim-fit-chino-pants-in-beige/207150762-1-crockery",
@@ -2027,6 +2027,1659 @@
     "currency": "USD",
     "image_url": "https://images.asos-media.com/products/asos-design-skinny-suit-pants-in-black/210126254-1-black",
     "product_url": "https://www.asos.com/us/asos-design/asos-design-skinny-suit-pants-in-black/grp/210881547#colourWayId-210126263&productId-210126254",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding"
+    ]
+  },
+  {
+    "id": "asos-210389739",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge lace midi dress in black",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "primary_color_hex": "#1a1a1a",
+    "price": 94.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-lace-midi-dress-in-black/210389739-1-black",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-lace-midi-dress-in-black/prd/210389739#colourWayId-210389743",
+    "occasion_tags": [
+      "dinner",
+      "date",
+      "wedding-guest",
+      "evening"
+    ]
+  },
+  {
+    "id": "asos-210218277",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN satin lace applique midi dress in khaki",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Khaki",
+        "hex": "#7c7048"
+      }
+    ],
+    "primary_color_hex": "#7c7048",
+    "price": 79.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-satin-lace-applique-midi-dress-in-khaki/210218277-1-khaki",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-satin-lace-applique-midi-dress-in-khaki/prd/210218277#colourWayId-210218282",
+    "occasion_tags": [
+      "dinner",
+      "date",
+      "wedding-guest",
+      "evening"
+    ]
+  },
+  {
+    "id": "asos-210737155",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN button front cap sleeve midi dress with contrast tipping in burnt red",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Burnt Red",
+        "hex": "#9b2d2d"
+      }
+    ],
+    "primary_color_hex": "#9b2d2d",
+    "price": 54.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-burnt-red/210737155-1-burntred",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-button-front-cap-sleeve-midi-dress-with-contrast-tipping-in-burnt-red/prd/210737155#colourWayId-210737165",
+    "occasion_tags": [
+      "dinner",
+      "date",
+      "wedding-guest",
+      "evening"
+    ]
+  },
+  {
+    "id": "asos-210569883",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN off the shoulder wrap bodice detailing maxi dress with train in green",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Olive",
+        "hex": "#5b5a2f"
+      }
+    ],
+    "primary_color_hex": "#5b5a2f",
+    "price": 94.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-off-the-shoulder-wrap-bodice-detailing-maxi-dress-with-train-in-green/210569883-1-olive",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-off-the-shoulder-wrap-bodice-detailing-maxi-dress-with-train-in-green/prd/210569883#colourWayId-210569907",
+    "occasion_tags": [
+      "wedding-guest",
+      "evening",
+      "vacation"
+    ]
+  },
+  {
+    "id": "asos-210749908",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN scoop neck maxi dress with asymmetric fringe in olive green",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Olive Green",
+        "hex": "#3f5e3f"
+      }
+    ],
+    "primary_color_hex": "#3f5e3f",
+    "price": 129,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-scoop-neck-maxi-dress-with-asymmetric-fringe-in-olive-green/210749908-1-olivegreen",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-scoop-neck-maxi-dress-with-asymmetric-fringe-in-olive-green/prd/210749908#colourWayId-210749910",
+    "occasion_tags": [
+      "wedding-guest",
+      "evening",
+      "vacation"
+    ]
+  },
+  {
+    "id": "asos-210897641",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN plisse contrast draped halter neck maxi dress in rum raisin",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Rum raisin",
+        "hex": "#4d2f33"
+      }
+    ],
+    "primary_color_hex": "#4d2f33",
+    "price": 74.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-plisse-contrast-draped-halter-neck-maxi-dress-in-rum-raisin/210897641-1-rumraisin",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-plisse-contrast-draped-halter-neck-maxi-dress-in-rum-raisin/prd/210897641#colourWayId-210897645",
+    "occasion_tags": [
+      "wedding-guest",
+      "evening",
+      "vacation"
+    ]
+  },
+  {
+    "id": "asos-210619086",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN satin maxi dress with godets in chocolate brown",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Chocolate",
+        "hex": "#4a3222"
+      }
+    ],
+    "primary_color_hex": "#4a3222",
+    "price": 84.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-satin-maxi-dress-with-godets-in-chocolate-brown/210619086-1-chocolate",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-satin-maxi-dress-with-godets-in-chocolate-brown/prd/210619086#colourWayId-210619095",
+    "occasion_tags": [
+      "evening",
+      "date",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210413891",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge premium embroidered ruffle detail maxi dress in ecru",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "ECRU",
+        "hex": "#e0d6c2"
+      }
+    ],
+    "primary_color_hex": "#e0d6c2",
+    "price": 169,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-premium-embroidered-ruffle-detail-maxi-dress-in-ecru/210413891-1-ecru",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-premium-embroidered-ruffle-detail-maxi-dress-in-ecru/prd/210413891#colourWayId-210413892",
+    "occasion_tags": [
+      "evening",
+      "date",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210484681",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN scattered paillette sequins scoop neck maxi dress in dark olive",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Dark Olive",
+        "hex": "#5b5a2f"
+      }
+    ],
+    "primary_color_hex": "#5b5a2f",
+    "price": 139,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-scattered-paillette-sequins-scoop-neck-maxi-dress-in-dark-olive/210484681-1-darkolive",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-scattered-paillette-sequins-scoop-neck-maxi-dress-in-dark-olive/prd/210484681#colourWayId-210484682",
+    "occasion_tags": [
+      "evening",
+      "date",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210298298",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN shirt mini dress with puff sleeve and tie detail in chocolate",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Chocolate",
+        "hex": "#4a3222"
+      }
+    ],
+    "primary_color_hex": "#4a3222",
+    "price": 69.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-shirt-mini-dress-with-puff-sleeve-and-tie-detail-in-chocolate/210298298-1-chocolate",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-shirt-mini-dress-with-puff-sleeve-and-tie-detail-in-chocolate/prd/210298298#colourWayId-210298299",
+    "occasion_tags": [
+      "office",
+      "everyday",
+      "smart-casual"
+    ]
+  },
+  {
+    "id": "asos-210337102",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN wide cuffs mini shirt dress in buttermilk",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Parsnip",
+        "hex": "#e6dbba"
+      }
+    ],
+    "primary_color_hex": "#e6dbba",
+    "price": 79.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-wide-cuffs-mini-shirt-dress-in-buttermilk/210337102-1-parsnip",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-wide-cuffs-mini-shirt-dress-in-buttermilk/prd/210337102#colourWayId-210337111",
+    "occasion_tags": [
+      "office",
+      "everyday",
+      "smart-casual"
+    ]
+  },
+  {
+    "id": "asos-210646754",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN open back cluster embellished mini T-shirt dress in turquoise",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Turquoise",
+        "hex": "#3fa8a0"
+      }
+    ],
+    "primary_color_hex": "#3fa8a0",
+    "price": 189,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-open-back-cluster-embellished-mini-t-shirt-dress-in-turquoise/210646754-1-turquoise",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-open-back-cluster-embellished-mini-t-shirt-dress-in-turquoise/prd/210646754#colourWayId-210646770",
+    "occasion_tags": [
+      "office",
+      "everyday",
+      "smart-casual"
+    ]
+  },
+  {
+    "id": "asos-210079084",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN midi slip dress with scarf in green",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Green",
+        "hex": "#3f5e3f"
+      }
+    ],
+    "primary_color_hex": "#3f5e3f",
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-midi-slip-dress-with-scarf-in-green/210079084-1-green",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-midi-slip-dress-with-scarf-in-green/prd/210079084#colourWayId-210079095",
+    "occasion_tags": [
+      "date",
+      "evening",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210969555",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Topshop",
+    "name": "Topshop viscose satin low scoop flood length maxi slip dress in abstract ochre print",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Abstract Ochre",
+        "hex": "#b57f2a"
+      }
+    ],
+    "primary_color_hex": "#b57f2a",
+    "price": 119,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topshop-viscose-satin-low-scoop-flood-length-maxi-slip-dress-in-abstract-ochre-print/210969555-1-abstractochre",
+    "product_url": "https://www.asos.com/us/topshop/topshop-viscose-satin-low-scoop-flood-length-maxi-slip-dress-in-abstract-ochre-print/prd/210969555#colourWayId-210969570",
+    "occasion_tags": [
+      "date",
+      "evening",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-209959033",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Topshop",
+    "name": "Topshop satin V-neck maxi slip dress with lace inserts in mole",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Mole",
+        "hex": "#7a6a5c"
+      }
+    ],
+    "primary_color_hex": "#7a6a5c",
+    "price": 119,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topshop-satin-v-neck-maxi-slip-dress-with-lace-inserts-in-mole/209959033-1-mole",
+    "product_url": "https://www.asos.com/us/topshop/topshop-satin-v-neck-maxi-slip-dress-with-lace-inserts-in-mole/prd/209959033#colourWayId-209959043",
+    "occasion_tags": [
+      "date",
+      "evening",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210218457",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN high neck drape front extreme cape sleeve mini dress in yellow",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "YELLOW",
+        "hex": "#c9a94a"
+      }
+    ],
+    "primary_color_hex": "#c9a94a",
+    "price": 59.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-high-neck-drape-front-extreme-cape-sleeve-mini-dress-in-yellow/210218457-1-yellow",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-high-neck-drape-front-extreme-cape-sleeve-mini-dress-in-yellow/prd/210218457#colourWayId-210218462",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "wedding-guest"
+    ]
+  },
+  {
+    "id": "asos-209989424",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN cotton linen blend halter neck wrap mini sundress in burgundy scarf print ",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Burgundy Scarf Print",
+        "hex": "#5a1f2a"
+      }
+    ],
+    "primary_color_hex": "#5a1f2a",
+    "price": 47.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-burgundy-scarf-print/209989424-1-burgundyscarfprint",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-cotton-linen-blend-halter-neck-wrap-mini-sundress-in-burgundy-scarf-print/prd/209989424#colourWayId-209989428",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "wedding-guest"
+    ]
+  },
+  {
+    "id": "asos-211035191",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN plunge waisted mini dress in black",
+    "category": "apparel",
+    "subcategory": "dress",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "primary_color_hex": "#1a1a1a",
+    "price": 47.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-plunge-waisted-mini-dress-in-black/211035191-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-plunge-waisted-mini-dress-in-black/prd/211035191#colourWayId-211035194",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "wedding-guest"
+    ]
+  },
+  {
+    "id": "asos-211434700",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Mango",
+    "name": "Mango Iguana tie waist tailored blazer in maroon - part of a set ",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Maroon",
+        "hex": "#5c2230"
+      }
+    ],
+    "primary_color_hex": "#5c2230",
+    "price": 139.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/mango-iguana-tie-waist-tailored-blazer-in-maroon-part-of-a-set/211434700-1-maroon",
+    "product_url": "https://www.asos.com/us/mango/mango-iguana-tie-waist-tailored-blazer-in-maroon-part-of-a-set/grp/211582964#colourWayId-211434701&productId-211434700",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-209932451",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ARRANGE",
+    "name": "ARRANGE structured tailored blazer in stone - part of a set",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "STONE",
+        "hex": "#b8ab95"
+      }
+    ],
+    "primary_color_hex": "#b8ab95",
+    "price": 209,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/arrange-structured-tailored-blazer-in-stone-part-of-a-set/209932451-1-stone",
+    "product_url": "https://www.asos.com/us/arrange/arrange-structured-tailored-blazer-in-stone-part-of-a-set/grp/210571297#colourWayId-209932454&productId-209932451",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210650973",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN tailored blazer with neck scarf detail and maxi skirt set in cream",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Cream",
+        "hex": "#ece3d2"
+      }
+    ],
+    "primary_color_hex": "#ece3d2",
+    "price": 154.98,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-tailored-blazer-with-neck-scarf-detail-and-maxi-skirt-set-in-cream/210192391-2",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-blazer-with-neck-scarf-detail-and-maxi-skirt-set-in-cream/grp/210650973#colourWayId-210192404",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210037767",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge tie front blouse in white",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "WHITE",
+        "hex": "#f4f2ec"
+      }
+    ],
+    "primary_color_hex": "#f4f2ec",
+    "price": 69.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-tie-front-blouse-in-white/210037767-1-white",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-tie-front-blouse-in-white/prd/210037767#colourWayId-210037768",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "interview"
+    ]
+  },
+  {
+    "id": "asos-209825443",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Miss Selfridge",
+    "name": "Miss Selfridge satin tie front blouse in fig",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Fig",
+        "hex": "#5b3a4a"
+      }
+    ],
+    "primary_color_hex": "#5b3a4a",
+    "price": 53.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/miss-selfridge-satin-tie-front-blouse-in-fig/209825443-1-fig",
+    "product_url": "https://www.asos.com/us/miss-selfridge/miss-selfridge-satin-tie-front-blouse-in-fig/prd/209825443#colourWayId-209825471",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "interview"
+    ]
+  },
+  {
+    "id": "asos-210739626",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Lioness",
+    "name": "Lioness Femme puff sleeve button up blouse in gray",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "BEIGE",
+        "hex": "#c8b79a"
+      }
+    ],
+    "primary_color_hex": "#c8b79a",
+    "price": 75,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/lioness-femme-puff-sleeve-button-up-blouse-in-gray/210739626-1-beige",
+    "product_url": "https://www.asos.com/us/lioness/lioness-femme-puff-sleeve-button-up-blouse-in-gray/prd/210739626#colourWayId-210739627",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "interview"
+    ]
+  },
+  {
+    "id": "asos-211051306",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN knit cinched top in red stripe",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Red stripe",
+        "hex": "#9b2d2d"
+      }
+    ],
+    "primary_color_hex": "#9b2d2d",
+    "price": 47.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-knit-cinched-top-in-red-stripe/211051306-1-redstripe",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-knit-cinched-top-in-red-stripe/prd/211051306#colourWayId-211051318",
+    "occasion_tags": [
+      "everyday",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-210835892",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "The Frolic",
+    "name": "The Frolic exclusive sleeveless asymmetric button knit top in white",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "CHARCOAL",
+        "hex": "#36393b"
+      }
+    ],
+    "primary_color_hex": "#36393b",
+    "price": 46,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/the-frolic-exclusive-sleeveless-asymmetric-button-knit-top-in-white/210835892-1-charcoal",
+    "product_url": "https://www.asos.com/us/the-frolic/the-frolic-exclusive-sleeveless-asymmetric-button-knit-top-in-white/prd/210835892#colourWayId-210835894",
+    "occasion_tags": [
+      "everyday",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-211550334",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Mango",
+    "name": "Mango knit polo shirt in blue and gray",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Gray",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 69.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/mango-knit-polo-shirt-in-blue-and-gray/211550334-1-grey",
+    "product_url": "https://www.asos.com/us/mango/mango-knit-polo-shirt-in-blue-and-gray/prd/211550334#colourWayId-211550335",
+    "occasion_tags": [
+      "everyday",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-207969313",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Monki",
+    "name": "Monki high waist wide leg tailored pants in dark gray melange",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Gray",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 51,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/monki-high-waist-wide-leg-tailored-pants-in-dark-gray-melange/207969313-1-grey",
+    "product_url": "https://www.asos.com/us/monki/monki-high-waist-wide-leg-tailored-pants-in-dark-gray-melange/prd/207969313#colourWayId-207969316",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-208884796",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Vero Moda Tall",
+    "name": "Vero Moda Tall dad fit tailored pants in chocolate",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "CHOCOLATE BROWN",
+        "hex": "#5a3f2b"
+      }
+    ],
+    "primary_color_hex": "#5a3f2b",
+    "price": 54,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/vero-moda-tall-dad-fit-tailored-pants-in-chocolate/208884796-1-chocolatebrown",
+    "product_url": "https://www.asos.com/us/vero-moda-tall/vero-moda-tall-dad-fit-tailored-pants-in-chocolate/prd/208884796#colourWayId-208884827",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-209805013",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Vero Moda Tall",
+    "name": "Vero Moda Tall straight leg tailored pants in green - part of a set",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Laurel Wreath",
+        "hex": "#59684a"
+      }
+    ],
+    "primary_color_hex": "#59684a",
+    "price": 51,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/vero-moda-tall-straight-leg-tailored-pants-in-green-part-of-a-set/209805013-1-laurelwreath",
+    "product_url": "https://www.asos.com/us/vero-moda-tall/vero-moda-tall-straight-leg-tailored-pants-in-green-part-of-a-set/grp/210591405#colourWayId-209805025&productId-209805013",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-211105775",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Topshop",
+    "name": "Topshop organza drape detail midi skirt in mink",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "Mink",
+        "hex": "#a4907c"
+      }
+    ],
+    "primary_color_hex": "#a4907c",
+    "price": 65,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topshop-organza-drape-detail-midi-skirt-in-mink/211105775-1-mink",
+    "product_url": "https://www.asos.com/us/topshop/topshop-organza-drape-detail-midi-skirt-in-mink/prd/211105775#colourWayId-211105778",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-211449820",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "JDY",
+    "name": "JDY lace trim satin maxi skirt in black polka dot print",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "Black cloud ",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "primary_color_hex": "#1a1a1a",
+    "price": 63,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jdy-lace-trim-satin-maxi-skirt-in-black-polka-dot-print/211449820-1-blackcloud",
+    "product_url": "https://www.asos.com/us/jdy/jdy-lace-trim-satin-maxi-skirt-in-black-polka-dot-print/prd/211449820#colourWayId-211449822",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-210900124",
+    "type": "apparel",
+    "gender": "women",
+    "brand": "Topshop",
+    "name": "Topshop drop waist full circle midi skirt in orange abstract striped print - part of a set",
+    "category": "apparel",
+    "subcategory": "skirt",
+    "colors": [
+      {
+        "name": "ORANGE",
+        "hex": "#c26b3a"
+      }
+    ],
+    "primary_color_hex": "#c26b3a",
+    "price": 75,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topshop-drop-waist-full-circle-midi-skirt-in-orange-abstract-striped-print-part-of-a-set/210900124-1-orange",
+    "product_url": "https://www.asos.com/us/topshop/topshop-drop-waist-full-circle-midi-skirt-in-orange-abstract-striped-print-part-of-a-set/grp/211637150#colourWayId-210900133&productId-210900124",
+    "occasion_tags": [
+      "office",
+      "dinner",
+      "everyday"
+    ]
+  },
+  {
+    "id": "asos-210080716",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN carrot fit suit pants in brown",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "BROWN",
+        "hex": "#5a3f2b"
+      }
+    ],
+    "primary_color_hex": "#5a3f2b",
+    "price": 49.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-carrot-fit-suit-pants-in-brown/210080716-1-brown",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-carrot-fit-suit-pants-in-brown/grp/211480115#colourWayId-210080721&productId-210080716",
+    "occasion_tags": [
+      "interview",
+      "wedding",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-209482066",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN skinny tuxedo pants in black",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "primary_color_hex": "#1a1a1a",
+    "price": 49.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-skinny-tuxedo-pants-in-black/209482066-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-skinny-tuxedo-pants-in-black/grp/210195448#colourWayId-209482072&productId-209482066",
+    "occasion_tags": [
+      "interview",
+      "wedding",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210225959",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones Premium super slim tailored pants in brown - part of a set",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Morel",
+        "hex": "#8a7663"
+      }
+    ],
+    "primary_color_hex": "#8a7663",
+    "price": 129,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-premium-super-slim-tailored-pants-in-brown-part-of-a-set/210225959-1-morel",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-super-slim-tailored-pants-in-brown-part-of-a-set/grp/210723431#colourWayId-210225967&productId-210225959",
+    "occasion_tags": [
+      "interview",
+      "wedding",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-206195387",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ONLY & SONS",
+    "name": "ONLY & SONS linen mix long sleeve shirt in sage",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Swamp",
+        "hex": "#5f6b4a"
+      }
+    ],
+    "primary_color_hex": "#5f6b4a",
+    "price": 58,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-sons-linen-mix-long-sleeve-shirt-in-sage/206195387-1-swamp",
+    "product_url": "https://www.asos.com/us/only-sons/only-sons-linen-mix-long-sleeve-shirt-in-sage/prd/206195387#colourWayId-206195429",
+    "occasion_tags": [
+      "vacation",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-204402083",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ONLY & SONS",
+    "name": "ONLY & SONS linen blend long sleeve slim fit shirt in white",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#f4f2ec"
+      }
+    ],
+    "primary_color_hex": "#f4f2ec",
+    "price": 58,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-sons-linen-blend-long-sleeve-slim-fit-shirt-in-white/204402083-1-white",
+    "product_url": "https://www.asos.com/us/only-sons/only-sons-linen-blend-long-sleeve-slim-fit-shirt-in-white/prd/204402083#colourWayId-204402138",
+    "occasion_tags": [
+      "vacation",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-209729019",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN oversized overhead linen blend shirt in beige - part of a set",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "BEIGE",
+        "hex": "#c8b79a"
+      }
+    ],
+    "primary_color_hex": "#c8b79a",
+    "price": 54.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-oversized-overhead-linen-blend-shirt-in-beige-part-of-a-set/209729019-1-beige",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-oversized-overhead-linen-blend-shirt-in-beige-part-of-a-set/prd/209729019#colourWayId-209729021",
+    "occasion_tags": [
+      "vacation",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-209651241",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Topman",
+    "name": "Topman relaxed fit short sleeve twill cropped overshirt in contrast ecru",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "ECRU",
+        "hex": "#e0d6c2"
+      }
+    ],
+    "primary_color_hex": "#e0d6c2",
+    "price": 70,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topman-relaxed-fit-short-sleeve-twill-cropped-overshirt-in-contrast-ecru/209651241-1-ecru",
+    "product_url": "https://www.asos.com/us/topman/topman-relaxed-fit-short-sleeve-twill-cropped-overshirt-in-contrast-ecru/prd/209651241#colourWayId-209651258",
+    "occasion_tags": [
+      "smart-casual",
+      "casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-210501006",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Topman",
+    "name": "Topman boxy fit jersey shacket in coral",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Coral",
+        "hex": "#d0705c"
+      }
+    ],
+    "primary_color_hex": "#d0705c",
+    "price": 75,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/topman-boxy-fit-jersey-shacket-in-coral/210501006-1-coral",
+    "product_url": "https://www.asos.com/us/topman/topman-boxy-fit-jersey-shacket-in-coral/prd/210501006#colourWayId-210501007",
+    "occasion_tags": [
+      "smart-casual",
+      "casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-210348945",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Liquor N Poker",
+    "name": "Liquor N Poker long sleeve shirt in burnt orange plaid",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Orange check",
+        "hex": "#c26b3a"
+      }
+    ],
+    "primary_color_hex": "#c26b3a",
+    "price": 70,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/liquor-n-poker-long-sleeve-shirt-in-burnt-orange-plaid/210348945-1-orangecheck",
+    "product_url": "https://www.asos.com/us/liquor-n-poker/liquor-n-poker-long-sleeve-shirt-in-burnt-orange-plaid/prd/210348945#colourWayId-210348946",
+    "occasion_tags": [
+      "smart-casual",
+      "casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-209320069",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones Premium knitted polo in gray",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Medium gray melange",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 59.95,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-gray/209320069-1-mediumgreymelange",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-knitted-polo-in-gray/prd/209320069#colourWayId-209320071",
+    "occasion_tags": [
+      "dinner",
+      "smart-casual",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-210225889",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones Premium knitted polo in beige",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Lemon Pepper",
+        "hex": "#d6c65c"
+      }
+    ],
+    "primary_color_hex": "#d6c65c",
+    "price": 49.95,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-beige/210225889-1-lemonpepper",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-knitted-polo-in-beige/prd/210225889#colourWayId-210225896",
+    "occasion_tags": [
+      "dinner",
+      "smart-casual",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-210226008",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones Premium knitted polo in beige",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Morel",
+        "hex": "#8a7663"
+      }
+    ],
+    "primary_color_hex": "#8a7663",
+    "price": 49.95,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-premium-knitted-polo-in-beige/210226008-1-morel",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-premium-knitted-polo-in-beige/prd/210226008#colourWayId-210226010",
+    "occasion_tags": [
+      "dinner",
+      "smart-casual",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-209814822",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones Toby wide leg tailored pants in black",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "primary_color_hex": "#1a1a1a",
+    "price": 45,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-toby-wide-leg-tailored-pants-in-black/209814822-1-black",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-toby-wide-leg-tailored-pants-in-black/prd/209814822#colourWayId-209814829",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding"
+    ]
+  },
+  {
+    "id": "asos-211133498",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Weekday",
+    "name": "Weekday wide leg tailored pants in dark gray pinstripe",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Gray pinstripe",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 96,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/weekday-wide-leg-tailored-pants-in-dark-gray-pinstripe/211133498-1-greypinstripe",
+    "product_url": "https://www.asos.com/us/weekday/weekday-wide-leg-tailored-pants-in-dark-gray-pinstripe/prd/211133498#colourWayId-211133499",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding"
+    ]
+  },
+  {
+    "id": "asos-210068291",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones wide fit tailored pants in gray",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Gray Melange",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 45,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-wide-fit-tailored-pants-in-gray/210068291-1-greymelange",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-wide-fit-tailored-pants-in-gray/prd/210068291#colourWayId-210068293",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding"
+    ]
+  },
+  {
+    "id": "asos-209801944",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN slim double breasted suit jacket in black",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#1a1a1a"
+      }
+    ],
+    "primary_color_hex": "#1a1a1a",
+    "price": 94.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-black/209801944-1-black",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-double-breasted-suit-jacket-in-black/grp/210510238#colourWayId-209801948&productId-209801944",
+    "occasion_tags": [
+      "interview",
+      "wedding",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210176518",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN slim double breasted suit jacket in light gray",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "LIGHT GRAY",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 94.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-light-gray/210176518-1-lightgrey",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-double-breasted-suit-jacket-in-light-gray/grp/211458921#colourWayId-210176534&productId-210176518",
+    "occasion_tags": [
+      "interview",
+      "wedding",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-210176868",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN slim double breasted suit jacket in charcoal",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "CHARCOAL",
+        "hex": "#36393b"
+      }
+    ],
+    "primary_color_hex": "#36393b",
+    "price": 94.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-slim-double-breasted-suit-jacket-in-charcoal/210176868-1-charcoal",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-slim-double-breasted-suit-jacket-in-charcoal/grp/211452507#colourWayId-210176871&productId-210176868",
+    "occasion_tags": [
+      "interview",
+      "wedding",
+      "office"
+    ]
+  },
+  {
+    "id": "asos-209717083",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Arket",
+    "name": "ARKET cotton rich corduroy tailored blazer in dark brown - part of a set",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "Dark brown",
+        "hex": "#5a3f2b"
+      }
+    ],
+    "primary_color_hex": "#5a3f2b",
+    "price": 161.7,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/arket-cotton-rich-corduroy-tailored-blazer-in-dark-brown-part-of-a-set/209717083-1-darkbrown",
+    "product_url": "https://www.asos.com/us/arket/arket-cotton-rich-corduroy-tailored-blazer-in-dark-brown-part-of-a-set/grp/210295959#colourWayId-209717085&productId-209717083",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-210485049",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN tailored relaxed mensy blazer in white",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "WHITE",
+        "hex": "#f4f2ec"
+      }
+    ],
+    "primary_color_hex": "#f4f2ec",
+    "price": 119,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-tailored-relaxed-mensy-blazer-in-white/210485049-1-white",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-tailored-relaxed-mensy-blazer-in-white/prd/210485049#colourWayId-210485052",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-209534995",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Mango",
+    "name": "Mango Bergamo premium wool mix tailored suit blazer in brown - part of a set",
+    "category": "apparel",
+    "subcategory": "blazer",
+    "colors": [
+      {
+        "name": "BROWN",
+        "hex": "#5a3f2b"
+      }
+    ],
+    "primary_color_hex": "#5a3f2b",
+    "price": 135,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/mango-bergamo-premium-wool-mix-tailored-suit-blazer-in-brown-part-of-a-set/209534995-1-brown",
+    "product_url": "https://www.asos.com/us/mango/mango-bergamo-premium-wool-mix-tailored-suit-blazer-in-brown-part-of-a-set/grp/210161769#colourWayId-209535011&productId-209534995",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "dinner"
+    ]
+  },
+  {
+    "id": "asos-202614093",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ONLY & SONS",
+    "name": "Only & Sons linen mix grandad collar shirt in white ",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "White",
+        "hex": "#f4f2ec"
+      }
+    ],
+    "primary_color_hex": "#f4f2ec",
+    "price": 41,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-sons-linen-mix-grandad-collar-shirt-in-white/202614093-1-white",
+    "product_url": "https://www.asos.com/us/only-sons/only-sons-linen-mix-grandad-collar-shirt-in-white/prd/202614093#colourWayId-202614094",
+    "occasion_tags": [
+      "vacation",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-209624987",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ASOS DESIGN",
+    "name": "ASOS DESIGN relaxed linen blend shirt in beige",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "BEIGE",
+        "hex": "#c8b79a"
+      }
+    ],
+    "primary_color_hex": "#c8b79a",
+    "price": 54.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/asos-design-relaxed-linen-blend-shirt-in-beige/209624987-1-beige",
+    "product_url": "https://www.asos.com/us/asos-design/asos-design-relaxed-linen-blend-shirt-in-beige/prd/209624987#colourWayId-209624989",
+    "occasion_tags": [
+      "vacation",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-210347641",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones linen blend long sleeve shirt in light blue",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Celestial Blue",
+        "hex": "#2f4b7c"
+      }
+    ],
+    "primary_color_hex": "#2f4b7c",
+    "price": 45,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-linen-blend-long-sleeve-shirt-in-light-blue/210347641-1-celestialblue",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-linen-blend-long-sleeve-shirt-in-light-blue/prd/210347641#colourWayId-210347642",
+    "occasion_tags": [
+      "vacation",
+      "smart-casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-208878097",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones overshirt in tweed plaid",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Delicioso",
+        "hex": "#8a7a63"
+      }
+    ],
+    "primary_color_hex": "#8a7a63",
+    "price": 70,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-overshirt-in-tweed-plaid/208878097-1-delicioso",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-overshirt-in-tweed-plaid/prd/208878097#colourWayId-208878109",
+    "occasion_tags": [
+      "smart-casual",
+      "casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-210979655",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Farah",
+    "name": "Farah Mattison shacket and Swinton shorts set in red",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "RED",
+        "hex": "#9b2d2d"
+      }
+    ],
+    "primary_color_hex": "#9b2d2d",
+    "price": 283,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/farah-mattison-shacket-and-swinton-shorts-set-in-red/210651435-2",
+    "product_url": "https://www.asos.com/us/farah/farah-mattison-shacket-and-swinton-shorts-set-in-red/grp/210979655",
+    "occasion_tags": [
+      "smart-casual",
+      "casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-210651435",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Farah",
+    "name": "Farah Mattison long sleeve logo shacket in red - part of a set",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "RED",
+        "hex": "#9b2d2d"
+      }
+    ],
+    "primary_color_hex": "#9b2d2d",
+    "price": 154,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/farah-mattison-long-sleeve-logo-shacket-in-red-part-of-a-set/210651435-1-red",
+    "product_url": "https://www.asos.com/us/farah/farah-mattison-long-sleeve-logo-shacket-in-red-part-of-a-set/grp/210979655#colourWayId-210651437&productId-210651435",
+    "occasion_tags": [
+      "smart-casual",
+      "casual",
+      "weekend"
+    ]
+  },
+  {
+    "id": "asos-207427931",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Jack & Jones",
+    "name": "Jack & Jones textured knitted polo in beige",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Coriander Detail",
+        "hex": "#c8b79a"
+      }
+    ],
+    "primary_color_hex": "#c8b79a",
+    "price": 40,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/jack-jones-textured-knitted-polo-in-beige/207427931-1-corianderdetail",
+    "product_url": "https://www.asos.com/us/jack-jones/jack-jones-textured-knitted-polo-in-beige/prd/207427931#colourWayId-207427953",
+    "occasion_tags": [
+      "dinner",
+      "smart-casual",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-204401956",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ONLY & SONS",
+    "name": "Only & Sons knitted polo in navy",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Dark Navy",
+        "hex": "#1f2a44"
+      }
+    ],
+    "primary_color_hex": "#1f2a44",
+    "price": 44,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-sons-knitted-polo-in-navy/204401956-1-darknavy",
+    "product_url": "https://www.asos.com/us/only-sons/only-sons-knitted-polo-in-navy/prd/204401956#colourWayId-204401959",
+    "occasion_tags": [
+      "dinner",
+      "smart-casual",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-204402130",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ONLY & SONS",
+    "name": "Only & Sons knitted polo in beige",
+    "category": "apparel",
+    "subcategory": "top",
+    "colors": [
+      {
+        "name": "Pumice stone",
+        "hex": "#b8ab95"
+      }
+    ],
+    "primary_color_hex": "#b8ab95",
+    "price": 44,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-sons-knitted-polo-in-beige/204402130-1-pumicestone",
+    "product_url": "https://www.asos.com/us/only-sons/only-sons-knitted-polo-in-beige/prd/204402130#colourWayId-204402142",
+    "occasion_tags": [
+      "dinner",
+      "smart-casual",
+      "date"
+    ]
+  },
+  {
+    "id": "asos-211337696",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Mango",
+    "name": "Mango tailored pants in mushroom",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Mushroom",
+        "hex": "#9b2d2d"
+      }
+    ],
+    "primary_color_hex": "#9b2d2d",
+    "price": 99.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/mango-tailored-pants-in-mushroom/211337696-1-mushroom",
+    "product_url": "https://www.asos.com/us/mango/mango-tailored-pants-in-mushroom/prd/211337696#colourWayId-211337703",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding"
+    ]
+  },
+  {
+    "id": "asos-211220540",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "Mango",
+    "name": "Mango pin stripe linen blend tailored pants in mid brown",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "BROWN",
+        "hex": "#5a3f2b"
+      }
+    ],
+    "primary_color_hex": "#5a3f2b",
+    "price": 119.99,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/mango-pin-stripe-linen-blend-tailored-pants-in-mid-brown/211220540-1-brown",
+    "product_url": "https://www.asos.com/us/mango/mango-pin-stripe-linen-blend-tailored-pants-in-mid-brown/prd/211220540#colourWayId-211220543",
+    "occasion_tags": [
+      "interview",
+      "office",
+      "wedding"
+    ]
+  },
+  {
+    "id": "asos-209988470",
+    "type": "apparel",
+    "gender": "men",
+    "brand": "ONLY & SONS",
+    "name": "ONLY & SONS loose fit tailored pants in dark gray",
+    "category": "apparel",
+    "subcategory": "trousers",
+    "colors": [
+      {
+        "name": "Dark Gray Melange",
+        "hex": "#8a8a8a"
+      }
+    ],
+    "primary_color_hex": "#8a8a8a",
+    "price": 81,
+    "currency": "USD",
+    "image_url": "https://images.asos-media.com/products/only-sons-loose-fit-tailored-pants-in-dark-gray/209988470-1-darkgreymelange",
+    "product_url": "https://www.asos.com/us/only-sons/only-sons-loose-fit-tailored-pants-in-dark-gray/prd/209988470#colourWayId-209988472",
     "occasion_tags": [
       "interview",
       "office",

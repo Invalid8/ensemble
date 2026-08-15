@@ -54,8 +54,12 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const [mode, setMode] = useState<Mode>(preview ? "preview" : "idle");
+  const [live, setLive] = useState(false);
   const [camError, setCamError] = useState<string | null>(null);
+
+  // The camera is the only real state here; "preview" vs "idle" is just whether a photo
+  // exists yet, so derive it from the prop rather than syncing it in an effect.
+  const mode: Mode = live ? "live" : preview ? "preview" : "idle";
 
   const stopStream = useCallback(() => {
     streamRef.current?.getTracks().forEach((track) => track.stop());
@@ -64,17 +68,13 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
 
   useEffect(() => () => stopStream(), [stopStream]);
 
-  useEffect(() => {
-    if (preview) setMode((m) => (m === "live" ? m : "preview"));
-  }, [preview]);
-
   // Attach the stream once the <video> is actually in the DOM.
   useEffect(() => {
-    if (mode === "live" && videoRef.current && streamRef.current) {
+    if (live && videoRef.current && streamRef.current) {
       videoRef.current.srcObject = streamRef.current;
       void videoRef.current.play().catch(() => {});
     }
-  }, [mode]);
+  }, [live]);
 
   const startCamera = useCallback(async () => {
     setCamError(null);
@@ -87,7 +87,7 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
         video: { facingMode: guide === "face" ? "user" : "environment" },
         audio: false,
       });
-      setMode("live");
+      setLive(true);
     } catch {
       setCamError("We couldn't reach your camera - you can upload a photo instead.");
     }
@@ -112,7 +112,7 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
         if (!blob) return;
         stopStream();
         onFile(new File([blob], "capture.jpg", { type: "image/jpeg" }));
-        setMode("preview");
+        setLive(false);
       },
       "image/jpeg",
       0.92
@@ -171,7 +171,7 @@ export function CaptureFrame({ guide, hint, preview, onFile }: CaptureFrameProps
           type="button"
           onClick={() => {
             stopStream();
-            setMode(preview ? "preview" : "idle");
+            setLive(false);
           }}
           className="mx-auto font-body text-sm text-ink-muted transition-colors hover:text-ink"
         >

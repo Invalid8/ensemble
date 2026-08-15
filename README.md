@@ -55,9 +55,13 @@ Open:
 YOUCAM_API_KEY=
 RAPIDAPI_KEY=
 DATABASE_URL=postgresql://ensemble:ensemble@localhost:5432/ensemble
+YOUCAM_LOOK_LIMIT=3
+YOUCAM_QUOTA_WINDOW_HOURS=12
 ```
 
 `YOUCAM_API_KEY` enables live Skin AI and Apparel VTO calls. Without it, `/api/youcam/[feature]` returns mock responses in the same normalized shape used by the UI.
+
+`YOUCAM_LOOK_LIMIT` and `YOUCAM_QUOTA_WINDOW_HOURS` cap how many looks one visitor can run. See [Usage Limits](#usage-limits). Set the limit to `0` to disable the cap.
 
 `DATABASE_URL` enables the API cache. If it is missing or unreachable, cache reads/writes fail open and the app continues to work.
 
@@ -167,12 +171,19 @@ It is a curated snapshot of apparel and beauty products normalized to the shared
 Catalog ingestion lives in `scripts/ingest-catalog.mjs`:
 
 ```bash
-node scripts/ingest-catalog.mjs discover
-node scripts/ingest-catalog.mjs ingest
-node scripts/ingest-catalog.mjs mens
+node scripts/ingest-catalog.mjs discover     # search both APIs, write candidates
+node scripts/ingest-catalog.mjs ingest       # normalize curated picks into catalog.json
+node scripts/ingest-catalog.mjs mens         # turnkey menswear append
+node scripts/ingest-catalog.mjs mens-extra   # second menswear pass (suit jackets, linen, knits)
+node scripts/ingest-catalog.mjs womens       # womenswear top-up, dress-heavy
+node scripts/ingest-catalog.mjs clean        # repair pass, no API calls, idempotent
 ```
 
 The intended workflow is discover candidates, curate IDs and manual enrichment in `scripts/catalog-picks.json`, then ingest the normalized snapshot. Detail responses are cached under `scripts/probes/detail-cache/` when the script runs.
+
+The `mens`, `mens-extra`, and `womens` modes are additive and deduped by product id, so they are safe to re-run. They are search-only and auto-enrich colour from the product's colour name.
+
+`clean` is the repair pass, and worth running after any append. It re-derives each apparel item's subcategory from its product name (a search term is a poor classifier: "mens suit" mostly returns suit trousers) and rescues colour names that fell back to neutral grey. It touches no API and is safe to run repeatedly.
 
 ## Useful Scripts
 
@@ -240,11 +251,26 @@ Manual mock-mode flow:
 
 Live integration checks require a real YouCam key and spend API units. Use `scripts/test-youcam.mjs` first to verify field shapes before relying on the full UI.
 
+## Usage Limits
+
+A YouCam key is a fixed pool of units, and one complete look spends three or four of them (two skin reads plus one or two try-on renders). Left open, a handful of people re-running the flow would drain a demo budget in an afternoon, so the proxy caps looks per visitor.
+
+- Default: **3 looks per visitor per 12 hours**, tuned with `YOUCAM_LOOK_LIMIT` and `YOUCAM_QUOTA_WINDOW_HOURS`.
+- A visitor is identified by forwarded IP. Shared NAT collapses a whole office into one bucket, which errs toward protecting the pool.
+- Counting is deliberately narrow. Only `skin-tone-analysis` is charged, since every look starts with exactly one tone read and the follow-up calls ride the same allowance.
+- **A cache hit is free.** Re-running the same photo costs no API units, so it costs no allowance either. The charge happens inside the cache factory, on a miss only.
+- **A failure that never reached YouCam is free.** Auth, network, and transport errors do not charge. A task that ran and then errored on the photo does charge, because those units are already spent.
+- Over-quota requests return `429` with `code: "rate_limited"`, and the studio shows a calm "come back later" screen rather than an error.
+- Mock mode is never limited, since it spends nothing.
+
+Set `YOUCAM_LOOK_LIMIT=0` to disable the cap, which is what you want while recording a demo.
+
 ## Known Gaps
 
-- Client-side image compression is installed but not wired into the upload path yet.
 - Live nested score parsing for some `skin-analysis` concerns should be rechecked against production responses.
 - Makeup VTO is not implemented; makeup is represented as coordinated product recommendations.
+- Menswear looks finish on skincare only. The catalog's colour cosmetics are all women's SKUs, so a menswear look does not recommend a lip or blush it cannot shade-match honestly.
+- The usage cap keys on IP and holds its counter in memory, mirrored to the cache table. It is sized for a demo, not for adversarial traffic.
 - The app has no accounts, checkout, medical diagnosis, body measurement, native app shell, or live RapidAPI dependency by design.
 
 ## Source Docs
@@ -256,4 +282,9 @@ Product decisions and open work live in:
 - `docs/DESIGN.md`
 - `docs/CONTENT.md`
 - `docs/TASKS.md`
+- `docs/SUBMISSION.md` — written description, demo script, pre-submit checklist
+
+## License
+
+MIT. See `LICENSE`.
 

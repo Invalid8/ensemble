@@ -5,9 +5,18 @@ import {
 } from "@/lib/composer";
 import type { LookProfile, Product, SkinConditions } from "@/lib/types";
 import { FOCUS_LABELS, STRENGTH_LABELS } from "@/lib/studio/constants";
+import { compressForUpload } from "@/lib/studio/compress";
 import type { SkinRead } from "@/lib/studio/types";
 
 const CONCERNS = ["redness", "oiliness", "moisture", "radiance", "age_spot", "texture", "skin_type"];
+
+/** The visitor has spent their allowance of looks - a different screen, not an error note. */
+export class QuotaError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "QuotaError";
+  }
+}
 
 async function postYouCam(
   feature: string,
@@ -23,6 +32,7 @@ async function postYouCam(
 
   const res = await fetch(`/api/youcam/${feature}`, { method: "POST", body: form });
   const json = await res.json();
+  if (res.status === 429 || json.code === "rate_limited") throw new QuotaError(json.error ?? "");
   if (!res.ok) throw new Error(json.error ?? `${feature} failed`);
   return json;
 }
@@ -38,11 +48,14 @@ export interface SkinReadResult {
 }
 
 export async function readSkin(file: File): Promise<SkinReadResult> {
+  // Compress once here rather than inside postYouCam - the two reads share one photo.
+  const upload = await compressForUpload(file);
+
   // Tone drives the palette and is the essential read; HD skin analysis is best-effort,
   // since it needs a closer face and can fail ("too small") on a photo tone accepts fine.
   const [toneR, skinR] = await Promise.allSettled([
-    postYouCam("skin-tone-analysis", file, { face_angle_strictness_level: "medium" }),
-    postYouCam("skin-analysis", file, { dst_actions: CONCERNS, format: "json" }),
+    postYouCam("skin-tone-analysis", upload, { face_angle_strictness_level: "medium" }),
+    postYouCam("skin-analysis", upload, { dst_actions: CONCERNS, format: "json" }),
   ]);
 
   if (toneR.status === "rejected") throw toneR.reason;
@@ -135,6 +148,6 @@ export async function renderVto(bodyFile: File, garments: Product[]): Promise<Vt
   const layers = buildLayers(garments);
   if (!layers.length) return { url: null, mock: false };
 
-  const vto = await postYouCam("cloth", bodyFile, undefined, { vtoLayers: layers });
+  const vto = await postYouCam("cloth", await compressForUpload(bodyFile), undefined, { vtoLayers: layers });
   return { url: vto.results?.url ?? null, mock: Boolean(vto.mock) };
 }

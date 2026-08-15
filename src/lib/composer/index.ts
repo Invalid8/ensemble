@@ -134,12 +134,22 @@ export function composeLook(profile: LookProfile, catalog: Product[]): CompleteL
   }
 
   const makeupSpec = getMakeupSpec(profile, nearFaceColorHex);
+  // The catalog's colour cosmetics are all women's SKUs, so a menswear look finishes on
+  // skincare alone rather than recommending a lip and blush nobody asked for. The skin read
+  // still drives that half through the prep above, so the fusion holds either way.
+  const wearsColorCosmetics = profile.wardrobe !== "men";
   const foundations = beauty.filter((p) => p.subcategory === "foundation");
   const finishKey = makeupSpec.baseFinish === "dewy-hydrating" ? "dewy" : makeupSpec.baseFinish;
   const foundation = foundations.find((p) => p.finish === finishKey) ?? foundations[0];
-  const lipstick = pickByTemperature(beauty.filter((p) => p.subcategory === "lipstick"), makeupSpec.lipBlushFamily, profile.undertone, nearFaceColorHex);
-  const blush = pickByTemperature(beauty.filter((p) => p.subcategory === "blush"), makeupSpec.lipBlushFamily, profile.undertone, nearFaceColorHex);
-  const makeup = [foundation, lipstick, blush].filter((p): p is Product => p !== undefined);
+  const lipstick = wearsColorCosmetics
+    ? pickByTemperature(beauty.filter((p) => p.subcategory === "lipstick"), makeupSpec.lipBlushFamily, profile.undertone, nearFaceColorHex)
+    : undefined;
+  const blush = wearsColorCosmetics
+    ? pickByTemperature(beauty.filter((p) => p.subcategory === "blush"), makeupSpec.lipBlushFamily, profile.undertone, nearFaceColorHex)
+    : undefined;
+  const makeup = (wearsColorCosmetics ? [foundation, lipstick, blush] : []).filter(
+    (p): p is Product => p !== undefined
+  );
 
   const nearFaceColorName = nearFaceGarment ? colorName(nearFaceGarment, nearFaceColorHex) : nearFaceColorHex;
   const garmentName = nearFaceGarment?.name ?? "piece";
@@ -150,6 +160,7 @@ export function composeLook(profile: LookProfile, catalog: Product[]): CompleteL
     garmentName,
     garmentNoun: nearFaceGarment?.subcategory,
     makeupSpec,
+    includeColorCosmetics: wearsColorCosmetics,
   });
 
   // §6.4b "Why This Look?" - every claim traces to a rule that actually fired above.
@@ -166,11 +177,16 @@ export function composeLook(profile: LookProfile, catalog: Product[]): CompleteL
   if (conditions && conditions.radiance.ui < 50) {
     reasons.push({ claim: "Clear, bright colours chosen to lift radiance near the face", source: "skinCondition" });
   }
-  if (makeupSpec.baseFinish !== "natural") {
+  if (wearsColorCosmetics && makeupSpec.baseFinish !== "natural") {
     reasons.push({
       claim: `A ${makeupSpec.baseFinish === "dewy-hydrating" ? "dewy, hydrating" : "matte"} base finish chosen for your skin today`,
       source: "skinCondition",
     });
+  }
+  // A menswear look has no base-finish claim, so without this the checklist would barely
+  // mention the skin read - and the deletion test has to stay legible on every path (§1).
+  if (!wearsColorCosmetics && skincarePrep.length > 0 && conditions) {
+    reasons.push({ claim: "Skin prep chosen from your scan, not a generic routine", source: "skinCondition" });
   }
   if (profile.occasion) {
     reasons.push({ claim: `Styled for ${profile.occasion}`, source: "occasion" });

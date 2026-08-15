@@ -34,10 +34,14 @@ export function generateRationale(opts: {
   /** Short garment noun ("dress", "top") for the second mention - the full name reads twice as clutter. */
   garmentNoun?: string;
   makeupSpec: MakeupSpec;
+  /** False for a menswear look, which finishes on skincare instead of a lip and base. */
+  includeColorCosmetics?: boolean;
 }): string {
-  const { profile, nearFaceColorName, garmentName, makeupSpec } = opts;
+  const { profile, garmentName, makeupSpec } = opts;
   const garmentNoun = opts.garmentNoun ?? garmentName;
   const garment = cleanGarmentName(garmentName);
+  // Retailers store colour names shouting ("BLUE", "ECRU"); the rationale is read aloud.
+  const nearFaceColorName = opts.nearFaceColorName.toLowerCase();
 
   const undertone = profile.undertone ?? "neutral";
   const topConcern = profile.skinFocusAreas?.[0];
@@ -50,8 +54,20 @@ export function generateRationale(opts: {
   const lip = LIP_PHRASE[makeupSpec.lipBlushFamily];
   const occasion = profile.occasion ?? "today";
 
+  const opening = `${openingClause} this ${nearFaceColorName} ${garment}, ${calmsClause}. `;
+
+  // Same chain either way: skin fact -> colour choice -> why -> skin care -> occasion. Only
+  // the beauty link changes, so a menswear look never promises a lip nobody picked.
+  if (opts.includeColorCosmetics === false) {
+    return (
+      opening +
+      `To finish: prep chosen for your ${skinType}skin so the colour sits clean against it - ` +
+      `ready for ${occasion}.`
+    );
+  }
+
   return (
-    `${openingClause} this ${nearFaceColorName} ${garment}, ${calmsClause}. ` +
+    opening +
     `To finish: a ${baseFinish} base for your ${skinType}skin, a ${lip} lip that ties to the ` +
     `${garmentNoun}, all shade-matched to you - ready for ${occasion}.`
   );

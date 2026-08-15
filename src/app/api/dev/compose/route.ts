@@ -24,6 +24,7 @@ function skinProfile(opts: {
   safetyFlags?: LookProfile["safetyFlags"];
   climateSeason?: string;
   focusAreas?: string[];
+  wardrobe?: LookProfile["wardrobe"];
 }): LookProfile {
   const season = getColorSeason(opts.undertone, opts.depth);
   const c = { redness: 80, oiliness: 80, moisture: 80, radiance: 80, spots: 80, texture: 80, ...opts.conditions };
@@ -51,6 +52,9 @@ function skinProfile(opts: {
     occasion: opts.occasion,
     country: "NG",
     climateSeason: opts.climateSeason ?? "wet",
+    // The app requires a wardrobe before it will continue, so the harness sets one too -
+    // without it the composer draws from both wardrobes and returns mixed-gender outfits.
+    wardrobe: opts.wardrobe ?? "women",
   };
 }
 
@@ -74,6 +78,7 @@ const PRESETS: Record<string, LookProfile> = {
     conditions: { oiliness: 35 },
     skinType: "oily",
     occasion: "interview",
+    wardrobe: "men",
   }),
 
   // Safety-suppression path: pregnant + sensitive - actives like salicylic/retinoids must vanish.
@@ -105,6 +110,7 @@ const PRESETS: Record<string, LookProfile> = {
     fitPref: "regular",
     country: "NG",
     climateSeason: "wet",
+    wardrobe: "women",
   },
 };
 

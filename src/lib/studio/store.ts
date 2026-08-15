@@ -2,7 +2,7 @@ import { create } from "zustand";
 import catalogJson from "@/data/catalog.json";
 import { composeLook, getClimateSeason } from "@/lib/composer";
 import { checkBrightness } from "@/lib/studio/brightness";
-import { readSkin, renderVto } from "@/lib/studio/client";
+import { QuotaError, readSkin, renderVto } from "@/lib/studio/client";
 import { STEP_SEQUENCE } from "@/lib/studio/types";
 import type { LightingState, SafetyToggles, SkinRead, StepId } from "@/lib/studio/types";
 import type { CompleteLook, LookProfile, Product } from "@/lib/types";
@@ -29,6 +29,8 @@ interface StudioState {
   vtoUrl: string | null;
   vtoMock: boolean;
   error: string | null;
+  /** Set when the visitor has used their allowance of looks. Owns the whole screen, not a note. */
+  limited: string | null;
 }
 
 interface StudioActions {
@@ -66,6 +68,7 @@ const INITIAL: StudioState = {
   vtoUrl: null,
   vtoMock: false,
   error: null,
+  limited: null,
 };
 
 export const useStudioStore = create<StudioState & StudioActions>((set, get) => ({
@@ -104,6 +107,10 @@ export const useStudioStore = create<StudioState & StudioActions>((set, get) => 
       set((s) => ({ profile: { ...s.profile, ...profilePatch }, skinRead, analyzing: false }));
       get().next();
     } catch (e) {
+      if (e instanceof QuotaError) {
+        set({ analyzing: false, limited: e.message });
+        return;
+      }
       set({
         analyzing: false,
         error: e instanceof Error ? e.message : "We couldn't read that photo - mind trying another?",
@@ -149,8 +156,11 @@ export const useStudioStore = create<StudioState & StudioActions>((set, get) => 
       try {
         const vto = await renderVto(bodyFile, look.outfit.garments);
         set({ vtoUrl: vto.url, vtoMock: vto.mock });
-      } catch {
-        set({ vtoUrl: null });
+      } catch (e) {
+        // Running out mid-compose still has a look to show, so fall through to garment
+        // imagery rather than throwing the visitor out at the last step.
+        if (e instanceof QuotaError) set({ vtoUrl: null, vtoMock: false });
+        else set({ vtoUrl: null });
       }
     }
 
