@@ -201,10 +201,25 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
       return NextResponse.json({ error: err.message }, { status: err.status });
     }
     console.error(`[youcam:${feature}]`, err);
+
     const offline = err instanceof YouCamApiError && err.statusCode === 0;
+    const timedOut = err instanceof Error && err.message.startsWith("Polling timed out");
     const message = offline
       ? "We couldn't reach the studio - check your connection and try again."
-      : "Something slipped on our end. Give it a moment and try again.";
-    return NextResponse.json({ error: message }, { status: 502 });
+      : timedOut
+        ? "The studio is taking longer than usual. Give it a moment and try again."
+        : "Something slipped on our end. Give it a moment and try again.";
+
+    // Name the step that actually broke. Without this the visitor-safe message is the only
+    // trace outside the server console, and "something slipped" is unactionable when a demo
+    // fails in front of someone - the step tells us upload vs task vs poll at a glance.
+    const detail =
+      err instanceof YouCamApiError
+        ? { step: err.step, upstreamStatus: err.statusCode }
+        : timedOut
+          ? { step: `poll/${feature}` }
+          : { step: feature };
+
+    return NextResponse.json({ error: message, ...detail }, { status: 502 });
   }
 }
