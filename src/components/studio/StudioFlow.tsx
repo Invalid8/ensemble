@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useSyncExternalStore } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useShallow } from "zustand/react/shallow";
 import { useStudioStore } from "@/lib/studio/store";
 import { STEP_SEQUENCE, type StepId } from "@/lib/studio/types";
+import { catalogImageUrl } from "@/lib/catalogImage";
 import { StudioShell } from "./StudioShell";
 import { ErrorNote } from "./ui/ErrorNote";
 import { OccasionStep } from "./steps/OccasionStep";
@@ -20,6 +21,39 @@ import { LookStep } from "./steps/LookStep";
 import { LimitStep } from "./steps/LimitStep";
 
 const PROGRESS_STEPS: StepId[] = ["face", "snapshot", "skinType", "goals", "safety", "body", "sizing"];
+
+const TRAVEL = 40;
+
+/**
+ * Dynamic variants, not inline objects: `custom` is the only way direction reaches a component
+ * that has already left the tree, so the screen on its way out travels with the one coming in
+ * instead of fading in place while the next slides - which read as moving the wrong way.
+ *
+ * Under mode="wait" the exit is on the critical path, so it is a quick tween and only the
+ * entrance springs.
+ */
+const stepVariants = {
+  enter: (d: number) => ({ x: d * TRAVEL, opacity: 0 }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      x: { type: "spring" as const, stiffness: 420, damping: 38, mass: 0.9 },
+      opacity: { duration: 0.22, ease: "easeOut" as const },
+    },
+  },
+  exit: (d: number) => ({
+    x: d * -TRAVEL,
+    opacity: 0,
+    transition: { duration: 0.16, ease: [0.4, 0, 1, 1] as const },
+  }),
+};
+
+const fadeVariants = {
+  enter: { opacity: 0 },
+  center: { opacity: 1, transition: { duration: 0.2 } },
+  exit: { opacity: 0, transition: { duration: 0.14 } },
+};
 
 // The mount gate never changes after hydration, so it needs no subscription - the server
 // snapshot returns false and the client snapshot returns true.
@@ -127,6 +161,7 @@ export default function StudioFlow() {
   const reset = useStudioStore((s) => s.reset);
   const goTo = useStudioStore((s) => s.goTo);
   const limited = useStudioStore((s) => s.limited);
+  const reduceMotion = useReducedMotion();
 
   // The zustand store is a module singleton, so its state can leak across server renders.
   // Gate on mount so SSR and the first client render agree, then hydrate the live flow.
@@ -161,7 +196,7 @@ export default function StudioFlow() {
     return (
       <LookStep
         look={look}
-        heroUrl={vtoUrl ?? look.outfit.garments[0]?.image_url ?? null}
+        heroUrl={vtoUrl || catalogImageUrl(look.outfit.garments[0]?.image_url ?? "") || null}
         vtoMock={vtoMock}
         vtoReal={Boolean(vtoUrl) && !vtoMock}
         vtoNote={vtoNote}
@@ -181,6 +216,7 @@ export default function StudioFlow() {
       showProgress={showProgress}
       progressTotal={PROGRESS_STEPS.length}
       progressCurrent={PROGRESS_STEPS.indexOf(step)}
+      scrollKey={step}
     >
       {error && (
         <ErrorNote
@@ -193,10 +229,11 @@ export default function StudioFlow() {
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.div
             key={step}
-            initial={{ x: direction > 0 ? 28 : -28, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            custom={direction}
+            variants={reduceMotion ? fadeVariants : stepVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
             className="flex flex-1 flex-col"
           >
             <CurrentStep />

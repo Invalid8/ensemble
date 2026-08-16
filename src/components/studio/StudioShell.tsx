@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Petal } from "@/components/brand/Petal";
 import { ProgressDots } from "./ui/controls";
@@ -41,6 +44,8 @@ interface StudioShellProps {
   showProgress: boolean;
   progressTotal: number;
   progressCurrent: number;
+  /** Changing this scrolls the pane back to the top - a new step should never open mid-page. */
+  scrollKey?: string;
 }
 
 export function StudioShell({
@@ -50,7 +55,14 @@ export function StudioShell({
   showProgress,
   progressTotal,
   progressCurrent,
+  scrollKey,
 }: StudioShellProps) {
+  const pane = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    pane.current?.scrollTo({ top: 0 });
+  }, [scrollKey]);
+
   return (
     <div className="relative min-h-dvh w-full overflow-hidden bg-bg lg:flex lg:items-center lg:justify-center lg:py-10">
       <StageScatter />
@@ -98,7 +110,7 @@ export function StudioShell({
           </div>
         )}
 
-        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-6 pb-8 pt-4">
+        <div ref={pane} className="flex min-h-0 flex-1 flex-col overflow-y-auto px-6 pb-8 pt-4">
           {children}
         </div>
       </div>
